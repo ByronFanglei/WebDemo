@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>无缝滚动</title>
+  <style>
+    *{padding: 0;margin: 0;}
+    div{
+      width: 915px;
+      height: auto;
+      margin: 200px auto;
+      background-color: khaki;
+      overflow: hidden;
+    }
+    div:hover >ul{
+      animation-play-state: paused;
+    }
+    div >ul{
+      width: 200%;
+      list-style: none;
+      animation: moveimg 5s linear infinite;
+    }
+    div >ul >li{
+      width: 183px;
+      float: left;
+    }
+    div >ul >li >img{
+      width: 100%;
+    }
+
+    @keyframes moveimg{
+      from{
+        transform: translate(0px);
+      }
+      to{
+        transform: translate(-915px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <ul>
+      <li><img src="./image/iPhone11.jpg" alt=""></li>
+      <li><img src="./image/iPhone11.jpg" alt=""></li>
+      <li><img src="./image/iPhone11.jpg" alt=""></li>
+      <li><img src="./image/iPhone11.jpg" alt=""></li>
+      <li><img src="./image/iPhone11.jpg" alt=""></li>
+      <li><img src="./image/iPhone11.jpg" alt=""></li>
+      <li><img src="./image/iPhone11.jpg" alt=""></li>
+      <li><img src="./image/iPhone11.jpg" alt=""></li>
+      <li><img src="./image/iPhone11.jpg" alt=""></li>
+      <li><img src="./image/iPhone11.jpg" alt=""></li>
+    </ul>
+  </div>
+</body>
+</html>

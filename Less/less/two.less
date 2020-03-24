@@ -1,0 +1,23 @@
+*{padding: 0;margin: 0;}
+.juzhong(@w:50px,@h:50px,@c:red){
+  width: @w;
+  height: @h;
+  background-color: @c;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.two{
+  width: 500px;
+  height: 500px;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  position: relative;
+  .inner1{
+    .juzhong(100px,100px,deeppink);
+  }
+  .inner2{
+    .juzhong(@c:yellow);
+  }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>时钟案例</title>
+  <style>
+    *{padding: 0;margin: 0;}
+    .clock{
+      width: 300px;
+      height: 300px;
+      background-color: #fff;
+      border: 10px solid lightgrey;
+      margin: 200px auto;
+      border-radius: 50%;
+      position: relative;
+    }
+    .line{
+      width: 6px;
+      height: 300px;
+      background-color: lightgrey;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%,0);
+    }
+    .line2{
+      transform: translate(-50%,0) rotate(30deg);
+    }
+    .line3{
+      transform: translate(-50%,0) rotate(60deg);
+    }
+    .line4{
+      transform: translate(-50%,0) rotate(90deg);
+    }
+    .line5{
+      transform: translate(-50%,0) rotate(120deg);
+    }
+    .line6{
+      transform: translate(-50%,0) rotate(150deg);
+    }
+    .cover{
+      width: 260px;
+      height: 260px;
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .hour{
+      width: 10px;
+      height: 50px;
+      background-color: orangered;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-100%);
+      transform-origin: center bottom;
+      animation: clockmove 43200s linear infinite;
+    }
+    .minute{
+      width: 6px;
+      height: 90px;
+      background-color: palegreen;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-100%);
+      transform-origin: center bottom;
+      animation: clockmove 3600s linear infinite;
+    }
+    .second{
+      width: 3px;
+      height: 120px;
+      background-color: salmon;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-100%);
+      transform-origin: center bottom;
+      animation: clockmove 60s infinite steps(60);
+      
+    }
+    .center{
+      width: 25px;
+      height: 25px;
+      background-color: lightgrey;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+    @keyframes clockmove {
+      from{
+        transform: translate(-50%,-100%) rotate(0deg) ;
+      }
+      to{
+        transform: translate(-50%,-100%) rotate(360deg) ;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <div class="line line1"></div>
+    <div class="line line2"></div>
+    <div class="line line3"></div>
+    <div class="line line4"></div>
+    <div class="line line5"></div>
+    <div class="line line6"></div>
+    <div class="cover"></div>
+    <div class="hour"></div>
+    <div class="minute"></div>
+    <div class="second"></div>
+    <div class="center"></div>
+  </div>
+</body>
+</html>

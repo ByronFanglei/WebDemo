@@ -1,0 +1,8 @@
+div {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-width: 80px;
+  border-style: dashed dashed solid dashed;
+  border-color: transparent transparent skyblue transparent;
+}

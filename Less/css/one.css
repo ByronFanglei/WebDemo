@@ -1,0 +1,17 @@
+/*暴露的注释*/
+/*变量*/
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: pink;
+}
+#one {
+  width: 200px;
+  height: 200px;
+  background-color: black;
+}
+#one:hover {
+  background-color: white;
+}

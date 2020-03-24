@@ -1,0 +1,9 @@
+.juzhong {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.juzhong:hover {
+  background-color: #df0f0f !important;
+}
