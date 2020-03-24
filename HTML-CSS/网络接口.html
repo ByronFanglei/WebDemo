@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>网络接口</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div>
+    <img src="image/iphone11.jpg">
+    <button class="full">全屏</button>
+    <button class="clear">退出全屏</button>
+    <button class="isfull">判断全屏</button>
+  </div>
+</body>
+
+<script>
+  window.onload=function(){
+    var divs = document.querySelector('div')
+
+    document.querySelector('.full').onclick=function(){
+      divs.webkitRequestFullScreen();
+    }
+    document.querySelector('.clear').onclick=function(){
+      document.webkitCancelFullScreen();
+    }
+    document.querySelector('.isfull').onclick=function(){
+      if(document.webkitFullscreenElement){
+        console.log(true)
+      }else{
+        console.log(false)
+      }
+    }
+  }
+</script>
+</html>

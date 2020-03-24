@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>读取文件</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <input type="file" name="userImg" id="userImg" onchange="getUserImg()">
+
+  <img id="img" src="">
+
+</body>
+<script>
+/*需求：即时预览
+即时：当用户选择玩图片后立即进行预览的处理 >>onchange
+预览：通过文件读取对象的readAsDataURL()完成*/
+function getUserImg(){
+  // 1.创建文件读取对象
+  var reader = new FileReader();
+  /*2.读取文件，获取DataURL
+  --没有任何返回值：void，但是读取完成之后，它会将读取的结果存储在读取文件对象的result中。当加载完图片之后，才能够返回result
+  --文件存储在file中表单元素的files属性中，是一个数组*/
+  var file = document.querySelector('#userImg').files
+  reader.readAsDataURL(file[0])
+  /*获取数据
+  FileReader提供了一个完整的组件模型，用来捕获读取文件的状态
+  onabort：读取文件中断时触发
+  onerror：读取文件错误时触发
+  onload：文件读取成功完成时触发
+  onloadend：读取完成时触发，无论成功还是失败
+  onloadstart：开始读取时触发
+  onprogress：读取文件过程中触发*/
+  reader.onload=function(){
+    console.log(reader.result)
+    console.log('文件读取成功啦')
+    document.querySelector('#img').src = reader.result
+  }
+  reader.onloadstart=function(){
+    console.log('开始读取文件了')
+  }
+  reader.onprogress=function(){
+    console.log('文件正在读取中...')
+  }
+  reader.onloadend=function(){
+    console.log('文件读取完成了，我不知道读取完成了没完成，反正读取完啦')
+  }
+}
+</script>
+</html>

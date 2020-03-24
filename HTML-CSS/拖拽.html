@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>拖拽</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+    div{
+      width: 300px;
+      height: 300px;
+      border: 1px solid #ff6700;
+      margin-right: 20px;
+      float: left;
+    }
+    p{
+      background: skyblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="div1" id="div1">
+    <p id="pe" draggable="true">拖我</p>
+    <p id="pee" draggable="true">拖我111111111</p>
+  </div>
+  <div class="div2" id="div2"></div>
+  <div class="div3" id="div3"></div>
+</body>
+<script>
+  // 被拖拽元素必须将元素添加draggable="true"，图片和超链接默认就可以拖拽
+  /*应用于被拖拽元素事件
+  ondrag        整个拖拽过程都会被调用--持续的
+  ondragstart   拖拽开始时调用
+  ondragleave   鼠标离开拖拽元素调用
+  ondragend     拖拽结束时调用*/
+  document.ondrag=function(){
+    console.log('整个拖拽过程都会被调用')
+  }
+  document.ondragstart=function(event){
+    console.log('拖拽开始了')
+    /*通过dataTransfer来实现数据的存储与获取
+    setData(format,data)
+    format:数据的类型：text/html  text/uri-list
+    data:数据，一般来说是字符串值*/
+    // event.target.id:获取当前拖拽id
+    event.dataTransfer.setData("text/html",event.target.id)
+  }
+  document.ondragleave=function(){
+    console.log('鼠标离开拖拽元素了')
+  }
+  document.ondragend=function(){
+    console.log('拖拽结束了')
+  }
+  /*应用与目标元素事件
+  ondragenter   当拖拽元素进入时调用
+  ondragover    当停留在目标元素上时调用--持续的
+  ondrop        当在目标元素上松开鼠标时调用
+  ondragleave   当拖拽元素离开目标元素时调用*/
+  document.ondragenter=function(){
+    console.log('拖拽元素进入目标元素')
+  }
+  document.ondragover=function(event){
+    console.log('拖拽元素停留在目标元素上')
+    // 如果想触发ondrop事件，必须在此处阻止浏览器默认行为
+    // 取消事件的默认动作
+    event.preventDefault()
+  }
+  // 浏览器会默认组织ondrop事件，必须在ondragover事件中组织浏览器默认行为
+  document.ondrop=function(event){
+    console.log('拖拽元素在目标元素上松开鼠标')
+    // 通过event.dataTransfer.setData存储的数据只能在drop中取值
+    var id =  event.dataTransfer.getData("text/html")
+    event.target.appendChild(document.getElementById(id))
+  }
+  document.ondragleave=function(){
+    console.log('拖拽元素离开目标元素了')
+  }
+</script>
+</html>

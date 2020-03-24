@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>web存储</title>
+</head>
+<body>
+  <input type="text" id="userName">
+  <input type="button" value="设置数据" id="setData">
+  <input type="button" value="获取数据" id="getData">
+  <input type="button" value="删除数据" id="removeData">
+  <input type="button" value="删除全部数据" id="clearData">
+</body>
+<script>
+  /*sessionStorage的使用：存储数据到本地，存储的内容5mb左右
+  1.这个数据本质是存储在当前页面的内存中
+  2.生命周期为关闭当前页面
+  setItem(key,value):存储数据，以键值对的方式存储
+  getItem(key):获取数据，通过指定的名称key获取对应的value值
+  removeItem(key):删除数据，删除指定名曾key对应的value值
+  clear():清空所有的存储内容---谨慎使用*/
+  
+  // 存储数据
+  document.querySelector('#setData').onclick=function(){
+    var name = document.querySelector('#userName').value
+    window.sessionStorage.setItem('userName',name)
+  }
+  // 获取数据
+  document.querySelector('#getData').onclick=function(){
+    // 如果找不到对应的key值，返回null
+    var name = window.sessionStorage.getItem('userName')
+    console.log(name)
+  }
+  document.querySelector('#removeData').onclick=function(){
+    // 删除找不到key值后，浏览器不报错，且不会删除数据
+    window.sessionStorage.removeItem('userName')
+  }
+  document.querySelector('#clearData').onclick=function(){
+    window.sessionStorage.clear()
+  }
+</script>
+</html>

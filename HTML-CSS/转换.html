@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>转换</title>
+  <style>
+    *{padding: 0;margin: 0;}
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: palegoldenrod;
+      margin-bottom: 20px;
+      transition: transform 2s,background-color 2s;
+    }
+    
+    div:first-of-type:active{
+      transform: translateY(1000px);
+    }
+    div:nth-of-type(2):active{
+      background-color: palegreen;
+      /* transform: scale(2); */
+      transform: scaleX(2);
+    }
+    div:nth-of-type(3):active{
+      background-color: palegreen;
+      transform-origin: left top;
+      transform: translateX(300px) rotate(-45deg);
+    }
+    div:nth-of-type(4):active{
+      transform: skewY(30deg);
+    }
+    div:nth-of-type(5){
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+  </style>
+</head>
+<body>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+</body>
+</html>

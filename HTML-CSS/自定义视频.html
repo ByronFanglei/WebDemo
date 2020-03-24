@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .videoAll{
+      position: relative;
+      width: 800px;
+      height: 500px;
+      border: 1px solid #ccc;
+      margin: 50px auto;
+    }
+    .videoAll > .videoinner{
+      width: 100%;
+    }
+    .videoAll > .videotwo{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 50px;
+      width: 100%;
+      height: 50px;
+      border: 1px solid #ff6700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      line-height: 50px;
+    }
+    .progress{
+      width: 500px;
+      height: 5px;
+      border-radius: 2px;
+      background: #999;
+      position: relative;
+    }
+    .bar{
+      width: 100%;
+      height: 5px;
+      opacity: 0;
+      position: absolute;
+      z-index: 999;
+    }
+    .load{
+      width: 60%;
+      height: 5px;
+      background: #666;
+      position: absolute;
+    }
+    .exten{
+      width: 0%;
+      height: 5px;
+      background: #ff6700;
+      position: absolute;
+    }
+    .wited{
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="videoAll">
+    <video src="./image/iPhone11.mp4" poster="./image/iPhone11.jpg" class="videoinner"></video>
+    <div class="videotwo">
+      <div class="start">开始</div>
+      <div class="progress">
+        <div class="bar"></div>
+        <div class="load"></div>
+        <div class="exten"></div>
+      </div>
+      <div class="timer">
+        <span class="timers">00:00:00</span>
+        /
+        <span class="totlatimer">00:00:00</span>
+      </div>
+      <div class="extension">扩展</div>
+    </div>
+  </div>
+</body>
+<script>
+  var video = document.querySelector('.videoinner')
+  // 开始暂停
+  document.querySelector('.start').onclick=function(){
+    if(video.paused){
+      video.play()
+      document.querySelector('.start').innerHTML="暂停"
+      document.querySelector('.start').classList.add('wited')
+      document.querySelector('.timer').classList.add('wited')
+    }else{
+      video.pause()
+      document.querySelector('.start').innerHTML="开始"
+    }
+  }
+  // 全屏
+  document.querySelector('.extension').onclick=function(){
+    video.requestFullscreen()
+  }
+  // 当视频可以播放时
+  video.oncanplay=function(){
+    // 获取视频时长
+    var total = Math.floor(video.duration)
+    var totaltime = getData(total)
+    document.querySelector('.totlatimer').innerHTML=totaltime
+  }
+  video.ontimeupdate=function(){
+    // 获取当前播放时间
+    var curren = Math.floor(video.currentTime)
+    var timer = getData(curren)
+    document.querySelector('.timers').innerHTML=timer
+    // 开始设置进度条
+    var total = video.duration
+    var extenW =  Math.floor((curren/total)*100)+"%"
+    document.querySelector('.exten').style.width=extenW
+  }
+  document.querySelector('.bar').onclick=function(event){
+    var barW = event.offsetX
+    var bar = barW/document.querySelector('.progress').offsetWidth
+    var bartimer = bar*video.duration
+    // 修改currentTime会自动调用ontimeupdate事件
+    video.currentTime = bartimer
+  }
+  // 时间函数
+  function getData(total){
+    var hours = Math.floor(total/3600)
+    var min = Math.floor(total%3600/60)
+    var se = Math.floor(total%60)
+    hours=hours>=10?hours:"0"+hours
+    min=min>=10?min:"0"+min
+    se=se>=10?se:"0"+se
+    return hours+':'+min+':'+se
+  }
+  // 播放完毕重置
+  video.onended=function(){
+    video.currentTime = 0
+  }
+</script>
+</html>

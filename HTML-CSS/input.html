@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>input</title>
+  <meta charset="utf-8">
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    form{
+      width: 800px;
+      margin: 0 auto;
+    }
+    form > fieldset{
+      padding: 10px
+    }
+    form > fieldset > meter,
+    form > fieldset > input{
+      width: 100%;
+      height: 46px;
+      line-height: 46px;
+      font-size: 16px;
+      margin: 10px 0;
+      border: none;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding-left: 5px;
+      box-sizing: border-box;
+    }
+    form > fieldset > meter{
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <fieldset>
+      <legend>学生档案</legend>
+      <label for="userName">姓名：</label>
+      <input type="text" name="userName" id="userName" placeholder="请输入姓名">
+      <label for="userPhone">手机号码：</label>
+      <input type="tel" name="userPhone" id="userPhone" pattern="^[1][3,4,5,7,8,9][0-9]{9}$" required>
+      <label for="userEmail">邮箱地址</label>
+      <input type="email" name="userEmail" id="userEmail" pattern="^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$">
+      <label>所属学院</label>
+      <input type="text" name="" list="study">
+      <datalist id="study">
+        <option value="java"></option>
+        <option value="c++"></option>
+        <option value="javaScript"></option>
+      </datalist>
+      <label for="userScore">入学成绩：</label>
+      <input type="number" name="userScore" max="100" min="0" id="userScore">
+      <label>基础水平：</label>
+      <meter max="100" min="0" low="59" high="90" id="userBasic"></meter>
+      <label id="userFirst">入学事件</label>
+      <input type="datatime-loal" name="userFirst" id="userFirst">
+      <label id="userLast">毕业事件</label>
+      <input type="datatime-loal" name="userLast" id="userLast">
+      <input type="submit" name="">
+    </fieldset>
+
+  </form>
+</body>
+<script>
+  document.getElementById('userScore').oninput=function(){
+    document.getElementById('userBasic').value = this.value
+  }
+  document.getElementById('userPhone').oninvalid=function(){
+    this.setCustomValidity('手机号输入错误！！！')
+  }
+  // document.getElementById('userEmail').oninvalid=function(){
+  //   this.setCustomValidity('邮箱输入有误！！！')
+  // }
+</script>
+</html>

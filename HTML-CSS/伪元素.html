@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>伪元素</title>
+  <style>
+    body{
+      padding: 200px;
+    }
+    div:nth-of-type(1){
+      width: 300px;
+      height: 200px;
+      background-color: hsla(260, 100%, 50%, .2);
+      float: left;
+    }
+    div:nth-of-type(2){
+      width: 100px;
+      height: 200px;
+      background-color: skyblue;
+      float: left;
+      position: relative;
+    }
+    div:nth-of-type(2)::before{
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      left: -10px;
+      top: -10px;
+      border-radius: 50%;
+    }
+    div:nth-of-type(2)::after{
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      left: -10px;
+      bottom: -10px;
+      border-radius: 50%;
+    }
+    p::first-letter{
+      color: #333;
+      font-size: 30px;
+      float: left;
+    }
+    p::first-line{
+      font-family: "仿宋";
+      text-decoration: underline;
+    }
+    p::selection{
+      background-color: pink;
+      color: skyblue;
+    }
+    h1{
+      color: #fff;
+      background-color: black;
+      text-align: center;
+    }
+    .one{
+      text-shadow: -2px -2px 2px #f00;
+    }
+    .two{
+      text-shadow: 0 0 30px #fff;
+    }
+    .three{
+      /* 多层阴影 */
+      text-shadow: 0 0 20px #fff,0 0 50px red,0 0 70px blue;
+    }
+    .four{
+      color: #000;
+      text-shadow: 0 1px 0 #fff;
+    }
+    .five{
+      text-shadow: 1px -1px 0 #ccc,2px -2px 0 #999,3px -3px 0 #666,4px -4px 0 #333;
+    }
+    .six{
+      background-color: #ccc;
+      color: transparent;
+      text-shadow: 0 0 3px hsla(30, 100%, 30%, 1);
+    }
+    .seven{
+      text-shadow: 0 -3px 0 #ff6700;
+    }
+    .images{
+      width: 800px;
+      height: auto;
+      margin-top: 300px;
+      box-sizing: border-box;
+    }
+    .images>img{
+      width: 100%;
+    }
+    .images:hover{
+      border: 5px solid hsla(180, 100%, 50%, .5);
+    }
+  </style>
+</head>
+<body>
+  <p>
+    这个数据本质是存储在当前页面的内存中生命周期为关闭当前页面
+  </p>
+  <h1 class="one">柳暗花明</h1>
+  <h1 class="two">柳暗花明</h1>
+  <h1 class="three">柳暗花明</h1>
+  <h1 class="four">柳暗花明</h1>
+  <h1 class="five">柳暗花明</h1>
+  <h1 class="six">柳暗花明</h1>
+  <h1 class="seven">柳暗花明</h1>
+  <div></div>
+  <div></div>
+  <div class="images">
+    <img src="./image/iPhone11.jpg" alt="">
+  </div>
+  <div class="radios"></div>
+</body>
+</html>

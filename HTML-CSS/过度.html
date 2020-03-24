@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>过度</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    .one{
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      background-color: black;
+      /* transition-property: left;
+      transition-duration: 2s;
+      transition-timing-function: ease;
+      transition-delay: 2s; */
+      transition: left 2s steps(5);
+    }
+    .one:active{
+      left: 1000px;
+    }
+    .menu{
+      width: 200px;
+      height: auto;
+      margin: 100px auto;
+    }
+    .item{
+      width: 100%;
+      height: auto;
+    }
+    .item > h3{
+      height: 40px;
+      line-height: 40px;
+      background-color: darkcyan;
+      /* color: darkorange; */
+      /* text-align: center; */
+      padding-left: 10px;
+      border-bottom: 1px solid #000;
+    }
+    .itemBox{
+      width: 100%;
+      height: 0px;
+      transition: height 2s;
+      overflow: hidden;
+    }
+    .itemBox > ul{
+      list-style: none;
+      background-color: gold;
+      color: rgb(90, 114, 108);
+      padding: 10px;
+    }
+    .item:hover > .itemBox{
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="one"></div> -->
+  <div class="menu">
+    <div class="item">
+      <h3>新闻一</h3>
+      <div class="itemBox">
+        <ul>
+          <li>山西新闻呢</li>
+          <li>山西新闻呢</li>
+          <li>山西新闻呢</li>
+          <li>山西新闻呢</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <h3>新闻二</h3>
+      <div class="itemBox">
+        <ul>
+          <li>北京新闻呢</li>
+          <li>北京新闻呢</li>
+          <li>北京新闻呢</li>
+          <li>北京新闻呢</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <h3>新闻三</h3>
+      <div class="itemBox">
+        <ul>
+          <li>杭州新闻呢</li>
+          <li>杭州新闻呢</li>
+          <li>杭州新闻呢</li>
+          <li>杭州新闻呢</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <h3>新闻四</h3>
+      <div class="itemBox">
+        <ul>
+          <li>深圳新闻呢</li>
+          <li>深圳新闻呢</li>
+          <li>深圳新闻呢</li>
+          <li>深圳新闻呢</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

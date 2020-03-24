@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML5</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+    .red{
+      color:red;
+    }
+  </style>
+</head>
+<body>
+  <header></header>
+  <nav></nav>
+  <main>
+    <article></article>
+    <aside></aside>
+  </main>
+  <footer></footer>
+  <form action="">
+    邮箱：<input type="email" name="user" placeholder="hahah" autofocus autocomplete="on" multiple>
+    电话：<input type="tel" name="" required pattern="^(\+86)?1\d{10}$" id="tell">
+    网址：<input type="url" name="">
+    数量：<input type="number" name="">
+    名称：<input type="search" name="">
+    范围：<input type="range" name="">
+    颜色：<input type="color" name="">
+    时间：<input type="time" name="">
+    日期：<input type="date" name="">
+    <input type="datetime" name="">
+    <input type="datetime-local" name="">
+    <input type="month" name="">
+    <input type="week" name="">
+    文件：<input type="file" name="" multiple>
+    <input type="submit" name="">
+    <select>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    专业：<input type="text" name="" list="subject">
+    <datalist id="subject">
+      <option value="前端" label="1"></option>
+      <option value="后端" label="2"></option>
+      <option value="java" label="3"></option>
+      <option value="c++" label="4"></option>
+    </datalist>
+    <progress value=""></progress>
+    <meter max="100" min="0" high="80" low="40" value="39"></meter>
+    <meter max="100" min="0" high="80" low="40" value="59"></meter>
+    <meter max="100" min="0" high="80" low="40" value="99"></meter>
+  </form>
+
+
+  <!-- <video controls>
+    <source src="image/iphone11.mp4" type="video/mp4">
+  </video> -->
+
+  <ul>
+    <li class="red" id="red">123123</li>
+    <li>213213123</li>
+    <li>213213123</li>
+    <li>213213123</li>
+  </ul>
+  <button id="one">1</button>
+</body>
+<script>
+  document.getElementById('tell').oninput=function(){
+    console.log(this.value)
+  }
+  document.getElementById('tell').oninvalid=function(){
+    // 修改默认值
+    this.setCustomValidity('手机号不对')
+  }
+  document.querySelector('#one').onclick=function(){
+    var i =document.querySelector('#red').classList.contains('red')
+    console.log(i)
+  }
+</script>
+</html>
