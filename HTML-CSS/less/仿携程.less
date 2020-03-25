@@ -1,0 +1,93 @@
+*{margin: 0;padding: 0;}
+header{
+  width: 100%;
+  display: flex;
+}
+header>div{
+  flex: 1;
+}
+header>div>img{
+  width: 100%;
+}
+main{
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+main>section{
+  width: 100%;
+  height: 200px;
+  margin-top: 10px;
+  background-color: #ccc;
+  display: flex;
+}
+main>section:first-of-type{
+  background-color: rgb(226, 226, 152);
+}
+main>section:nth-of-type(2){
+  background-color: rgb(113, 233, 183);
+}
+main>section:nth-of-type(3){
+  background-color: rgb(145, 238, 122);
+}
+main>section:last-of-type{
+  background-color: rgb(238, 198, 124);
+}
+.left{
+  flex: 1;
+}
+.right{
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+}
+.right>a{
+  width: 50%;
+  line-height: 100px;
+  text-decoration: none;
+  color: #ff6700;
+  font-size: 24px;
+  padding-left: 10px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  box-sizing: border-box;
+}
+.right>a:nth-last-of-type(-n+2){
+  border-bottom: 0px;
+}
+.imgs{
+  width: 100%;
+  display: flex;
+}
+.imgs>div{
+  flex: 1;
+}
+.imgs>div>img{
+  width: 100%;
+}
+footer{
+  width: 100%;
+}
+footer>nav{
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+footer>nav>a{
+  line-height: 30px;
+  text-align: center;
+  color: #ccc;
+  text-decoration: none;
+  flex: 1;
+}
+.link{
+  text-align: center;
+}
+.link>a{
+  color: #ccc;
+  text-decoration: none;
+}
+.copy{
+  text-align: center;
+}

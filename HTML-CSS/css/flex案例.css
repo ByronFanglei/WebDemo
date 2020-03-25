@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.layout {
+  width: 800px;
+  height: 900px;
+  background-color: #ccc;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  width: 100%;
+  height: 100px;
+  background-color: #e03131;
+}
+footer {
+  width: 100%;
+  height: 100px;
+  background-color: #26e2c3;
+}
+main {
+  width: 100%;
+  height: auto;
+  background-color: #dd6c0f;
+  flex: 1;
+  display: flex;
+}
+article {
+  width: auto;
+  height: 100%;
+  background-color: #5cec64;
+  flex: 1;
+}
+aside {
+  width: auto;
+  height: 100%;
+  background-color: #5052e0;
+  flex: 3;
+}

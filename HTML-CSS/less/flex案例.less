@@ -1,0 +1,31 @@
+*{margin: 0;padding: 0;}
+.box(@w,@h,@c){
+  width: @w;
+  height: @h;
+  background-color: @c;
+}
+.layout{
+  .box(800px,900px,#ccc);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+header{
+  .box(100%,100px,rgb(224, 49, 49));
+}
+footer{
+  .box(100%,100px,rgb(38, 226, 195));
+}
+main{
+  .box(100%,auto,rgb(221, 108, 15));
+  flex: 1;
+  display: flex;
+}
+article{
+  .box(auto,100%,rgb(92, 236, 100));
+  flex: 1;
+}
+aside{
+  .box(auto,100%,rgb(80, 82, 224));
+  flex: 3;
+}

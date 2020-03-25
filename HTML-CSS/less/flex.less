@@ -1,0 +1,43 @@
+*{margin: 0;padding: 0;}
+.minbox(@c){
+  width: 200px;
+  height: 200px;
+  background-color: @c;
+  
+}
+.box{
+  width: 500px;
+  height: 300px;
+  border: 1px solid hsla(128, 100%, 50%, .5);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  
+}
+.first{
+  .minbox(skyblue);
+  flex-shrink: 2;
+}
+.second{
+  .minbox(rgb(99, 231, 10));
+  flex-shrink: 1;
+
+}
+.third{
+  .minbox(rgb(214, 16, 198));
+  flex-shrink: 1;
+}
+.flex{
+  width: 100%;
+  height: 200px;
+  background-color: #ccc;
+  display: flex;
+}
+.left{
+  .minbox(#ff6700);
+  flex: 1;
+}
+.right{
+  .minbox(skyblue);
+  flex: 4;
+}
