@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>切割轮播</title>
+  <link rel="stylesheet" href="./css/切割轮播.css">
+</head>
+<body>
+  <div class="view">
+    <ul>
+      <li>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </li>
+      <li>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </li>
+      <li>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </li>
+      <li>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </li>
+      <li>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </li>
+    </ul>
+    <a class="pre">&lt;</a>
+    <a class="next">&gt;</a>
+  </div>
+</body>
+<script>
+  var next = document.querySelector('.next')
+  var pre = document.querySelector('.pre')
+  var index=0
+  var flag = true
+  next.onclick=function(){
+    if(flag){
+    index--
+    flag=false
+    document.querySelectorAll('li').forEach((key,value) => {
+    document.querySelectorAll('li')[value].style.transform='rotateX('+(index*90)+'deg)'
+    document.querySelectorAll('li')[value].style.transitionDelay=(value*0.2)+"s"
+    })
+    setTimeout(()=>{
+      flag=true
+    },1000)
+    }
+  }
+  pre.onclick=function(){
+    if(flag){
+    index++
+    flag=false
+    document.querySelectorAll('li').forEach((key,value) => {
+    document.querySelectorAll('li')[value].style.transform='rotateX('+(index*90)+'deg)'
+    document.querySelectorAll('li')[value].style.transitionDelay=(value*0.2)+"s"
+    })
+    setTimeout(()=>{
+      flag=true
+    },1000)
+    }
+  }
+</script>
+</html>
