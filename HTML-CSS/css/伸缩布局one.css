@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.box {
+  width: 1500px;
+  height: 200px;
+  border: 1px solid hsla(128, 100%, 50%, 0.5);
+  margin: 100px auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+.first {
+  width: 200px;
+  height: 200px;
+  background-color: skyblue;
+}
+.second {
+  width: 200px;
+  height: 200px;
+  background-color: #63e70a;
+}
+.third {
+  width: 200px;
+  height: 200px;
+  background-color: #d610c6;
+}
+.fourth {
+  width: 200px;
+  height: 200px;
+  background-color: #ec0f1a;
+}

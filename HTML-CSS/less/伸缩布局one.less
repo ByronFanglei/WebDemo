@@ -1,0 +1,26 @@
+*{margin: 0;padding: 0;}
+.minbox(@c){
+  width: 200px;
+  height: 200px;
+  background-color: @c;
+}
+.box{
+  width: 1500px;
+  height: 200px;
+  border: 1px solid hsla(128, 100%, 50%, .5);
+  margin: 100px auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+.first{
+  .minbox(skyblue)
+}
+.second{
+  .minbox(rgb(99, 231, 10))
+}
+.third{
+  .minbox(rgb(214, 16, 198))
+}
+.fourth{
+  .minbox(rgb(236, 15, 26))
+}
