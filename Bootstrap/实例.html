@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>实例</title>
+
+    <!-- Bootstrap -->
+    <link href="./bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="./bootstrap-3.3.7-dist/js/html5shiv.min.js"></script>
+      <script src="./bootstrap-3.3.7-dist/js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      img{
+        width: 100%;
+      }
+      .byron-loop{
+        margin-top: 50px;
+      }
+      .byron-top{
+        margin-top: 50px;
+      }
+      /* .byron-loop,.byron-loop .item{
+        height: 500px;
+        overflow: hidden;
+      } */
+      /* .carousel-caption{
+        bottom: 48%;
+      }
+      @media only screen and (max-width: 768px){
+        .carousel-caption{
+        bottom: 5%;
+      }
+      .byron-loop,.byron-loop .item{
+        height: 200px;
+      }
+      }  */
+    </style>
+  </head>
+  <body>
+    <!-- 导航 -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">红米K30Pro</a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">综述 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">简述</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">特点 <span class="caret"></span></a>
+              <ul class="dropdown-menu" id="byron-nav">
+                <li><a href="#one">K30pro</a></li>
+                <li><a href="#two">K30</a></li>
+                <li><a href="#three">Chrome</a></li>
+                <li><a href="#four">IE</a></li>
+              </ul>
+            </li>
+            <li><a href="#" data-target="#myModal" data-toggle="modal">关于</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- 轮播 -->
+    <div id="carousel-example-generic" class="carousel slide byron-loop" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+      </ol>
+    
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="../Images/redmiK30_one.jpg">
+          <div class="carousel-caption">
+            月慕白
+          </div>
+        </div>
+        <div class="item">
+          <img src="../Images/redmiK30_two.jpg">
+          <div class="carousel-caption">
+            太空灰
+          </div>
+        </div>
+        <div class="item">
+          <img src="../Images/redmiK30_three.jpg">
+          <div class="carousel-caption">
+            天际蓝
+          </div>
+        </div>
+        <div class="item">
+          <img src="../Images/redmiK30_four.jpg">
+          <div class="carousel-caption">
+            星环紫
+          </div>
+        </div>
+      </div>
+    
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- 三列布局 -->
+    <div class="container byron-top">
+      <div class="row">
+        <div class="col-lg-4 text-center">
+            <img src="../Images/iPhone11.jpg">
+            <div class="caption">
+              <h3>Thumbnail label</h3>
+              <p>...</p>
+              <p><a href="#" class="btn btn-default" role="button">Button</a></p>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center">
+          <img src="../Images/iPhone11.jpg">
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+            <p>...</p>
+            <p><a href="#" class="btn btn-default" role="button">Button</a></p>
+          </div>
+      </div>
+      <div class="col-lg-4 text-center">
+        <img src="../Images/iPhone11.jpg">
+        <div class="caption">
+          <h3>Thumbnail label</h3>
+          <p>...</p>
+          <p><a href="#" class="btn btn-default" role="button">Button</a></p>
+        </div>
+    </div>
+      </div>
+    </div>
+    <!-- 分割线 -->
+    <div class="container">
+      <hr/>
+    </div>
+    <!-- 标签页 -->
+    <div class="container" id="byron-tap">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist" id="byron-list">
+        <li role="presentation" class="active"><a href="#one" aria-controls="one" role="tab" data-toggle="tab">one</a></li>
+        <li role="presentation"><a href="#two" aria-controls="two" role="tab" data-toggle="tab">two</a></li>
+        <li role="presentation"><a href="#three" aria-controls="three" role="tab" data-toggle="tab">three</a></li>
+        <li role="presentation"><a href="#four" aria-controls="four" role="tab" data-toggle="tab">four</a></li>
+      </ul>
+    
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="one">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-7">
+                <h3>Iphone11</h3>
+                Iphone11Iphone11Iphone11Iphone11Iphone11Iphone11
+              </div>
+              <div class="col-md-5">
+                <img src="../Images/iPhone11.jpg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="two">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-7">
+                <h3>RedK30Pro</h3>
+                RedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30Pro
+              </div>
+              <div class="col-md-5">
+                <img src="../Images/redmiK30_one.jpg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="three">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-7">
+                <h3>RedK30Pro</h3>
+                RedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30Pro
+              </div>
+              <div class="col-md-5">
+                <img src="../Images/redmiK30_two.jpg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="four">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-7">
+                <h3>RedK30Pro</h3>
+                RedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30ProRedK30Pro
+              </div>
+              <div class="col-md-5">
+                <img src="../Images/redmiK30_three.jpg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    <!-- 商标 -->
+    <div class="container">
+      &copy;Byron
+    </div>
+    <!-- 模态框 -->
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">模态框</h4>
+          </div>
+          <div class="modal-body">
+            <p>我是个模态框&hellip;</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary">保存</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <script src="../JQuery/jquery-3.4.1.min.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  </body>
+  <script>
+    $(function(){
+      $('.carousel').carousel({
+        interval: 6000
+      })
+      // $('.carousel').on('slide.bs.carousel', function () {
+      //   console.log('轮播开始了！！！')
+      // })
+      // $('.carousel').on('slid.bs.carousel', function () {
+      //   console.log('轮播结束了！！！')
+      // })
+      $('#byron-nav > li > a').click(function(e){
+        e.preventDefault()
+        var href = $(this).attr('href')
+        $("#byron-list > li >a[href='"+(href)+"']").tab('show')
+        $(document).scrollTop($('#byron-tap').offset().top)
+      })
+    })
+  </script>
+</html>
