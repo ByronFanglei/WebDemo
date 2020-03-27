@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+}
+.content {
+  display: flex;
+  animation-delay: 1s;
+}
+.content .dot {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  margin: 0.8em;
+  border-radius: 50%;
+}
+.content .dot::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  animation: move 2s ease-out infinite;
+}
+.content .dot:nth-child(1) {
+  background: #7ef9ff;
+}
+.content .dot:nth-child(1)::before {
+  animation-delay: 0.2s;
+}
+.content .dot:nth-child(2) {
+  background: #89cff0;
+}
+.content .dot:nth-child(2)::before {
+  animation-delay: 0.4s;
+}
+.content .dot:nth-child(3) {
+  background: #4682b4;
+}
+.content .dot:nth-child(3)::before {
+  animation-delay: 0.6s;
+}
+.content .dot:nth-child(4) {
+  background: #0f52ba;
+}
+.content .dot:nth-child(4)::before {
+  animation-delay: 0.8s;
+}
+.content .dot:nth-child(5) {
+  background: #000080;
+}
+.content .dot:nth-child(5)::before {
+  animation-delay: 1s;
+}
+@keyframes move {
+  50%,
+  75% {
+    transform: scale(2.5);
+  }
+  80%,
+  100% {
+    opacity: 0;
+  }
+}

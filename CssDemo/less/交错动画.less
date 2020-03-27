@@ -1,0 +1,50 @@
+*{margin: 0;padding: 0;}
+body{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+}
+.content{
+  @colors: #7ef9ff, #89cff0, #4682b4, #0f52ba, #000080;
+  display: flex;
+  animation-delay: 1s;
+  .dot{
+    position: relative;
+    width: 2em;
+    height: 2em;
+    margin: 0.8em;
+    border-radius: 50%;
+    &::before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: inherit;
+      animation: move 2s ease-out infinite;
+    }
+    .loop(@i) when (@i<=length(@colors)){
+      &:nth-child(@{i}){
+        background: extract(@colors, @i);
+        &::before{
+          animation-delay: @i * 0.2s;
+        }
+      }
+      .loop(@i+1);
+    }
+    .loop(1);
+  }
+}
+
+@keyframes move{
+  50%,
+  75%{
+    transform: scale(2.5);
+  }
+  80%,
+  100%{
+    opacity: 0;
+  }
+}
