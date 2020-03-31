@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工厂模式</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function Person(name,age,gender){
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.sayHello = fun;
+  }
+  // 防止sayHello不断调用，但是会污染全局性，所以需要使用原型解决
+  function fun(){
+    alert(this.name);
+  }
+  var two = new Person('byron',23,'男');
+
+  console.log(two.sayHello());
+  console.log(two instanceof Person);
+
+</script>
+</html>

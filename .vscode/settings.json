@@ -1,5 +1,17 @@
 {
   "less.compile": {
     "out": "..//css//"
-  }
+  },
+  "easysass.formats": [ 
+    //nested：嵌套缩进的 css 代码。
+    //expanded：没有缩进的、扩展的css代码。
+    //compact：简洁格式的 css 代码。
+    //compressed：压缩后的 css 代码
+
+        {
+            "format": "expanded",
+            "extension": ".css"
+        }
+    ],
+  "easysass.targetDir": "CssDemo/css/"
 }

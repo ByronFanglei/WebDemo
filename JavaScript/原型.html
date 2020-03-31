@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原型</title>
+</head>
+<body>
+
+</body>
+<script>
+  function Mycalss(){
+
+  };
+  Mycalss.prototype.a = function(){
+    alert('我在原型中')
+  };
+  var one = new Mycalss();
+  one.name = "byron"
+  console.log(Mycalss.prototype);
+  console.log(one.__proto__);
+  console.log(one.a());
+  console.log("a" in one);
+  console.log(one.hasOwnProperty("name"));
+
+  console.log(Mycalss.prototype.__proto__)
+  console.log(one.__proto__.__proto__)
+  console.log(one.__proto__.__proto__.__proto__)
+</script>
+</html>
