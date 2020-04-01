@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组</title>
+</head>
+<body>
+  
+</body>
+<script>
+  var arr = ['张三','李四','王五'];
+  var arr2 = ['孙悟空','猪八戒','沙僧'];
+  var arr3 = [11,24,53,25,77,90,199];
+  var result = arr.push('赵六');
+  var result = arr.pop();
+  var result = arr.unshift('周二');
+  var result = arr.shift();
+  arr.forEach(function(value,index,obj){
+    console.log(value+'=='+index)
+  })
+  var result = arr.slice(0,2)
+  var result = arr.splice(0,1,'牛七')
+  var result = arr.concat(arr2,arr,'白龙马')
+  var result = arr.join('-=-')
+  var result = arr2.reverse()
+  var result = arr3.sort(function(a,b){
+    return a-b
+    })
+  console.log(result)
+  console.log(arr)
+  console.log(arr2)
+  console.log(arr3)
+</script>
+</html>
