@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>添加删除</title>
+  <style>
+    table{
+      border: 1px solid #000;
+      text-align: center;
+      border-collapse: collapse;
+    }
+    table tr td{
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>Email</td>
+      <td>Salary</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>byron</td>
+      <td>12345@qq.com</td>
+      <td>5000</td>
+      <td><a>Delect</a></td>
+    </tr>
+    <tr>
+      <td>bob</td>
+      <td>sjandak@163.com</td>
+      <td>15000</td>
+      <td><a>Delect</a></td>
+    </tr>
+  </table>
+
+  <div>
+    Name: <input type="text" class="name"><br/>
+    Email: <input type="text" class="email"><br/>
+    Salary: <input type="text" class="salary"><br/>
+    <div id="button" class="sublime">提交</div>
+  </div>
+</body>
+<script>
+  // 删除操作
+  function del(){
+    var del = document.getElementsByTagName("a");
+    for(var i=0;i<del.length;i++){
+      del[i].onclick = function () {
+        var result= confirm('你确定要删除吗')
+        if(result){
+          this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode)
+        }
+      }
+    }
+  }
+  del();  
+  // 添加信息
+  var na = document.querySelector('.name');
+  var email = document.querySelector('.email');
+  var salary = document.querySelector('.salary');
+  var sublime = document.querySelector('.sublime');
+  sublime.onclick = function () {
+    var namevalue = na.value;
+    var emailvalue = email.value;
+    var salaryvalue = salary.value;
+    var tr = document.createElement('tr')
+    // var one = document.createElement('td')
+    // var two = document.createElement('td')
+    // var three = document.createElement('td')
+    // var four = document.createElement('td')
+    // var a = document.createElement('a')
+    // one.innerHTML = namevalue
+    // two.innerHTML = emailvalue
+    // three.innerHTML = salaryvalue
+    // a.innerText = 'Delect'
+    // tr.appendChild(one)
+    // tr.appendChild(two)
+    // tr.appendChild(three)
+    // four.appendChild(a)
+    // tr.appendChild(four)
+    tr.innerHTML = "<td>"+namevalue+"</td>"+"<td>"+emailvalue+"</td>"+"<td>"+salaryvalue+"</td>"+"<td><a>Delter</a></td>"
+    document.querySelector('tbody').appendChild(tr)
+    del()
+  }
+</script>
+</html>

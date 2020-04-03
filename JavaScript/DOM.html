@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+  <button id="btn">111</button>
+  <div id="div"></div>
+</body>
+<script>
+  // var body = document.body;
+  // var html = document.documentElement;
+  // var all = document.all;
+  // var id = document.getElementById()
+  // var box1 = document.querySelector()
+  // var box1 = document.querySelectorAll()
+  // console.log(body)
+  // console.log(html)
+  // console.log(all)
+  
+
+  myClick("btn",function(){
+    var li = document.createElement('li')
+    li.innerHTML = "北京"
+    // var text = document.createTextNode("北京")
+    // li.appendChild(text)
+    var div = document.getElementById('div')
+    div.appendChild(li)
+    // div.replaceChild().removeChild()
+  })
+
+
+
+
+  function myClick(idstr, fun){
+    var div = document.getElementById(idstr)
+    div.onclick = fun
+  }
+</script>
+</html>

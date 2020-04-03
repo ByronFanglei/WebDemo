@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>切换图片</title>
+  <style>
+    div{
+      width: 700px;
+      text-align: center;
+      margin: 100px auto;
+    }
+    div img{
+      width: 100%;
+    }
+  </style>
+  <script>
+    window.onload = function(){
+      var arr = ['../Images/iPhone11.jpg','../Images/redmiK30_one.jpg','../Images/redmiK30_two.jpg','../Images/redmiK30_three.jpg','../Images/redmiK30_four.jpg']
+      var img = document.getElementById('imgs');
+      var up = document.getElementById('up');
+      var next = document.getElementById('next');
+      var pp = document.getElementById('p');
+      var index = 0;
+      up.onclick = function(){
+        index--;
+        if(index < 0){
+          index=arr.length - 1
+        }
+        img.src = arr[index]
+        pp.innerHTML = "一共有"+arr.length+"张图片,"+"当前为第"+(index+1)+"张。"
+      }
+      next.onclick = function(){
+        index++;
+        if(index > arr.length -1){
+          index = 0
+        }
+        img.src = arr[index]
+        pp.innerHTML = "一共有"+arr.length+"张图片,"+"当前为第"+(index+1)+"张。"
+      }
+      pp.nextElementSibling
+    }
+  </script>
+</head>
+<body>
+  <div>
+    <p id="p"></p>
+    <img id="imgs" src="../Images/iPhone11.jpg" alt="">
+    <button id="up">上一张</button>
+    <button id="next">下一张</button>
+  </div>
+</body>
+</html>
