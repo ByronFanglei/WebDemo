@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>滚轮事件</title>
+  <style>
+    #box{
+      width: 100px;
+      height: 100px;
+      background-color: darksalmon;
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+</body>
+<script>
+  var box = document.querySelector('#box')
+  box.onmousewheel = function(event){
+    event || window.event
+    if(event.wheelDelta > 0 || event.detail < 0){
+      //向上
+      var h =(box.offsetHeight)-=10
+      h=h<10?10:h
+      box.style.height = h + 'px'
+    }else{
+      //向下
+      var h =(box.offsetHeight)+=10
+      h=h>500?500:h
+      box.style.height = h + 'px'
+    }
+    // 取消默认属性 火狐
+    event.preventDefault();
+    // 取消默认属性 chrome
+    return false
+  }
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件对象</title>
+  <style>
+    #box1{
+      width: 600px;
+      height: 300px;
+      border: 1px solid #ff6700;
+      text-align: center;
+    }
+    #box2{
+      width: 600px;
+      height: 50px;
+      border: 1px solid #ff6700;
+    }
+  </style>
+</head>
+<body>
+  <div id="box1">滑动这里</div>
+  <div id="box2"></div>
+</body>
+<script>
+  var box1 = document.querySelector('#box1')
+  var box2 = document.querySelector('#box2')
+  box1.onmousemove = function(event){
+    //   兼容IE
+    // if(!event){
+    //   event = window.event
+    // }
+    event || window.event
+    // event.clientX
+    box2.innerHTML = 'screenX='+event.screenX +'  clientX='+event.clientX +'<br/>'+'screenY='+event.screenY +'  clientY='+event.clientY
+  }
+</script>
+</html>

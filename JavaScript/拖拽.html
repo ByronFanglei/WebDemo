@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>拖拽</title>
+  <style>
+    #box{
+      width: 100px;
+      height: 100px;
+      background-color: crimson;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    #img1{
+      width: 300px;
+      position: absolute;
+      top: 0;
+      left: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div>拖拽搜索</div>
+  <div id="box"></div>
+  <img src="../Images/iPhone11.jpg" id="img1">
+</body>
+<script>
+  var box = document.querySelector('#box')
+  function drag(obj) {
+    obj.onmousedown = function(event) {
+    var lt = event.clientX - obj.offsetLeft
+    var st = event.clientY - obj.offsetTop
+    document.onmousemove = function(event){
+      obj.style.top = event.clientY -st+ 'px'
+      obj.style.left = event.clientX -lt+ 'px'
+    }
+    document.onmouseup = function(){
+      document.onmousemove = null
+      document.onmouseup = null
+      // IE当鼠标送开时，取消对事件的捕获
+      obj.releaseCapture && obj.releaseCapture()
+    }
+    //组织浏览器默认行为，在这里主要是阻止浏览器推拽搜索
+    return false
+    }
+  }
+  drag(box)
+  drag(img1)
+  
+</script>
+</html>

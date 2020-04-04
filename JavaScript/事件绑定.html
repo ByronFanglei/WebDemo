@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件绑定</title>
+</head>
+<body>
+  <button id="btn">点击以下</button>
+</body>
+<script>
+  var btn = document.querySelector('#btn')
+  function bind(obj,eventStr,callback){
+    if(obj.addEventListener){
+      obj.addEventListener(eventStr,callback,false)
+    }else{
+      obj.attachEvent('on'+eventStr,function(){
+        callback.call(obj)
+      })
+    }
+  }
+  bind(btn,'click',function(){
+    alert(this)
+  })
+</script>
+</html>

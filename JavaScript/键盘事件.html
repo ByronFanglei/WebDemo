@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>键盘事件</title>
+  <style>
+    #box{
+      width: 100px;
+      height: 100px;
+      background-color: #bfc;
+      position: absolute;
+      left: 100px;
+      top: 100px;
+    }
+  </style>
+</head>
+<body>
+  不能输入数字：<input type="text" id="inp">
+  <div id="box">按上下左右键</div>
+</body>
+<script>
+  var inp = document.querySelector('#inp')
+  var box = document.querySelector('#box')
+  inp.onkeydown = function(event) {
+    if(event.keyCode>=48 && event.keyCode<=57){
+      return false
+    }
+  }
+  document.onkeydown = function(event){
+    var speed = 10
+    dir = event.keyCode
+    if(event.ctrlKey){
+      speed = 50
+    }
+    setInterval(function(){
+      switch(dir){
+      case 37: box.style.left = box.offsetLeft - speed + 'px'
+      break
+      case 38: box.style.top = box.offsetTop - speed + 'px'
+      break
+      case 39: box.style.left = box.offsetLeft + speed + 'px'
+      break
+      case 40: box.style.top = box.offsetTop + speed + 'px'
+      break
+      }
+    },30)
+  }
+  document.onkeyup = function(){
+    dir=0
+  }
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>阅读信息</title>
+  <style>
+    div {
+      width: 200px;
+      height: 500px;
+      background-color: blanchedalmond;
+      overflow: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="info">
+    <p>
+      阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款阅读信息，阅读条款
+    </p>
+  </div>
+  <input type="checkbox" disabled="disabled">
+  <input type="button" value="注册" disabled="disabled">
+</body>
+<script>
+  var info = document.getElementById('info')
+  var inp = document.getElementsByTagName('input')
+  info.onscroll = function(){
+    if(this.scrollHeight - this.scrollTop == this.clientHeight){
+      for(let i=0;i<inp.length;i++){
+        inp[i].disabled=false
+      }
+    }
+  }
+</script>
+</html>

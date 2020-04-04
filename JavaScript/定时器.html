@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOM</title>
+  <style>
+    #img{
+      width: 500px;
+      display: block;
+      margin: 100px auto;
+    }
+  </style>
+</head>
+<body>
+  <img src="../Images/redmiK30_one.jpg" id="img">
+  <button id="star">开始</button>
+  <button id="end">结束</button>
+</body>
+<script>
+  var arr = ['../Images/iPhone11.jpg','../Images/redmiK30_one.jpg','../Images/redmiK30_two.jpg']
+  var index = 0
+  var img = document.querySelector('#img')
+  var star = document.querySelector('#star')
+  var end = document.querySelector('#end')
+  var timer
+  star.onclick = function(){
+    clearInterval(timer)
+    timer = setInterval(function(){
+      index++
+      // if(index >= arr.length){
+      //   index = 0
+      // }
+      index %= arr.length
+      img.src = arr[index]
+    },1000)
+  }
+  end.onclick = function(){
+    clearInterval(timer)
+  }
+</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>内联样式</title>
+  <style>
+    .box1{
+      width: 200px;
+      height: 200px;
+      background-color: aquamarine;
+      padding: 10px;
+      border: 2px solid #000;
+      overflow: auto;
+    }
+    .box3{
+      width: 500px;
+      height: 500px;
+      background: bisque;
+    }
+    botton{
+      border: 1px solid salmon;
+    }
+  </style>
+</head>
+<body>
+  <div id="box1" class="box1"></div>
+  <botton id="btn">点击添加内嵌</botton>
+  <botton id="btn1">读取内嵌</botton>
+  <botton id="btn3">读取内联</botton>
+  <botton id="btn4">可见高度宽度</botton>
+  
+  <div id="box2" class="box1">
+    <div id="box3" class="box3"></div>
+  </div>
+  <botton id="btn5">滚动距离</botton>
+</body>
+<script>
+  var box = document.querySelector('#box1');
+  var box2 = document.querySelector('#box2');
+  var box3 = document.querySelector('#box3');
+  var btn = document.querySelector('#btn');
+  var btn1 = document.querySelector('#btn1');
+  var btn3 = document.querySelector('#btn3');
+  var btn4 = document.querySelector('#btn4');
+  var btn5 = document.querySelector('#btn5');
+  btn.onclick = function(){
+    box.style.width = "300px"
+    box.style.backgroundColor = "#ff6700"
+  }
+  btn1.onclick = function(){
+    alert(box.style.width)
+  }
+
+  btn3.onclick = function(){
+    // alert(getComputedStyle(box,null).width)
+    alert(getStyle(box, "width"))
+  }
+  
+  function getStyle(obj, name){
+    // if(window.getComputedStyle){
+    //   return getComputedStyle(obj, null)[name]
+    // }else{
+    //   return obj.currentStyle[name]
+    // }
+    return window.getComputedStyle ? getComputedStyle(obj, null)[name] : obj.currentStyle[name]
+  }
+  btn4.onclick = function(){
+    // alert(box.clientWidth +'  '+ box.clientHeight)
+    alert(box.offsetWidth +' '+ box.offsetHeight)
+    console.log(box.offsetLeft +' '+ box.offsetTop)
+  }
+  // alert(box3.scrollWidth +' '+ box3.scrollHeight)
+  btn5.onclick = function(){
+    alert(box2.scrollTop +' '+ box2.scrollLeft)
+  }
+</script>
+</html>
