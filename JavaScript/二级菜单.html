@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>二级菜单</title>
+    <style>
+        span{
+            background-color: pink;
+        }
+        #menu{
+            background-color: orange;
+            width: 90px;
+            font-size: 30px;
+            text-align: center;
+            cursor: pointer;
+            margin: auto;
+            margin-top: 100px;
+        }
+        .fold{
+            height: 30px;
+            overflow: hidden;
+        }
+        a{
+            font-size: 20px;
+        }
+    </style>
+   
+</head>
+<body>
+    <div id="menu">
+        <div class="fold"><span>羊村</span>
+            <br>
+            <a href="#">喜羊羊</a><br>
+            <a href="#">美羊羊</a><br>
+            <a href="#">懒羊羊</a><br>
+            <a href="#">懒羊羊</a><br>
+        </div>
+        <div class="fold"><span>羊村</span>
+            <br>
+            <a href="#">喜羊羊</a><br>
+            <a href="#">美羊羊</a><br>
+            <a href="#">懒羊羊</a><br>
+            <a href="#">美羊羊</a><br>
+            <a href="#">懒羊羊</a><br>
+        </div>
+        <div class="fold"><span>羊村</span>
+            <br>
+            <a href="#">喜羊羊</a><br>
+            <a href="#">美羊羊</a><br>
+            <a href="#">懒羊羊</a><br>
+            <a href="#">喜羊羊</a><br>
+            <a href="#">美羊羊</a><br>
+            <a href="#">懒羊羊</a><br>
+        </div>
+    </div>
+</body>
+<script src="./tools.js"></script>
+<script>
+var spans = document.getElementsByTagName('span'); //获取span标签
+var opendiv = spans[0].parentNode;
+removeClass(opendiv,'fold');
+ 
+ for(var i = 0; i < spans.length; i++){
+    spans[i].onclick = function(){
+        var clickdiv = this.parentNode;
+       // alert(clickdiv);
+        menutoggle(clickdiv);
+       // toggleClass(clickdiv,'fold');
+        if(opendiv!=clickdiv && !hasClass(opendiv,'fold')){
+            //addClass(opendiv,'fold');
+            //toggleClass(opendiv,'fold');
+            menutoggle(opendiv);
+        }
+        opendiv = clickdiv;
+ 
+    }
+}
+/* 定义菜单切换以及动画效果 */ 
+function menutoggle(obj){
+    //在切换样式之前元素的高度
+    var begin = obj.offsetHeight;
+    //切换样式
+    toggleClass(obj,'fold');
+    //切换之后的高度
+    var end = obj.offsetHeight;
+    //将元素样式切换到变化前，来设置动画效果
+    obj.style.height = begin + 'px';
+    obj.style.overflow = 'hidden';
+    move(obj,'height',end,10,function(){
+        obj.style.height = ""; //内联样式取消，防止影响下次触发动画样式不变
+    });
+ 
+}
+ 
+</script>
+ 
+</html>

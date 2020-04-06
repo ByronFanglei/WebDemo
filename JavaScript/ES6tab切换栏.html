@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tab切换栏</title>
+  <style>
+    *{margin: 0;padding: 0;}
+    main{
+      width: 500px;
+      border: 1px solid #000;
+      margin: 100px auto;
+    }
+    nav{
+      display: flex;
+      justify-content: space-between;
+      border-bottom:1px solid #000;
+      
+    }
+    nav ul li{
+      float: left;
+      list-style-type: none;
+      margin-right: 20px;
+    }
+    section{
+      display: none;
+    }
+    .block{
+      display: block;
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+<body>
+  <main id="main"> 
+    <h3>动态添加标签页</h3>
+    <div>
+      <nav>
+        <ul class="ul">
+          <li class="block">测试1<span class="icon">❌</span></li>
+          <li>测试2<span class="icon">❌</span></li>
+          <li>测试3<span class="icon">❌</span></li>
+        </ul>
+        <div id="tabadd"><span>+</span></div>
+      </nav>
+
+      <div class="sec">
+        <section class="block">测试1</section>
+        <section>测试2</section>
+        <section>测试3</section>
+      </div>
+    </div>
+  </main>
+</body>
+<script>
+  var that;
+  // 构造tab函数
+  class Tab {
+    constructor(id) {
+      that = this;
+      this.main = document.querySelector(id);
+      this.tabadd = this.main.querySelector('#tabadd');
+      this.ul = that.main.querySelector('.ul');
+      this.sec = that.main.querySelector('.sec');
+      this.init()
+    }
+    //初始化事件
+    init(){
+      // 初始化之前，更新子标签
+      this.updated()
+      this.tabadd.onclick = this.addTag;
+      for(var i=0;i<this.lis.length;i++){
+        this.lis[i].index = i;
+        this.lis[i].onclick = this.toggleTab;
+        this.remove[i].onclick = this.removeTab;
+        this.lis[i].ondblclick = this.editTab;
+        this.sections[i].ondblclick = this.editTab;
+      }
+    }
+    //更新子标签
+    updated() {
+      this.lis = this.main.querySelectorAll('li');
+      this.sections = this.main.querySelectorAll('section');
+      this.remove = this.main.querySelectorAll('.icon');
+    }
+    addTag() {
+      // 添加新标签前移除所有标签的className
+      that.clearTab()
+      var random = Math.random();
+      var newli = "<li class='block'>新测试<span class='icon'>❌</span></li>";
+      var newce = "<section class='block'>新测试"+ random +"</section>";
+
+      that.ul.insertAdjacentHTML('beforeend',newli)
+      that.sec.insertAdjacentHTML('beforeend',newce)
+      // 添加完成新标签后，初始化事件，让新添加的标签具有初始化属性
+      that.init()
+    }
+    removeTab(event) {
+      // 阻止冒泡,防止阻碍li替换的功能
+      event.stopPropagation();
+      // 获取当前icon的父元素的下标
+      var index = this.parentNode.index;
+      // remove()可以直接删除指定元素
+      that.lis[index].remove()
+      that.sections[index].remove()
+      that.init();
+      // 当删除不是选中状态时,结束函数,不执行if以下代码
+      if(document.querySelector('.block')) return
+      // 删除选定状态后,让前一个li为选定状态
+      index--;
+      // 手动调用点击事件
+      that.lis[index] && that.lis[index].click()
+    }
+    toggleTab() {
+      that.clearTab();
+      this.className = "block";
+      that.sections[this.index].className = "block";
+    }
+    clearTab() {
+      for(var i=0;i<this.lis.length;i++){
+        this.lis[i].className = "";
+        this.sections[i].className = "";
+      }
+    }
+    editTab(event) {
+      // 获取当前标签的内容
+      var str = this.innerHTML.split('<')[0];
+      // 阻止双击选定文字
+      window.getSelection?window.getSelection().removeAllRanges():document.selection.empty();
+      this.innerHTML = "<input type='text' />";
+      
+      var inp = this.children[0]
+      inp.value = str
+      inp.select();
+      inp.onblur = function(){
+        if(inp.value=='' || inp.value==null || inp.value==undefined) {
+          alert("输入框不能为空！！！")
+          return
+        }
+        if(event.target.localName == 'li'){
+          this.parentNode.innerHTML = this.value+"<span class='icon'>❌</span>"
+        }else{
+          this.parentNode.innerHTML = this.value
+        }
+        that.init()
+      }
+      inp.onkeydown = function(event) {
+        if(event.keyCode === 13){
+          this.blur()
+        }
+      }
+    }
+  }
+
+  var tab = new Tab('#main')
+
+</script>
+</html>

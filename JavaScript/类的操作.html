@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .b1{
+      width: 200px;
+      height: 200px;
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">点击</button>
+  <div class="box b1"></div>
+</body>
+<script>
+  var box = document.querySelector('.box')
+  var btn = document.querySelector('#btn')
+  btn.onclick = function(){
+    toggleClass(box,"b1")
+  }
+
+
+  function addClass(obj,cn){
+    if(!hasClass(obj,cn)){
+      obj.className += " "+cn
+    }
+  }
+  function hasClass(obj,cn){
+    var reg = new RegExp("\\b"+cn+"\\b")
+    return reg.test(obj.className)
+  }
+  function removeClass(obj,cn){
+    var reg = new RegExp("\\b"+cn+"\\b")
+    obj.className = obj.className.replace(reg, "").replace(/\s+/g,"")
+    console.log(obj.className)
+  }
+  function toggleClass(obj,cn){
+    if(hasClass(obj,cn)){
+      removeClass(obj,cn)
+    }else{
+      addClass(obj,cn)
+    }
+  }
+</script>
+</html>

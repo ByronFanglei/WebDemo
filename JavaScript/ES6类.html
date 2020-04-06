@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>类</title>
+</head>
+<body>
+  
+</body>
+<script>
+
+  class Star{
+    constructor(name,age){
+      this.name = name;
+      this.age = age
+    }
+    sing(){
+      return this.name
+    }
+  }
+  class Son extends Star{
+    constructor(name,age){
+      //调用父类的构造函数
+      super(name,age);
+    }
+    sing(){
+      console.log(super.sing() + "son");
+    }
+  }
+  var ss = new Star('byron',23)
+  var son = new Son('byron',23)
+  console.log(ss.name)
+  son.sing()
+</script>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>僵尸来了</title>
+  <style>
+    #all{
+      width: 1700px;
+      height: 800px;
+      background-color: #bfc;
+      margin: 50px auto;
+      position: relative;
+    }
+    .jianshi{
+      width: 62px;
+			height: 90px;
+			background-image: url('../Images/jiang.jpg');
+			background-position: 0 0;
+			position: absolute;
+			transform: scaleX(-1);
+    }
+  </style>
+</head>
+<body>
+  <button id="more">一大波僵尸</button>
+  <div id="all"></div>
+</body>
+<script>
+  var that;
+  class Move {
+    //创建/添加僵尸
+    constructor(){
+      //保存当前的this
+      that = this;
+      // 获取当前背景元素
+      this.all = document.querySelector("#all");
+      // 获取当前背景最大值，也就是僵尸移动的范围
+      this.maxwidth = parseInt(getComputedStyle(this.all)['width'])-50;
+      // 调用初始化
+      this.init();
+    }
+    //初始化
+    init(){
+      // 获取随机高度
+      this.random   = Math.floor(Math.random()*7+1) * 100;
+      // 创建div元素
+      this.dom = document.createElement('div');
+      // 添加必要的类名
+      this.dom.className = 'jianshi';
+      // 僵尸随机高度出现
+      this.dom.style.top=this.random+'px';
+      // 父元素添加子元素
+      that.all.appendChild(this.dom)
+      // 调用移动
+      this.move();
+    }
+    //移动僵尸
+    move(){
+      // 设置图片下标，图片每八张后重置
+      var index = 0;
+      // 获取当前的this，因为调用定时器后要获取当前的元素this，否则下一个对象会影响上一个对象的路径，这是一个大坑
+      var self = this;
+      this.timer = setInterval(function(){
+        // 图片下表加一
+        index++;
+        // 当图片下标大于七时，证明图片一轮完成了，需要重置
+        if(index>7) index=0;
+        // 对当前的div进行复制
+        self.dom.style.backgroundPosition = -(index) * 62+'px 0';
+        // 获取当前元素的left
+        self.left=parseInt(getComputedStyle(self.dom)['left']);
+        // 当前的坐标++，移动div
+        self.left+=10;
+        // 当僵尸移动位置大于父元素位置后，进行移除
+        if(self.left>=that.maxwidth) self.remove();
+        // 赋值当前的位置
+        self.dom.style.left=self.left+'px';
+      },100)
+    }
+    //删除僵尸
+    remove(){
+      // 清除当前元素的定时器
+      clearInterval(this.timer)
+      // 父元素清除当前子元素
+      that.all.removeChild(this.dom)
+    }
+  }
+
+
+  var more = document.querySelector('#more');
+  
+  more.onclick = function(){
+    var timers = setInterval(function(){
+      new Move();
+    },1000)
+  }
+</script>
+</html>
