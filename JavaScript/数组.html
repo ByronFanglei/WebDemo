@@ -26,10 +26,17 @@
   var result = arr2.reverse()
   var result = arr3.sort(function(a,b){
     return a-b
-    })
+  })
+  var result = arr3.filter(function(value,index,obj){
+    return value>=20;
+  })
+
+  var result = arr3.some(function(value,index,obj){
+    return value>=59
+  })
   console.log(result)
-  console.log(arr)
-  console.log(arr2)
-  console.log(arr3)
+  // console.log(arr)
+  // console.log(arr2)
+  // console.log(arr3)
 </script>
 </html>

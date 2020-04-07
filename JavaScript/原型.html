@@ -9,22 +9,42 @@
 
 </body>
 <script>
-  function Mycalss(){
-
+  function Mycalss(age){
+    this.age = age
   };
   Mycalss.prototype.a = function(){
     alert('我在原型中')
   };
-  var one = new Mycalss();
+  var one = new Mycalss(23);
   one.name = "byron"
-  console.log(Mycalss.prototype);
-  console.log(one.__proto__);
-  console.log(one.a());
-  console.log("a" in one);
-  console.log(one.hasOwnProperty("name"));
+  // console.log(Mycalss.prototype);
+  // console.log(one.__proto__);
+  // console.log(one.a());
+  // console.log("a" in one);
+  // console.log(one.hasOwnProperty("name"));
 
-  console.log(Mycalss.prototype.__proto__)
-  console.log(one.__proto__.__proto__)
-  console.log(one.__proto__.__proto__.__proto__)
+  // console.log(Mycalss.prototype.__proto__)
+  // console.log(one.__proto__.__proto__)
+  // console.log(one.__proto__.__proto__.__proto__)
+  Mycalss.prototype = {
+    constructor: Mycalss,
+    sing:function(){
+      console.log('sing')
+    },
+    move:function(){
+      console.log('move')
+    }
+  }
+  // console.dir(Mycalss.prototype)
+  console.log(Array.prototype)
+  Array.prototype.sum = function(){
+    var num = 0;
+    for(var i =0; i<this.length; i++){
+      num+=this[i];
+    }
+    return num;
+  }
+  var arr = [2,4,6];
+  console.log(arr.sum())
 </script>
 </html>

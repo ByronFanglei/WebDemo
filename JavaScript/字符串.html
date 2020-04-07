@@ -11,6 +11,12 @@
 <script>
   var str = 'HelloWorld';
   var str1 = 'Byron';
+  var str2 = '    hello      ';
+  var obj = {
+    id: 1,
+    pname: '小米',
+    num: 2000
+  }
   var result = str.charAt(0)
   var result = str.charCodeAt(0)
   var result = String.fromCharCode(72)
@@ -23,6 +29,31 @@
   var result = str.split('')
   var result = str.toLocaleLowerCase()
   var result = str.toLocaleUpperCase()
+  var result = str2.trim();
+  var result = Object.keys(obj)
+  Object.defineProperty(obj,'num',{
+    value: 1000
+  })
+  Object.defineProperty(obj,'id',{
+    //不允许修改这个属性
+    writable: false
+  })
+  Object.defineProperty(obj,'address',{
+    //设置当前属性的值
+    value: '这是地址哇',
+    //是否可以重写 默认false
+    writable: false,
+    //是否允许遍历/枚举，默认为false，不允许遍历
+    enumerable: true,
+    //是否可以删除该属性，默认为false，不允许删除,不允许修改第三个参数里面的特性
+    configurable: true
+    
+  })
   console.log(result)
+  
+  console.log(Object.keys(obj));
+  delete obj.address;
+  console.log(obj);
+  
 </script>
 </html>

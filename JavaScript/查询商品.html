@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>查询商品</title>
+  <style>
+    table{
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+      margin: 100px auto;
+      text-align: center;
+    }
+    td{
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    按照价格查询：<input type="text" class="start"> - <input type="text" class="end">
+    <button class="search1">搜索</button>
+    按照商品名称查询：<input type="text" class="name">
+    <button class="search2">搜索</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <td>id</td>
+        <td>产品名称</td>
+        <td>价格</td>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</body>
+<script>
+  var date=[{
+    id: 1,
+    pname: '小米',
+    price: 3999
+  } ,{
+    id: 2,
+    pname: '苹果',
+    price: 6999
+  } ,{
+    id: 3,
+    pname: '一加',
+    price: 4999
+  } ,{
+    id: 4,
+    pname: '魅族',
+    price: 1999
+  } ,{
+    id: 6,
+    pname: '华为',
+    price: 7999
+  }]
+  
+  var tbody = document.querySelector('tbody');
+  var start = document.querySelector('.start');
+  var end = document.querySelector('.end');
+  var names = document.querySelector('.name');
+  var search1 = document.querySelector('.search1');
+  var search2 = document.querySelector('.search2');
+  setdate(date)
+  function setdate(mydate){
+    tbody.innerHTML='';
+    mydate.forEach(function(value,index,obj){
+      var tr = document.createElement('tr');
+      tr.innerHTML="<td>"+index+"</td><td>"+value['pname']+"</td><td>"+value['price']+"</td>"
+      tbody.appendChild(tr);
+    })
+  }
+  
+  search1.onclick=function(){
+    var result = date.filter(function(value,index,obj){
+      return value['price'] >= start.value && value['price'] <= end.value;
+    })
+    setdate(result)
+  }
+
+  search2.onclick=function(){
+    var arr=[];
+    date.some(function(value,index,obj){
+      if(value.pname === names.value){
+        arr.push(value);
+        return true;  //使用some  return后必须写true
+      }
+    })
+    setdate(arr);
+  }
+</script>
+</html>
