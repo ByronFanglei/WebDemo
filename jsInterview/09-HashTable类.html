@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HashTable类</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  // JavaScript 模拟一个HashTable类；包含add，remove，contains，length方法
+  function HashTable () {
+    this.arr = new Array();
+  }
+  //添加方法
+  HashTable.prototype.add = function(value){
+    this.arr.push(value)
+  }
+  //移除方法
+  HashTable.prototype.remove = function(index){
+    this.arr.splice(index,1)
+  }
+  //查询长度
+  HashTable.prototype.length = function(){
+    return this.arr.length
+  }
+  //是否包含此元素
+  HashTable.prototype.contains = function(value){
+    var arrvalue = this.arr;
+    if(arrvalue.length > 0){
+      for(let i=0;i<arrvalue.length;i++){
+        if(value == arrvalue[i]){
+          return true
+        }
+        //这里不能写else false 否则会覆盖
+      }
+    }else{
+      return false
+    }
+  }
+
+  var h = new HashTable();
+  h.add('hello1111');
+  h.add('1');
+  h.add('2');
+  console.log(h.length());
+  h.remove(1);
+  console.log(h.length());
+  console.log(h.contains('2'));
+  
+  console.log(h);
+  
+</script>
+
+</html>

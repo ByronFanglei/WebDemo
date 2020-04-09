@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>获取指定的随机数</title>
+</head>
+<body>
+  
+</body>
+<script>
+
+// JavaScript 写一个通用的整数随时学方法,要求有两个参数,用来限定随机数的上限和下限,方法最终能返回这个符合条件的随机数;
+/*
+*返回指定范围内的数组
+*max：最大值
+*min：最小值
+*/
+function random(max,min){
+  console.log(Math.floor(Math.random()*(max-min+1))+min);
+}
+random(50,20)
+</script>
+</html>

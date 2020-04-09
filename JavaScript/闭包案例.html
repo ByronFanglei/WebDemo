@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>闭包案例</title>
+</head>
+<body>
+  <ul class="nav">
+    <li>菜品1</li>
+    <li>菜品2</li>
+    <li>菜品3</li>
+    <li>菜品4</li>
+    <li>菜品5</li>
+  </ul>
+</body>
+<script>
+  var lis = document.querySelector('.nav').querySelectorAll('li');
+  // 1动态添加
+  for(var i=0;i<lis.length;i++){
+    lis[i].index=i;
+    lis[i].onclick = function(){
+      console.log(this.index)
+    }
+  }
+
+  // 2闭包方式
+  for(var i=0;i<lis.length;i++){
+    (function(i){
+      lis[i].onclick = function(){
+        console.log(i);
+        
+      }
+    })(i)
+  }
+
+  for(var i=0;i<lis.length;i++){
+    (function(i){
+      setTimeout(function(){
+        console.log(lis[i].innerHTML);
+        
+      },3000)
+    })(i)
+  }
+</script>
+</html>

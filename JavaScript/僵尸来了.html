@@ -59,24 +59,23 @@
     move(){
       // 设置图片下标，图片每八张后重置
       var index = 0;
-      // 获取当前的this，因为调用定时器后要获取当前的元素this，否则下一个对象会影响上一个对象的路径，这是一个大坑
-      var self = this;
+      // 获取当前的this，因为调用定时器后要获取当前的元素this，可是使用bind获取当前this，否则下一个对象会影响上一个对象的路径，这是一个大坑
       this.timer = setInterval(function(){
         // 图片下表加一
         index++;
         // 当图片下标大于七时，证明图片一轮完成了，需要重置
         if(index>7) index=0;
         // 对当前的div进行复制
-        self.dom.style.backgroundPosition = -(index) * 62+'px 0';
+        this.dom.style.backgroundPosition = -(index) * 62+'px 0';
         // 获取当前元素的left
-        self.left=parseInt(getComputedStyle(self.dom)['left']);
+        this.left=parseInt(getComputedStyle(this.dom)['left']);
         // 当前的坐标++，移动div
-        self.left+=10;
+        this.left+=10;
         // 当僵尸移动位置大于父元素位置后，进行移除
-        if(self.left>=that.maxwidth) self.remove();
+        if(this.left>=that.maxwidth) this.remove();
         // 赋值当前的位置
-        self.dom.style.left=self.left+'px';
-      },100)
+        this.dom.style.left=this.left+'px';
+      }.bind(this),100);
     }
     //删除僵尸
     remove(){

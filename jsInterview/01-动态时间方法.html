@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>动态时间方法</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /*
+  考察Date函数
+  */
+  function time(){
+    let date = new Date;
+    //获取年份
+    let year = date.getFullYear();
+    //获取月份
+    let month = date.getMonth()+1;
+    //获取日期
+    let day = date.getDate();
+    //获取星期
+    let weeks = date.getDay();
+    week = w(weeks);
+    //获取小时
+    let hours = date.getHours();
+    //获取分钟
+    let min = date.getMinutes();
+    //获取秒钟
+    let s = date.getSeconds();
+    //获取毫秒
+    let mill = date.getMilliseconds();
+
+
+    return '今天是'+year+'年'+month+'月'+day+'日，星期'+week+'，当前时间为'+hours+'时'+min+'分'+s+'秒'+mill+'毫秒';
+  }
+  function w(w){
+    let week = '';
+    switch(w){
+      case 0: 
+        week='日';break;
+      case 1: 
+        week='一';break;
+      case 2: 
+        week='二';break;
+      case 3: 
+        week='三';break;
+      case 4: 
+        week='四';break;
+      case 5: 
+        week='五';break;
+      case 6: 
+        week='六';break;
+    }
+    return week;
+  }
+  document.write(time());
+  setInterval(() => {
+    document.body.innerText = '';
+    document.write(time());
+  }, 1000);
+
+  var num=3;
+  console.log(window.isNaN(num));
+  
+</script>
+</html>

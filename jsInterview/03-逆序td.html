@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>逆序td</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+  </table>
+</body>
+<script>
+  // JavaScript 假设有一个4行td的table,将table里面的td顺序颠倒
+  // 方法一，数组方法
+  var td = document.querySelectorAll('td');
+  var tbody = document.querySelector('tbody');
+  var arrtr = document.createElement('tr')
+  var arrtd = [];
+  for(var i=(td.length-1);i>=0;i--){
+    arrtd.push(td[i].innerHTML)
+  }
+  for(var i=0;i<arrtd.length;i++){
+    var td = document.createElement('td');
+    td.innerHTML = arrtd[i];
+    arrtr.appendChild(td);
+  }
+  tbody.appendChild(arrtr)
+  
+
+</script>
+</html>

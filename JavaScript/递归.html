@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>递归</title>
+</head>
+<body>
+  
+</body>
+<script>
+  var i = 1;
+  var sum = 0;
+  function fun(n){
+    if(n==1){
+      return 1;
+    }
+    return n * fun(n-1);
+  }
+  console.log(fun(7));
+
+  var data = [{
+    id: 1,
+    name: '家电',
+    goods: [{
+      id: 11,
+      gname: '冰箱',
+      goods: [{
+        id: 111,
+        gname: '海尔'
+      }, {
+        id: 112,
+        gname: '美的'
+      }]
+    }, {
+      id: 12,
+      gname: '电视'
+    }]
+  }, {
+    id: 2,
+    name: '服饰'
+  }];
+  
+  function search(obj,num){
+    var da = {};
+    obj.forEach(function(value){
+      if(value.id==num){
+        da = value;
+        return value;
+      }else if(value.goods && value.goods.length>0){
+        da = search(value.goods,num)
+      }
+    });
+    return da;
+  }
+  console.log(data);
+  console.log(search(data,1));
+  console.log(search(data,2));
+  console.log(search(data,11));
+  console.log(search(data,12));
+  console.log(search(data,111));
+  console.log(search(data,112));
+</script>
+</html>

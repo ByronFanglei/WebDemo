@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIbonacci</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /*
+  三元运算
+  */
+  function printFibonacci (n) {
+    //判断初始值是否大于0，如果大于0直接设置数组否则return
+    var arr = n > 0 ? [1] : [];
+    //循环n指，获取指定n指的FIbonacci数
+    for(let i=1;i<n;i++){
+      arr.push(arr[i-1] + (i>=2?arr[i-2]:0) )
+    }
+    return arr;
+  }
+  console.log(printFibonacci(20));
+
+
+  function f(n){
+    if(n===1 || n===2){
+      return 1;
+    }
+    return f(n-1) + f(n-2)
+  }
+  console.log(f(20));
+  
+</script>
+</html>

@@ -4,12 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>正则表达式</title>
+  <style>
+    .one{
+      color: #aaa;
+    }
+    .red{
+      color: red;
+    }
+    .blue{
+      color: skyblue;
+    }
+  </style>
 </head>
 <body>
-  
+  <input type="text" class="inp">  <span class="one">请输入用户名</span>
 </body>
 <script>
   var reg = new RegExp("a","i");
+  var reg = new RegExp(/aa/);
+  console.log(reg);
+  
   var str = "1h2n4j5k5j7k/58n9kAJF.K82";
   var reg = /[a-z]/;
   var result = reg.test(str)
@@ -39,5 +53,87 @@
   reg = /^\w{3,}(\.\w+)*@[A-z0-9]*(\.[A-z]{2,5}){1,2}$/
   var email = "fdsfdsaf@163.com"
   console.log(reg.test(email))
+  console.log('===========================================================');
+  var rgl = /^[abc]$/; //三选一  只有a或只有b或只有c 才返回true
+  console.log(rgl.test('a'));
+  console.log(rgl.test('b'));
+  console.log(rgl.test('c'));
+  console.log(rgl.test('aaa'));
+  console.log(rgl.test('abc'));
+  console.log('===========================================================');
+  var rgl = /^[a-z]$/;  //26个英文字母任意一个返回true
+  console.log(rgl.test('a'));
+  console.log(rgl.test('1'));
+  console.log(rgl.test('A'));
+  //字符组合
+  var rgl = /^[A-z0-9_-]$/;  //26个英文字母任意一个返回true
+  console.log(rgl.test('-'));
+  console.log(rgl.test('a'));
+  console.log(rgl.test('A'));
+  console.log(rgl.test('_'));
+  console.log(rgl.test('1'));
+  console.log(rgl.test('!'));
+  console.log('===========================================================');
+  var rgl = /^[^A-z0-9_-]$/;  //中括号里的^表示取反，不包括中括号里面的
+  console.log(rgl.test('-'));
+  console.log(rgl.test('a'));
+  console.log(rgl.test('A'));
+  console.log(rgl.test('_'));
+  console.log(rgl.test('1'));
+  console.log(rgl.test('!'));
+  console.log('===========================================================');
+  var rgl = /^a*$/; //*表示>=0，可以出现0次或多次
+  console.log(rgl.test('aaa'));
+  console.log(rgl.test('a'));
+  console.log(rgl.test(''));
+  console.log(rgl.test('abc'));
+  console.log('===========================================================');
+  var rgl = /^a+$/; //+表示>=1，可以出现1次或多次
+  console.log(rgl.test('aaa'));
+  console.log(rgl.test('a'));
+  console.log(rgl.test(''));
+  console.log(rgl.test('abc'));
+  console.log('===========================================================');
+  var rgl = /^a?$/; //?表示1||0，可以出现1次或0次
+  console.log(rgl.test('aaa'));
+  console.log(rgl.test('a'));
+  console.log(rgl.test(''));
+  console.log(rgl.test('abc'));
+  console.log('===========================================================');
+  var rgl = /^a{3}$/; //表示a重复三次
+  console.log(rgl.test('aaa'));
+  console.log(rgl.test('a'));
+  console.log(rgl.test(''));
+  console.log(rgl.test('abc'));
+  console.log('===========================================================');
+  var rgl = /^a{3,}$/; //表示a重复三次以上
+  console.log(rgl.test('aaa'));
+  console.log(rgl.test('a'));
+  console.log(rgl.test(''));
+  console.log(rgl.test('abc'));
+  console.log(rgl.test('aaaaa'));
+  console.log('===========================================================');
+  var rgl = /^a{3,10}$/; //表示a重复三次以上
+  console.log(rgl.test('aaa'));
+  console.log(rgl.test('a'));
+  console.log(rgl.test(''));
+  console.log(rgl.test('abc'));
+  console.log(rgl.test('aaaaaaaaa'));
+  console.log(rgl.test('aaaaaaaaaa'));
+  console.log(rgl.test('aaaaaaaaaaa'));
+  console.log('===========================================================');
+
+  var inp = document.querySelector('.inp');
+  var one = document.querySelector('.one');
+  var rell = /^[A-z0-9]{6,10}$/;
+  inp.onblur = function(){
+    if(rell.test(this.value)){
+      one.innerHTML = "用户名输入正确";
+      one.className = 'blue';
+    }else{
+      one.innerHTML = "用户名输入错误";
+      one.className = 'red';
+    }
+  }
 </script>
 </html>

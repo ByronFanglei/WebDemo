@@ -6,7 +6,8 @@
   <title>函数</title>
 </head>
 <body>
-  
+  <button>test</button>
+  <span>点击</span>
 </body>
 <script>
   function fun(a,b){
@@ -17,5 +18,69 @@
   fun(1,2);
   fun.call(obj,1,2);
   fun.apply(obj,[1,2]);
+
+  console.dir(fun)
+  console.log(fun instanceof Object)
+  console.log(fun.__proto__.constructor)
+
+  // 普通函数
+  function fn(){
+    console.log('这是普通函数'+this)
+  }
+  // 调用
+  fn();
+  fn.call();
+  fn.apply();
+  fn.bind()();
+  // 对象方法
+  var fun = {
+    say: function(){
+      console.log('这是对象方法函数'+this);
+    }
+  }
+  fun.say();
+  //构造函数
+  function Star() {
+    console.log('这是对象构造函数'+this);
+  };
+  Star.prototype.sing = function(){
+    console.log('这是对象构造函数的原型方法'+this);
+  }
+  var funs = new Star();
+  funs.sing();
+  //绑定事件
+  var btn = document.querySelector('button');
+  btn.onclick = function(){
+    console.log('这是绑定事件函数'+this)
+  };
+  //定时器函数
+  setTimeout(function(){
+    console.log('这是定时器函数'+this)
+  },2000);
+  //立即执行函数
+  (function() {
+    console.log('这是立即执行函数'+this);
+  })();
+
+  function F(user,name){
+    this.user=user;
+    this.name=name;
+  }
+  function S(user,name){
+    F.call(this,user,name)
+  }
+  var son = new S('byron',18);
+  console.log(son)
+
+  var arr = [1,2,3,4,5];
+  console.log(Math.max.apply(Math,arr))
+
+  var span = document.querySelector('span');
+  span.onclick = function(){
+    this.innerHTML="点击了";
+    setTimeout(function(){
+      this.innerHTML="点击";
+    }.bind(this),3000)
+  }
 </script>
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据类型判断</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 数据类型判断
+  // 基本数据类型可以直接用typeof  复杂数据类型要使用instanceof
+  // 基本数据类型
+  var num = 9;
+  var string = '9';
+  var boolean = true;
+  var un = undefined;
+  var n = null;
+  var s = Symbol();
+
+  console.log(typeof num);
+  console.log(typeof string);
+  console.log(typeof boolean);
+  console.log(typeof un);
+  console.log(typeof n);
+  console.log(typeof s);
+  console.log('======================================');
+
+  // 复杂数据类型
+  var arr = [1,2,3]
+  var obj = {
+    id: 1,
+    name: 'byron'
+  }
+  console.log(arr instanceof Array);
+  console.log(obj instanceof Object);
+  console.log('======================================');
+
+  function isArray(o) {
+    return Object.prototype.toString.call(o);
+  }
+  console.log(isArray(num));
+  console.log(isArray(string));
+  console.log(isArray(boolean));
+  console.log(isArray(un));
+  console.log(isArray(n));
+  console.log(isArray(s));
+  console.log(isArray(arr));
+  console.log(isArray(obj));
+  
+  
+</script>
+</html>

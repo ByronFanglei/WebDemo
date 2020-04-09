@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>获取按钮</title>
+</head>
+<body>
+  <button>点击</button>
+  <button>点击</button>
+  <button>点击</button>
+  <button>点击</button>
+  <button>点击</button>
+</body>
+<script>
+  /*
+  考察闭包
+  */
+  var btn = document.querySelectorAll('button');
+  for(let i=0;i<btn.length;i++){
+    (function(i){
+      btn[i].onclick = function(){
+        console.log('这是第'+(i+1)+'个按钮')
+      }
+    })(i);
+  }
+</script>
+</html>

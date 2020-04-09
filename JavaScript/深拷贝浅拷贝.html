@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>深拷贝浅拷贝</title>
+</head>
+<body>
+  
+</body>
+<script>
+
+  var obj = {
+    id: 1,
+    name: 'obay',
+    msg: {
+      age: 24
+    },
+    color: ['red','pink','skyblue']
+  }
+
+  //浅拷贝 方法1
+  // var o = obj;
+  //浅拷贝 方法2
+  var o = {};
+  // for(var key in obj){
+  //   o[key]=obj[key]
+  // }
+  //浅拷贝 方法3 ES6方法  常用
+  Object.assign(o,obj)
+
+  //深拷贝
+  var o = {};
+  function Deppcopy(oldObj,newObj){
+    for(var key in oldObj){
+      var item = oldObj[key];
+      if(item instanceof Array){
+        //判断是否为数组,为什么先判断数组，因为数组也包括在Object，如果先判断Object则可能把数组略过
+        newObj[key] = [];
+        Deppcopy(item,newObj[key]);
+      }else if(item instanceof Object){
+        //判断是否为Object
+        newObj[key] = {};
+        Deppcopy(item,newObj[key]);
+      }else{
+        //否则为简单类型
+        newObj[key] = item;
+      }
+    }
+  }
+  Deppcopy(obj,o)
+  o.msg.age = 200;
+  console.log(o);
+  console.log(obj);
+  
+</script>
+</html>

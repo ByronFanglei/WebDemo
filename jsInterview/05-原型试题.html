@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原型试题</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /*
+  原型
+  */
+  // JavaScript 实现如下语法的功能 var a=(5).plus(3).minus(6);，也就是5+3-6;
+  //因为直接操作number所以需要在Number的prototype上写方法
+  Number.prototype.plus=function(num){
+    return this+num;
+  }
+  Number.prototype.minus=function(num){
+    return this-num;
+  }
+  var a = (5).plus(3).minus(6);
+  console.log(a);
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>赋值</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // JavaScript var a=b=c=d=5是什么意思?如果接下来再写一句,d=9,a,b,c的值会变化吗?
+  var a=b=c=d=5;  //全是5
+  console.log(a);
+  console.log(b);
+  console.log(c);
+  console.log(d);
+  console.log('========================================');
+  d=9;
+  console.log(a);
+  console.log(b);
+  console.log(c);
+  console.log(d);
+  console.log('========================================');
+  // JavaScript var a=b=c=d=[1,2,3,4,5]是什么意思?如果接下来再写一句,d[5]=9,a,b,c的值会变化吗?
+  var a=b=c=d=[1,2,3,4,5]
+  console.log(a);
+  console.log(b);
+  console.log(c);
+  console.log(d);
+  console.log('========================================');
+  d[5]=9; //a,b,c也会添加下表为5的值为9
+  console.log(a);
+  console.log(b);
+  console.log(c);
+  console.log(d);
+  console.log('========================================');
+  // JavaScript var a=b=c=d=[1,2,3,4,5]是什么意思?如果接下来再写一句,d=9,a,b,c的值会变化吗?
+  var a=b=c=d=[1,2,3,4,5]
+  console.log(a);
+  console.log(b);
+  console.log(c);
+  console.log(d);
+  console.log('========================================');
+  d=9;  //只有d变成9，其他不变
+  console.log(a);
+  console.log(b);
+  console.log(c);
+  console.log(d);
+  console.log('========================================');
+  //JavaScript var n=(1,2,3,4,5),n的值是多少?
+  //其实就是逗号运算符，看最后一位是那个数就可以
+  var n=(1,2,3,4,5);
+  console.log(n);
+  console.log('========================================');
+  // JavaScript var str=true+11+null+9+undefined+"zhuanbang"+false+null+9+[],str的值是多少，为什么
+  var str=true+11+null+9+undefined+"zhuanbang"+false+null+9+[];
+  console.log(str); //NaNzhuanbangfalsenull9
+  console.log(typeof str);
+  // 因为undefined类型与任意数类型进行“+”运算结果都是NaN,NaN在与’zhuanbang’+false+null+9+[]运算,
+  // 由于’zhuanbang’是字符串类型,NaN是number类型,
+  // NaN会隐式调用toString方法得到‘NaN’,false是布尔类型当与字符串类型相加会隐式调用toString方法,得到’false’,
+  // 9和空数组同样也是调用toString方法进行加运算。
+
+</script>
+</html>

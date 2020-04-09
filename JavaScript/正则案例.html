@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>正则案例</title>
+  <style>
+    .error{
+      color: brown;
+    }
+    .success{
+      color: lightskyblue;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <ul>
+      <li>
+        <label for="user">账号：</label>
+        <input type="text" id="user">
+        <span>请输入账号</span>
+      </li>
+      <li>
+        <label for="pass">密码</label>
+        <input type="password" id="pass"> 
+        <span>请输入密码</span>
+      </li>
+      <li>
+        <label for="realpass">确认密码</label>
+        <input type="password" id="realpass"> 
+        <span>请输入密码</span>
+      </li>
+      <li>
+        <label for="tel">手机号</label>
+        <input type="text" id="tel">
+        <span>请输入手机号</span>
+      </li>
+      <li>
+        <label for="email">邮箱</label>
+        <input type="text" id="email">
+        <span>请输入邮箱</span>
+      </li>
+      <li>
+        <label for="qq">QQ号</label>
+        <input type="text" id="qq">
+        <span>请输入QQ号</span>
+      </li>
+      <li>
+        <label for="name">姓名</label>
+        <input type="text" id="name">
+        <span>请输入姓名</span>
+      </li>
+    </ul>
+  </div>
+  <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+  <button id="btn">提交</button>
+</body>
+
+<script>
+
+  var user = document.querySelector('#user');
+  var userreg = /^[a-zA-Z0-9_-]{4,16}$/;
+  var pass = document.querySelector('#pass');
+  var realpass = document.querySelector('#realpass');
+  var passreg = /^[a-zA-Z]\w{5,17}$/;
+  var tel = document.querySelector('#tel');
+  var telreg = /^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+  var email = document.querySelector('#email');
+  var emailreg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+  var names = document.querySelector('#name');
+  var namereg = /^([\u4e00-\u9fa5]{1,20}|[a-zA-Z\.\s]{1,20})$/;
+  var qq = document.querySelector('#qq');
+  var qqreg = /[1-9][0-9]{4,10}/;
+  var textarea = document.querySelector('#textarea');
+  var btn = document.querySelector('#btn');
+
+  function test(ele,reg){
+    ele.onblur = function(){
+      if(!this.value.trim() == ''){
+        if(reg.test(this.value)){
+          this.nextElementSibling.className = 'success';
+          this.nextElementSibling.innerHTML = '格式正确';
+        }else{
+          this.nextElementSibling.className = 'error';
+          this.nextElementSibling.innerHTML = '格式错误';
+        }
+      }else{
+        alert('不能为空')
+      }
+    }
+  }
+  realpass.onblur = function(){
+    if(this.value == pass.value){
+      this.nextElementSibling.className = 'success';
+      this.nextElementSibling.innerHTML = '两次密码格式正确';
+    }else{
+      this.nextElementSibling.className = 'error';
+      this.nextElementSibling.innerHTML = '两次密码格式错误';
+      }
+  }
+
+  btn.onclick = function(){
+    document.body.innerHTML = textarea.value.replace(/激情/g,'**')
+  }
+  test(user,userreg);
+  test(pass,passreg);
+  test(tel,telreg);
+  test(email,emailreg);
+  test(qq,qqreg);
+  test(names,namereg)
+</script>
+</html>

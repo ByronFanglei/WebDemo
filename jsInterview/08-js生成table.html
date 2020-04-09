@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js生成table</title>
+</head>
+<body>
+
+</body>
+<script>
+  var row=3;
+  var cell=9;
+  var table = document.createElement('table');
+  for(let i=1;i<=row;i++){
+    var tr = document.createElement('tr');
+    for(let i=1;i<=cell;i++){
+      var td = document.createElement('td');
+      td.innerHTML="byron";
+      tr.appendChild(td);
+    }
+    table.appendChild(tr);
+  }
+  document.body.appendChild(table)
+</script>
+</html>

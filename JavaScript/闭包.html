@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>闭包</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function fun(){
+    var sun = 10;
+    return function(){
+      console.log(sun)
+    }
+  }
+  var ff = fun();
+  ff();
+  console.log(ff)
+  // ƒ (){
+  //     console.log(sun)
+  //   }
+</script>
+</html>

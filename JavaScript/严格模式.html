@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>严格模式</title>
+</head>
+<body>
+  
+</body>
+<script>
+  'use strict';
+  var num=10;
+  console.log(num);
+  // delete num;
+  function fun(){
+    console.log(this);
+  }
+  fun();
+</script>
+<script>
+  (function(){
+    'use strict';
+  })()
+</script>
+<script>
+  function fun(){
+    'use strict';
+    //函数内不采取严格模式
+  }
+</script>
+</html>

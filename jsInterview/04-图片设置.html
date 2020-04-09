@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片设置</title>
+</head>
+<body>
+  <img src="" id="img">
+</body>
+<script>
+  // JavaScript 实现预加载一张图片，加载完成后显示在网页中并设定其高度为200px;宽度为200px;
+  var img = document.querySelector('#img');
+  function addimg(src){
+    var imgobj = new Image();
+    imgobj.src = src;
+    //加载成功后为图片设置样式
+    imgobj.onload=function(){
+      img.src = this.src;
+      img.width = 200;
+      img.height = 200;
+    }
+    
+  }
+  addimg('../Images/redmiK30_four.jpg')
+</script>
+</html>
