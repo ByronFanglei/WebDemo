@@ -1,0 +1,112 @@
+{
+  "ret": true,
+  "data": {
+    "swiperList": [{
+        "id": "0001",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1801/1a/94428c6dea109402.jpg_640x200_2cf590d8.jpg"
+      },{
+        "id": "0002",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1802/42/7c92b9a381e46402.jpg_640x200_1cdce2a4.jpg"
+      },{
+        "id": "0003",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1802/51/e78f936a5b404102.jpg_640x200_c14f0b3a.jpg"
+      },{
+        "id": "0004",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1712/91/a275569091681d02.jpg_640x200_0519ccb9.jpg"
+      }],
+    "iconList": [{
+        "id": "0001",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png",
+        "desc": "景点门票"
+      }, {
+        "id": "0002",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
+        "desc": "滑雪季"
+      }, {
+        "id": "0003",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1710/a6/83f636bd75ae6302.png",
+        "desc": "泡温泉"
+      }, {
+        "id": "0004",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/35/2640cab202c41b02.png",
+        "desc": "动植园"
+      }, {
+        "id": "0005",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/d0/e09575e66f4aa402.png",
+        "desc": "游乐园"
+      }, {
+        "id": "0006",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/59/569d3c096e542502.png",
+        "desc": "必游榜单"
+      }, {
+        "id": "0007",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/17/4bd370f3eb1acd02.png",
+        "desc": "演出"
+      }, {
+        "id": "0008",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/7f/b1ea3c8c7fb6db02.png",
+        "desc": "城市观光"
+      }, {
+        "id": "0009",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1611/a9/ffc620dbda9b9c02.png",
+        "desc": "一日游"
+      }],
+    "recommendList": [{
+        "id": "001",
+        "imgUrl": "http://p0.meituan.net/200.0/deal/ec13bc77584009d04aac683494b2f73760915.jpg",
+        "title": "酒鬼爱烤鸡架",
+        "desc": "[十里河]招牌烤鸡架（店家招牌）1份",
+        "price": "9.9"
+      }, {
+        "id": "002",
+        "imgUrl": "http://p1.meituan.net/200.0/deal/7fa4d4497aab7b81ced0d3081616e77262464.jpg",
+        "title": "掉香缘掉渣饼",
+        "desc": "[西单]掉渣饼1份，提供免费WiFi",
+        "price": "7.9"
+      }, {
+        "id": "003",
+        "imgUrl": "http://p1.meituan.net/200.0/deal/c67f16980a3298696b22ea3467b86622159728.jpg",
+        "title": "郑大烤冷面",
+        "desc": "[安定门]主食2选1",
+        "price": "8.8"
+      }, {
+        "id": "004",
+        "imgUrl": "http://p0.meituan.net/200.0/deal/416d01cbc4b8a2871b3c260615b5998088199.jpg",
+        "title": "东来顺",
+        "desc": "[2店通用]4-5人套餐，节假日通用，中关村店/朝阳双井店通用",
+        "price": "209"
+      }, {
+        "id": "005",
+        "imgUrl": "http://p0.meituan.net/200.0/deal/f38a659eb827ed9571deddb74db2f388142809.jpg",
+        "title": "北京全聚德",
+        "desc":"[天安门广场]精品烤鸭3-4人餐1份",
+        "price": "458"
+      }],
+    "weekendList": [{
+        "id": "0001",
+        "imgUrl": "http://p1.meituan.net/deal/f524ecf569143ba627a6f18529e4515d79443.jpg",
+        "title": "金语轩烤肉火锅自助餐",
+        "desc": "单人自助"
+      }, {
+        "id": "0002",
+        "imgUrl": "http://p0.meituan.net/deal/a7b900ef68ff1933a4845a9d9b67e42a101111.jpg",
+        "title": "簋街大肠卤煮",
+        "desc": "大肠卤煮单人餐，提供免费WiFi"
+      }, {
+        "id": "0003",
+        "imgUrl": "http://p1.meituan.net/deal/3bf4587938b51e414e38483496daff5150100.jpg",
+        "title": "旺顺阁鱼头泡饼",
+        "desc": "100元代金券1张，可叠加"
+      }, {
+        "id": "0004",
+        "imgUrl": "http://p0.meituan.net/deal/a6ebaaf5960f46cb7d7fa227dd3b17ce33137.jpg",
+        "title": "味多美",
+        "desc": "【可自提】老婆饼（玫瑰味）1粒"
+      }, {
+        "id": "0005",
+        "imgUrl": "http://p1.meituan.net/deal/08fb85a7fc83d0f7a085681202aad13b245093.jpg",
+        "title": "山城辣妹子重庆火锅",
+        "desc": "100元代金券1张，可叠加"
+      }]
+  }
+}

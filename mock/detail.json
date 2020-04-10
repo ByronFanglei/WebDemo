@@ -1,0 +1,387 @@
+{
+  "ret": true,
+  "data": [
+    {
+      "id": "001",
+      "sightName": "酒鬼爱烤鸡架",
+      "bannerImg": "http://p0.meituan.net/deal/ec13bc77584009d04aac683494b2f73760915.jpg",
+      "gallaryImgs": [
+        "http://p0.meituan.net/deal/ec13bc77584009d04aac683494b2f73760915.jpg",
+        "http://p0.meituan.net/440.0/dealwatera/ce1feb5d436ca3f199f930767d6b0d5674569.jpg"
+      ],
+      "price": "9.9",
+      "oldPrice": "12",
+      "sales": "199",
+      "score": "44",
+      "evaluation": "9",
+      "evaluations": ["服务热情","味道赞","到店自提"],
+      "title": "酒鬼爱烤鸡架（十里河店）",
+      "address": "朝阳区弘燕南一路永辉超市西20米",
+      "comments": [{
+        "userImg": "https://img.meituan.net/avatar/b28f7405600a6f8f214877d73df8fe0772620.jpg",
+        "userName": "皮卡丘的精灵世界",
+        "userStar": "35",
+        "comment": "位置很好找，就在永辉超市的旁边，周六去买也没有排队，店家服务态度很好，问有忌口之类的嘛。【口味】刚炸出来配着馒头吃太香了，哈哈哈哈哈哈哈哈哈哈哈，【环境】环境一般，这种小吃店还要什么自行车呀【服务】店家服务态度很好👌",
+        "commentTime": "2019-10-27",
+        "commentImg": [
+          "http://p0.meituan.net/shaitu/18780a85ab7ab0606767363769a3ee6517271.jpg",
+          "http://p0.meituan.net/shaitu/37fdbb28ec012e23de94ba1237cd3b65304173.jpg",
+          "http://p0.meituan.net/shaitu/bdf28346ec53d77bf186c0a899ccb87c495079.jpg"
+        ]
+      }, {
+        "userImg": "http://p1.meituan.net/mmc/8fd17014c791cdf393bed473dab116ff3643.png",
+        "userName": "AAC471586973",
+        "userStar": "50",
+        "comment": "终于吃到了，店家很热情，味道也很不错，拍得看着少，其实分量很足，值得购买！",
+        "commentTime": "2019-10-07",
+        "commentImg": [
+          "http://p0.meituan.net/shaitu/2e1db38e042baaf5f794b55c657820a2229757.jpg@220w_220h_1e_1c"
+        ]
+      }],
+      "categoryList": [
+        {
+          "title": "一人餐",
+          "children": [
+            {
+              "title": "一人套餐A",
+              "children": [
+                {
+                  "title": "鱼肉 + 鸡肉"
+                }
+              ]
+            },
+            {
+              "title": "一人套餐B"
+            }
+          ]
+        },
+        {
+          "title": "二人餐"
+        },
+        {
+          "title": "三人餐"
+        },
+        {
+          "title": "四人餐"
+        }
+      ]
+    },
+    {
+      "id": "002",
+      "sightName": "掉香缘掉渣饼",
+      "bannerImg": "http://p1.meituan.net/deal/7fa4d4497aab7b81ced0d3081616e77262464.jpg",
+      "gallaryImgs": [
+        "http://p1.meituan.net/deal/7fa4d4497aab7b81ced0d3081616e77262464.jpg"
+      ],
+      "price": "7.9",
+      "oldPrice": "10",
+      "sales": "36360",
+      "score": "43",
+      "evaluation": "1299",
+      "evaluations": ["味道赞","价格实惠","性价比高","回头客","服务热情","上菜快","菜品不错","分量足","肉类差","到店自提"],
+      "title": "掉香缘掉渣饼（明珠美食城店）",
+      "address": "西城区横二条西单明珠市场8层",
+      "comments": [{
+        "userImg": "https://img.meituan.net/avatar/d9d3800931ff62b1b369d0bcf44506577288.jpg",
+        "userName": "抓住一个肖zhan",
+        "userStar": "41",
+        "comment": "就在西单明珠八层，类似一个大食堂的感觉，有很多卖快餐的，掉渣饼团了一个，做好的，很快，以为和酱香饼一样，就是酥酥的饼外面刷了一层酱，有肉末，可以做小吃，一个饼挺",
+        "commentTime": "2019-10-27",
+        "commentImg": [
+          "http://p1.meituan.net/shaitu/0911003385d89e1de5886f43e4e9805c3116103.jpg",
+          "http://p0.meituan.net/shaitu/60c6007aadba5fc6819363bba753a54b3391123.jpg",
+          "http://p0.meituan.net/shaitu/60c6007aadba5fc6819363bba753a54b3391123.jpg"
+        ]
+      }, {
+        "userImg": "https://img.meituan.net/avatar/a09b5fbe188eda8686f26a1f62afffc978835.jpg",
+        "userName": "文刀刀儿",
+        "userStar": "31",
+        "comment": "学生时代的记忆，还是那个味道，好吃。",
+        "commentTime": "2019-10-27",
+        "commentImg": [
+          "http://p0.meituan.net/shaitu/7320528a0d62ab2495882b7cb996e8d7292278.jpg"
+        ]
+      }, {
+        "userImg": "https://img.meituan.net/avatar/8547da83330084bff74a945d70851dc026661.jpg",
+        "userName": "QQ爱老婆",
+        "userStar": "50",
+        "comment": "每次和老公来西单必吃！",
+        "commentTime": "2019-10-27",
+        "commentImg": [
+          "http://p0.meituan.net/shaitu/5145d1e9f8c2707921a2cedb4012ec082244223.jpg",
+          "http://p0.meituan.net/shaitu/9742c79ba2386762d18087723c0355241673870.jpg"
+        ]
+      }],
+      "categoryList": [
+        {
+          "title": "一人餐",
+          "children": [
+            {
+              "title": "一人套餐A",
+              "children": [
+                {
+                  "title": "鱼肉 + 鸡肉"
+                }
+              ]
+            },
+            {
+              "title": "一人套餐B"
+            }
+          ]
+        },
+        {
+          "title": "二人餐"
+        },
+        {
+          "title": "三人餐"
+        },
+        {
+          "title": "四人餐"
+        }
+      ]
+    },
+    {
+      "id": "003",
+      "sightName": "郑大烤冷面",
+      "bannerImg": "http://p1.meituan.net/deal/c67f16980a3298696b22ea3467b86622159728.jpg",
+      "gallaryImgs": [
+        "http://p1.meituan.net/deal/c67f16980a3298696b22ea3467b86622159728.jpg"
+      ],
+      "price": "8.8",
+      "oldPrice": "12",
+      "sales": "397",
+      "score": "42",
+      "evaluation": "29",
+      "evaluations": ["味道赞","价格实惠","干净整洁","回头客","服务热情","上菜快","菜品健康","分量足","肉类差","到店自提"],
+      "title": "郑大烤冷面",
+      "address": "东城区车辇店胡同甲11号全季酒店底商蜂巢鲜生内",
+      "comments": [{
+        "userImg": "https://img.meituan.net/avatar/0d8a750108235a8fb2a645e18d10912018742.jpg",
+        "userName": "xiaotao986",
+        "userStar": "50",
+        "comment": "美团限时秒杀抢到的优惠劵，原价13元的烤冷面和手抓饼二选一，活动价只要4元，真是物超所值！位置就在安定门内车辇胡同全季酒店蜂巢鲜生里面，开着导航🧭很好我。店员",
+        "commentTime": "2020-03-07",
+        "commentImg": [
+          "http://p0.meituan.net/shaitu/7abc7535d98107220886287dc6b063131811418.jpg",
+          "http://p0.meituan.net/shaitu/5b884d78d698c20cafbec3700e7b0a972138080.jpg",
+          "http://p0.meituan.net/shaitu/8803c19b4997ea705982e5507adb2b781913147.jpg",
+          "http://p0.meituan.net/shaitu/69b21c8f963a53ef212d487d3c0c2fff1863018.jpg"
+        ]
+      }, {
+        "userImg": "http://p1.meituan.net/mmc/8fd17014c791cdf393bed473dab116ff3643.png",
+        "userName": "bp333sd",
+        "userStar": "50",
+        "comment": "非常时期突然很想念这口，看到有秒杀活动，忍不住特意跑来光顾，一口气自提4份，到家还是热气腾腾的，趁热吃味道很赞，老板服务也很贴心，会继续光顾的",
+        "commentTime": "2020-03-06",
+        "commentImg": [
+          "http://p0.meituan.net/shaitu/ed0dd14521bf8f0d562a2f4947fe6d7114310282.jpg",
+          "http://p0.meituan.net/shaitu/fc5e3aff46f2e7777987b8346e6b56389206900.jpg"
+        ]
+      }, {
+        "userImg": "https://img.meituan.net/avatar/8770b988093d04662bb7a7192330006f64931.jpg",
+        "userName": "可可x酱",
+        "userStar": "50",
+        "comment": "经典酸辣味，便宜又好吃，够辣！！！！！！",
+        "commentTime": "2019-12-29",
+        "commentImg": [
+          "http://p0.meituan.net/shaitu/6ef59bfed924878ae80a7c27c55309d52181704.jpg@220w_220h_1e_1c"
+        ]
+      }],
+      "categoryList": [
+        {
+          "title": "一人餐",
+          "children": [
+            {
+              "title": "一人套餐A",
+              "children": [
+                {
+                  "title": "鱼肉 + 鸡肉"
+                }
+              ]
+            },
+            {
+              "title": "一人套餐B"
+            }
+          ]
+        },
+        {
+          "title": "二人餐"
+        },
+        {
+          "title": "三人餐"
+        },
+        {
+          "title": "四人餐"
+        }
+      ]
+    },
+    {
+      "id": "004",
+      "sightName": "东来顺",
+      "bannerImg": "http://p0.meituan.net/deal/6084663428eb1fbe148a06306cce44b498695.jpg",
+      "gallaryImgs": [
+        "http://p0.meituan.net/deal/6084663428eb1fbe148a06306cce44b498695.jpg",
+        "http://p1.meituan.net/440.0/dealwaterb/4eea58bc0e0c0cd899584493bfdcfbe766046.jpg",
+        "http://p1.meituan.net/440.0/dealwaterb/9cdeb66d9f7d7599ef1034ed7d89335037993.jpg",
+        "http://p1.meituan.net/440.0/dealwaterb/3e334d53050396fcdf66931aec1b8b2a52823.jpg",
+        "http://p0.meituan.net/440.0/dealwaterb/bb80900f2221ee518c32fcdcf4e68fa840971.jpg",
+        "http://p1.meituan.net/440.0/dealwaterb/c11aff477a94c8e6f8a382689817678147122.jpg"
+      ],
+      "price": "129",
+      "oldPrice": "381",
+      "sales": "46290",
+      "score": "41",
+      "evaluation": "5218",
+      "evaluations": ["菜品精致","上菜快","交通便利","海鲜棒","冬天吃过瘾","朋友聚餐","菜品不错","分量足","肉类差","到店自提"],
+      "title": "东来顺饭庄（五道口店）",
+      "address": "海淀区成府路28号五道口购物中心5楼13号（近五道口地铁站）",
+      "comments": [{
+        "userImg": "http://www.dpfile.com/ugc/user/anonymous.png",
+        "userName": "匿名用户",
+        "userStar": "50",
+        "comment": "在网上定要比店里便宜很多，味道非常棒，超级喜欢他家的面，还有肉也非常嫩，每次去都有好多人排队。",
+        "commentTime": "2020-02-05",
+        "commentImg": [
+          "http://p0.meituan.net/shaitu/66a671b1728b2d3cc7925ba3a2c4d909328656.jpg",
+          "http://p0.meituan.net/shaitu/86657dc0f5697412925fb93cea4a3c65391556.jpg"
+        ]
+      }, {
+        "userImg": "https://p0.meituan.net/122.74/mmc/89bec9d64cde38d441cf976f751c482e3788.png",
+        "userName": "霍霍妮",
+        "userStar": "45",
+        "comment": "服务态度特别好 菜品也强烈推荐  菜品本人也很喜欢 菜品分量很足肉质很嫩。素菜拼盘也很给力，笑料麻将也很喜欢，自制烧饼芝麻的 还有一份绿豆杂面也很喜欢，木耳也很新鲜哦。地理位置也特别好 ，上了扶梯就是 也不用风味，",
+        "commentTime": "2019-9-18",
+        "commentImg": [
+          "https://p0.meituan.net/60.0/shaitu/007fcf6396e98e3ec856d637921a1d991954675.jpg",
+          "https://p0.meituan.net/60.0/shaitu/200d510cd6fdc52322583cc78bf5801f1792619.jpg",
+          "https://p0.meituan.net/60.0/shaitu/636a2e2372bbb9baa805db4ea57a42511820232.jpg",
+          "https://p0.meituan.net/60.0/shaitu/a805dbdf10aa601149d6d24bee4b00002127302.jpg"
+        ]
+      }, {
+        "userImg": "https://img.meituan.net/122.74/avatar/0c28bce54310dfe803d3695d6ea2b5a132877.jpg",
+        "userName": "四一w",
+        "userStar": "35",
+        "comment": "上菜很快的，服务还不错，就是没有辣椒面只有辣椒油，身为重庆人的我有点不习惯量还是很大的，两个女孩纸肯定够的，吃的撑，毕竟有面条和饼，酸梅汤也很好喝有一个肉不太好吃，另一个肉好吃些，整体来说很满意",
+        "commentTime": "2019-8-10",
+        "commentImg": [
+          "https://p0.meituan.net/60.0/shaitu/02e2bd68452024e06f9bf68c6685ff551482309.jpg",
+          "https://p0.meituan.net/60.0/shaitu/81abdf9770b7e1409bd75a5bd34482212330658.jpg",
+          "https://p0.meituan.net/60.0/shaitu/987655659a46dc2436d3d5d9992388ab1270793.jpg",
+          "https://p0.meituan.net/60.0/shaitu/395514f444ed7fbb0f5b86dd55aa14231680809.jpg",
+          "https://p0.meituan.net/60.0/shaitu/c1787a36d540df9050bfd6364c7c517f458001.jpg"
+        ]
+      }],
+      "categoryList": [
+        {
+          "title": "一人餐",
+          "children": [
+            {
+              "title": "一人套餐A",
+              "children": [
+                {
+                  "title": "鱼肉 + 鸡肉"
+                }
+              ]
+            },
+            {
+              "title": "一人套餐B"
+            }
+          ]
+        },
+        {
+          "title": "二人餐"
+        },
+        {
+          "title": "三人餐"
+        },
+        {
+          "title": "四人餐"
+        }
+      ]
+    },
+    {
+      "id": "005",
+      "sightName": "北京全聚德",
+      "bannerImg": "http://p0.meituan.net/deal/f38a659eb827ed9571deddb74db2f388142809.jpg",
+      "gallaryImgs": [
+        "http://p0.meituan.net/440.0/dealwatera/06b1371dacdc3418a4e82826c30f67d760653.jpg",
+        "http://p1.meituan.net/440.0/dealwatera/e91daa8d740811dfc7eba0226928b55662822.jpg"
+      ],
+      "price": "458",
+      "oldPrice": "573",
+      "sales": "6305",
+      "score": "38",
+      "evaluation": "752",
+      "evaluations": ["味道赞","肉类好","性价比高","店内消毒","服务热情","上菜快","菜品不错","分量足","肉类差","到店自提"],
+      "title": "北京全聚德（天安门店）",
+      "address": "东城区东交民巷44号（国家博物馆南，近地铁天安门东站D口出，地铁前门站A口出）",
+      "comments": [{
+        "userImg": "https://img.meituan.net/avatar/1569c468f766cfc4238ffd46251ef69b313472.jpg@",
+        "userName": "自爱成稳xsy",
+        "userStar": "35",
+        "comment": "还行吧， 带一家人来北京玩。  来到北京自然🉐️ 打卡下 全聚德烤鸭了。  怎么说呢，体验感吧，  味道还行，也没有特别好吃，但也不难吃，  服务吧，也就一般般， 收取的那 20% 服务费呢，也就刚开始进来，给你摆一下碗筷 倒下茶水什么的，没有特别的专门服务啥的，   价格吧，  反正就一只鸭的套餐，一起下来 花了 600 不到吧。  总体来说，也还行，反正只是为了  象征性来 打卡一趟而已",
+        "commentTime": "2019-07-15",
+        "commentImg": [
+          "http://p0.meituan.net/shaitu/c559f25487f365c933c8dc91e2d26a8d1544953.jpg",
+          "http://p0.meituan.net/shaitu/fdd82f9cdb97467411cee43912d8ad2a1334873.jpg",
+          "http://p0.meituan.net/shaitu/e34dbf9fd5d0073c1fc469ccfdeb90a51134975.jpg",
+          "http://p0.meituan.net/shaitu/e34dbf9fd5d0073c1fc469ccfdeb90a51134975.jpg",
+          "http://p0.meituan.net/shaitu/cea51c3f2a6af159ba6fce051a3562ea1426899.jpg",
+          "http://p0.meituan.net/shaitu/c2287b69f49fdf84514537e88e05bab31360910.jpg",
+          "http://p0.meituan.net/shaitu/22b9d6ac8ba3cf2942c2b449bcee6858147549.jpg"
+        ]
+      }, {
+        "userImg": "https://img.meituan.net/122.74/avatar/57b56a1e645610a9714126dc79cb050d59554.jpg",
+        "userName": "朱卓伟888",
+        "userStar": "50",
+        "comment": "烤鸭很新鲜，好不容易带着孩子们来一趟北京，足足等了一个半小时才吃上，楼上楼下都坐满了人，走廊边都坐满了排队人，这人气爆棚了，头一次见这场面，我们还是美团上提前预定的，所以等到叫号，就可以开吃了，节约了不少时间，也减少了服务员的工作量，孩子们都吃的很开心,服务都很好，很客气，最贴心的就是看图二，谢谢全体的工作人员，你们辛苦了，祝生意兴隆",
+        "commentTime": "2019-08-15",
+        "commentImg": [
+          "https://p0.meituan.net/60.0/shaitu/fb821e5e3daff76c006d9ce626240d28656922.jpg",
+          "https://p0.meituan.net/60.0/shaitu/a86f0ff9a7b1d9857161d64678c0b915434315.jpg",
+          "https://p0.meituan.net/60.0/shaitu/edeffa93e06eae747279aefc9a0acbda545867.jpg",
+          "https://p1.meituan.net/60.0/shaitu/756cbfc01fce00e76f9a1df577f06096395986.jpg"
+        ]
+      }, {
+        "userImg": "https://img.meituan.net/122.74/avatar/a8f9f127d34652f4fc2ff586954f3dd852013.jpg",
+        "userName": "YVR453445443",
+        "userStar": "37",
+        "comment": "买了套餐自己点了一些饮料，加上服务费差不多。一直鸭还是有两盘，但是两个人洗完一盘就腻了，感觉四个大人加一个小孩都够吃。服务不错，！初来北京还是可以尝试，可提前预约 免得排队。还是有点小贵！",
+        "commentTime": "2019-08-04",
+        "commentImg": [
+          "https://p0.meituan.net/60.0/shaitu/38f30f20d5233b6c3efea4b7c04006671696942.jpg",
+          "https://p0.meituan.net/60.0/shaitu/9437b02979233db3b68627acc164221d1377551.jpg",
+          "https://p0.meituan.net/60.0/shaitu/e8bfb3643c1a1efe532a41241b4483851347544.jpg",
+          "https://p0.meituan.net/60.0/shaitu/b3628a7b13c245567f526db15e69610b2071652.jpg"
+        ]
+      }],
+      "categoryList": [
+        {
+          "title": "一人餐",
+          "children": [
+            {
+              "title": "一人套餐A",
+              "children": [
+                {
+                  "title": "鱼肉 + 鸡肉"
+                }
+              ]
+            },
+            {
+              "title": "一人套餐B"
+            }
+          ]
+        },
+        {
+          "title": "二人餐"
+        },
+        {
+          "title": "三人餐"
+        },
+        {
+          "title": "四人餐"
+        }
+      ]
+    }
+  ]
+}

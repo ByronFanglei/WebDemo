@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>剩余参数</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const sum = (...arg) => {
+    let total = 0;
+    arg.forEach(item => total+=item);
+    return total;
+  }
+  console.log(sum(1,2,3,4,5,6));
+  console.log(sum(16,23,37,41,56,69));
+
+  let person = {name: 'byron', age: 23, gender: '男'}
+  let {name,...age} = person;
+  console.log(name);
+  console.log(age);
+  
+  
+</script>
+</html>

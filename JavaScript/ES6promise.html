@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>promise</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  // let promise = new Promise((resolve,reject) => {
+  //   // 1、初始化promise状态为pending--->初始化状态
+  //   // 2、执行异步任务，比如开启定时器，发送Ajax请求，根据异步任务的执行结果去修改promise对象状态
+  //   setTimeout(() => {
+  //     // 如果异步执行成功，调用resolve()修改promise的状态 ---> fullfilled
+  //     let msg = 'byron';
+  //     resolve(msg)
+  //     console.log(promise);
+  //     // 如果异步执行失败，调用reject()修改promise的状态 ---> rejected
+  //     // reject();
+  //     // console.log(promise);
+  //   },1000)
+
+  // })
+
+  // promise.then((msg) => {
+  //   //当promise对象的状态变为fullfilled时，会自动调用then方法的第一个回调
+  //   console.log(`成功了${msg}`);
+  // }, () => {
+  //   //当promise对象的状态变为rejected时，会自动调用then方法的第二个回调
+  //   console.log('失败了');
+  // })
+
+
+  let num = 0;
+  function utils(){
+    num++;
+    let promise = new Promise((resolve,reject) => {
+      setTimeout(() => {
+        resolve(`第${num}次传递成功`)
+      },2000)
+    });
+    return promise;
+  }
+
+  utils().then((result) => {
+    console.log(result);
+    console.log('成功了');
+    return utils();
+  }, (error) => {
+    console.log(error);
+    console.log('失败了');
+  })
+  .then((result) => {
+    console.log(result);
+    console.log('成功了');
+  }, (error) => {
+    console.log(error);
+    console.log('失败了');
+  })
+
+
+
+
+  // let  promise = new Promise((resolve,reject) => {
+  //   setTimeout(() => {
+  //     resolve('测试');
+  //     console.log('第一个定时器完成');
+  //   },2000)
+  // })
+  // promise.then((result) => {
+  //   if(result){
+  //     setTimeout(() => {
+  //       console.log('第二个定时器完成');
+  //     },2000)
+  //   }
+  // },(error) => {
+  //   console.log(error);
+  // })
+
+</script>
+
+</html>

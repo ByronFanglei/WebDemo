@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>箭头函数</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const fn=()=>{
+    console.log(111)
+  }
+  fn();
+  const sum=(n1,n2) => n1+n2;
+  console.log(sum(10,20));
+  
+  // const avg = v => alert(v)
+  // avg(10)
+
+  function fun(){
+    console.log(this);
+    return () => {
+      console.log(this);
+      
+    }
+    
+  }
+
+  const obj = {name:'byron'};
+  var ref = fun.call(obj)
+  ref();
+</script>
+</html>

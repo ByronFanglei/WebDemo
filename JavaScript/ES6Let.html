@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>let</title>
+</head>
+<body>
+  
+</body>
+<script>
+  if(true){
+    let a = 10;
+    // console.log(a);
+    if(true){
+      let b = 20;
+    }
+    // console.log(b);
+    
+  }
+  // console.log(a);
+  
+  for(let i=0;i<2;i++){
+
+  }
+  // console.log(i);
+  
+  // console.log(aa);
+  // let aa = 10;
+  
+  var tem = 123;
+  if(true){
+    //log不会去寻找var定义的num，但是let定义的num在log以下，所以会报错
+    // console.log(num);
+    let num = 10;
+  }
+
+  var arr = [];
+  for(let i=0;i<2;i++){
+    arr[i]=function(){
+      console.log(i);
+    }
+  }
+  arr[0]();
+  arr[1]();
+</script>
+</html>

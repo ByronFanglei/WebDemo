@@ -78,3 +78,29 @@ function random(max,min){
 
 // ----------------------------------------------------------------------------------
 
+  /*
+  计算未来某一事件距离今天多久
+  newdate：未来事件
+  */
+ function Distance(newdate){
+  //获取指定日期时间戳
+  let newd = new Date(newdate).getTime();
+  //获取当前日期时间戳
+  let date = new Date().valueOf();
+  // 获取相差多少秒
+  let dis = Math.floor((newd/1000)) - Math.floor((date/1000));
+  // 获取一天的秒钟
+  let daytime = 24*60*60;
+  //获取天数
+  let day = Math.floor(dis/daytime);
+  //获取小时
+  let hours = Math.floor(dis%daytime/3600)
+  //获取分钟
+  let min = Math.floor(dis%daytime/60)
+  //获取秒钟
+  let sec = Math.floor(dis%daytime%60)
+  return `距离${newdate}还有${day}天${hours}小时${min}分钟${sec}秒钟`;
+}
+
+// ----------------------------------------------------------------------------------
+

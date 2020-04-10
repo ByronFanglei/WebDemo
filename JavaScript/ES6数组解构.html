@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组结构</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let [a,b,c,d] = [1,2,3];
+  console.log(a); //1
+  console.log(b); //2
+  console.log(c); //3
+  console.log(d); //undefined
+
+  let person = {name: 'byron', age: 23, gender: '男'}
+  //方法一
+  let { name,age,gender } = person;
+  console.log(name);  //byron
+  console.log(age);   //23
+  console.log(gender);   //男
+  //方法二
+  let {name: myName, age:myAge, gender: sex} = person;
+  console.log(myName);  //byron
+  console.log(myAge);   //23
+  console.log(sex);   //男
+</script>
+</html>

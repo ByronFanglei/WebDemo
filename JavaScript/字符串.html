@@ -55,5 +55,25 @@
   delete obj.address;
   console.log(obj);
   
+  var sss = 'qwert';
+  var result = sss.includes('w') 
+  console.log(result);
+
+  // 模板字符串
+  let name = `byron`;
+  let hello = `hello ${name}`;
+  console.log(hello);
+  const fn = () =>{
+    return '模板字符串'
+  }
+  let html = `这是${fn()}`;
+  console.log(html);
+  
+  let strs = 'hello byron!';
+  console.log(strs.startsWith('hello'));  //true
+  console.log(strs.endsWith('!'));        //true
+  
+  console.log('x'.repeat(10));
+  
 </script>
 </html>
