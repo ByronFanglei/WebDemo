@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>error</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 常见的内置错误
+  // 1、ReferenceError：引用的变量不存在
+  // console.log(a); //ReferenceError: a is not defined
+  // console.log('---'); //没有捕获上面error，所以不会执行
+
+  // 2、TypeError：数据类型不正确错误
+  // let b;
+  // console.log(b.xxx); //TypeError: Cannot read property 'xxx' of undefined
+  // b = {}
+  // b.xxx() //TypeError: b.xxx is not a function
+  
+  // 3、RangeError：数据值不在其所允许的范围内
+  // function fu() {
+  //   fu()
+  // }
+  // fu()  //RangeError: Maximum call stack size exceeded
+    
+  // 4、SyntaxError：语法错误
+  // const c = """"  SyntaxError: Unexpected string
+
+
+  // 错误处理
+  // 1、捕获错误：try ...catch
+  try {
+    let b;
+    console.log(b.xxx);
+  } catch(error) {
+    console.log(error.message);
+    console.log(error.stack);
+  }
+  console.log('上面代码已经出错！！！');
+  
+  // 2、捕获错误：throw error
+  function sometime() {
+    if(Date.now() % 2 ==1){
+      console.log('当前时间为奇数，执行任务！');
+    } else {
+      throw error = new Error('当前时间为偶数，不能执行任务！')
+    }
+  }
+  try {
+    sometime()
+  } catch(error) {
+    console.log(error.message);
+  }
+
+  
+
+  
+  
+  
+</script>
+</html>

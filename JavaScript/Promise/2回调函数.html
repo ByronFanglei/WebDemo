@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>回调函数</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 同步回调：
+  //   立即执行，完全执行完了才结束，不会放入到回调队列中
+  //   eg:数组遍历相关的回调函数 / promise的excutor函数
+  // 异步函数:
+  //   不会立即执行，会放入回调队列中来执行
+  //   eg:定时器回调 / ajax回调 / promise的成功|失败回调
+
+  // 同步回调
+  var arr = [1,2,3,4,5];
+  // arr.forEach(item => {
+  //   console.log(item);
+  // })
+  // console.log('forEach之后');
+  // 异步函数
+  setTimeout(() => {
+    console.log(arr);
+  },1000)
+  console.log('setTimeout之后');
+  
+</script>
+</html>

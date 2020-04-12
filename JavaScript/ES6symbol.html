@@ -17,6 +17,43 @@
   console.log(typeof s1); //symbol
   
   
+  // 实现iterator接口
+  function iteratorUtil(){
+    console.log('调用我的接口');
+    let that = this;  //缓存this
+    let index = 0;  //表示指针位置
+    if(that instanceof Array){
+      return {  //指针对象
+        next() {  //指针对象next方法
+          return index < that.length?{value: that[index++], done: false}:{value: that[index++], done: true}
+        }
+      }
+    }else{
+      let keys = Object.keys(that); //目标对象所有key
+      let length = keys.length  //生成目标对象key值的数组
+      return {  //指针对象
+        next() {  //指针对象next方法
+          return index < length?{value: that[keys[index++]], done: false}:{value: that[keys[index++]], done: true}
+        }
+      }
+    }
+  }
+  Array.prototype[Symbol.iterator] = iteratorUtil;  //这里覆盖掉了Array中的iterator方法
+  Object.prototype[Symbol.iterator] = iteratorUtil; //Object本身是没有iterator这个方法的
+  var arr = [1,2,3,3,4,5,6];
+  for(let i of arr){ //使用的iterator接口
+    console.log(i);
+  }
+  var obj = {
+    id:1,
+    name: '123'
+  }
+  for(let i of obj){
+    console.log(i);
+  }
+  console.log(arr);
+  console.log(obj);
+  
   
 </script>
 </html>

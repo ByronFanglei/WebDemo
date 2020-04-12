@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>promise使用</title>
+</head>
+<body>
+  
+</body>
+<script>
+  //创建一个新的promise对象
+  const promise = new Promise((resolve,reject) => { //执行器函数
+  //模拟执行异步操作
+    setTimeout(() => {
+      const time = Date.now();
+      if(time % 2 ==0){
+        //如果成功了，调用resolve(value)
+        resolve(`成功回调,时间为偶数${time}`)
+      }else{
+        //如果失败了，调用resolve(reason)
+        reject(`失败回调,时间为奇数${time}`)
+      }
+    },1000)
+  })
+
+  promise.then((value) => { //接收得到成功的value，onResolved
+    console.log(value);
+    console.log(promise);
+  },(reason) => {     //接收得到失败的value，onRejected
+    console.log(reason);
+    console.log(promise);
+  })
+</script>
+</html>
