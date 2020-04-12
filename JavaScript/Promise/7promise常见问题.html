@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>问题</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 如何改变promise的状态
+  const p = new Promise((resolve,reject) => {
+    // 1、resolve(1); //promise变为resolved成功状态
+    reject(2);  //promise变为rejected成功状态
+    // 3、throw new Error('报错啦'); //Error: 报错啦 Promise {<rejected>: Error: 报错啦,promise变为rejected失败状态
+    // throw 3; //3  Promise {<rejected>: 3},promise变为rejected失败状态
+  })
+  p.then(
+    value => {console.log(value)},
+    reason => {console.log('reason1',p)}
+  )
+
+  // 一个promise指定多个成功/失败回调函数，都会调用吗？
+  p.then(
+    value => {console.log(value)},
+    reason => {console.log('reason2',p)}
+  )
+</script>
+</html>

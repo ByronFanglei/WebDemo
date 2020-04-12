@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>循环计数器</title>
+</head>
+<body>
+
+</body>
+<script>
+  // JavaScript 写一个从0到59依次循环的计时器
+  let a = 0;
+  setInterval(() => {
+    document.body.innerText='';
+    document.write(a);
+    console.log(a);
+    a++;
+    if(a>=60){
+      a=0;
+    }
+  },1000)
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>查找class</title>
+</head>
+<body>
+  <div name="A">1111</div>
+  <div name="B">2222</div>
+  <div name="A">3333</div>
+</body>
+<script>
+  // 请使用JavaScript找出name="A"的内容
+  // 要求打印结果为  1111,3333
+  var divs = document.querySelectorAll('div');
+  var v = '';
+  for(let i=0;i<divs.length;i++){
+    const item = divs[i];
+    if(item.getAttribute('name') == 'A'){
+      v += (!v ? '' : ',')+item.innerHTML;
+    }
+  }
+  console.log(v);
+  
+</script>
+</html>

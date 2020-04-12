@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>promise</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 1、回调地狱
+  doSomething(function(result) {
+    doSomethingElse(result,function(newResult) {
+      doThirdTing(newResult,function(finalResult){
+        conlole.log(`result${finalResult}`);
+      },failureCallback)
+    },failureCallback)
+  },failureCallback)
+
+  // 2、使用promise链式调用解决回调地狱
+  doSomething().then((result) => {
+    return doSomethingElse(result);
+  })
+  .then((newResult) => {
+    return doThirdTing(newResult);
+  })
+  .then((finalResult) => {
+    conlole.log(`result${finalResult}`);
+  })
+  .catch(failureCallback)
+
+  // 3、async/await 解决回调地狱最终方案
+  async function request() {
+    try{
+      const result = await doSomething()
+      const newResult = await doSomethingElse()
+      const finalResult = await doThirdTing()
+      conlole.log(`result${finalResult}`);
+    } catch (error) {
+      failureCallback(error)
+    }
+  }
+</script>
+</html>
