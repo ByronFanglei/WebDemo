@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>如何分析用户UA</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  // JavaScript 如何获取UA? 浏览器内核
+  // console.log(window.navigator.userAgent);
+
+  // 浏览器检查结果
+  function browser() {
+    var ua = navigator.userAgent;
+    var ret = {},
+      webkit = ua.match(/WebKit\/([\d.]+)/),
+      chrome = ua.match(/Chrome\/([\d.]+)/) ||
+        ua.match(/CriOS\/([\d.]+)/),
+
+      ie = ua.match(/MSIE\s([\d\.]+)/) ||
+        ua.match(/(?:trident)(?:.*rv:([\w.]+))?/i),
+      firefox = ua.match(/Firefox\/([\d.]+)/),
+      safari = ua.match(/Safari\/([\d.]+)/),
+      opera = ua.match(/OPR\/([\d.]+)/);
+
+    webkit && (ret.webkit = parseFloat(webkit[1]));
+    chrome && (ret.chrome = parseFloat(chrome[1]));
+    ie && (ret.ie = parseFloat(ie[1]));
+    firefox && (ret.firefox = parseFloat(firefox[1]));
+    safari && (ret.safari = parseFloat(safari[1]));
+    opera && (ret.opera = parseFloat(opera[1]));
+    return ret;
+  }
+  console.log(browser());
+</script>
+
+</html>
