@@ -139,18 +139,30 @@
 
   /*
   Promise函数对象的resolve方法
-  返回结果指定的一个成功的promise
+  返回结果指定value的一个成功的promise
   */
   Promise.resolve = function (value) {
-
+    // 返回一个成功/失败的promise
+    return new Promise((resolve, reject) => {
+      //判断value是promise
+      if(value instanceof Promise) {  //使用value的结果作为promise的结果
+        value.then(resolve, reject);
+      }else{
+        //判断value不是promise,promise变为成功，数据为value
+        resolve(value)
+      }
+    })
   }
 
   /*
   Promise函数对象的reject方法
-  返回结果指定的一个失败的promise
+  返回结果指定reason的一个失败的promise
   */
   Promise.reject = function (reason) {
-
+    // 返回一个失败的promise
+    return new Promise((resolve, reject) => {
+      reject(reason)
+    })
   }
 
   /*
