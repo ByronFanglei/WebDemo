@@ -26,6 +26,7 @@
       不要再想文件路径了，把所有的路径都想象成 url 地址
     -->
   <link rel="stylesheet" href="/public/lib/bootstrap/bootstrap.css">
+  <script src="/public/js/main.js"></script>
 </head>
 
 <body>
@@ -37,18 +38,9 @@
   </div>
   <div class="comments container">
     <ul class="list-group">
-      <li class="list-group-item">不错说：对南沙健康拿到数据看定金款三 <span class="pull-right">2017-11-2 17:11:22</span></li>
-      
-      <li class="list-group-item">范家伟说：香锅还是香锅啊 <span class="pull-right">2017-11-2 17:11:22</span></li>
-      
-      <li class="list-group-item">王汪汪说：能看出来是谁发的吗 <span class="pull-right">2017-11-2 17:11:22</span></li>
-      
-      <li class="list-group-item">马化腾说：不充钱怎么变得更强 <span class="pull-right">2017-11-2 17:11:22</span></li>
-      
-      <li class="list-group-item">崔铭说：催什么催，快下课 <span class="pull-right">2017-11-2 17:11:22</span></li>
-      <!-- {{each comments}}
+      {{each comments}}
       <li class="list-group-item">{{ $value.name }}说：{{ $value.message }} <span class="pull-right">{{ $value.dateTime }}</span></li>
-      {{/each}} -->
+      {{/each}}
     </ul>
   </div>
 </body>
