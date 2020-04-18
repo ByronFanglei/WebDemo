@@ -1,42 +1,34 @@
+//获取对应的核心模块
 const http = require('http');
+const template = require('art-template');
 const fs = require('fs');
+const time = new Date();
+//建立服务
 const server = http.createServer();
-const dir = 'dir/'
-var content = '';
-// 读取目录
-fs.readdir(dir, (err, data) => {
-  if (!err) {
-    data.forEach((item) => {
-      content += `
-      <tr>
-      <td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td>
-      <td><a href="css/">${item}/</a> </td>
-      <td align="right">2020-03-02 22:40 </td>
-      <td align="right"> - </td>
-      <td>&nbsp;</td>
-      </tr>
-      `
-    })
-  }
-})
-//发送响应
+//请求服务
 server.on('request', (request, response) => {
-  const url = request.url;
-  // var filePath = '/index.html';
-  // if(url !== '/'){
-  //   filePath = url;
-  // }
+  // 读取文件
   fs.readFile('./template.html', (err, data) => {
-    if (!err) { 
-      data = data.toString();
-      data = data.replace('@@', content)
-      return response.end(data);
+    if(err){
+      console.log('文件读取失败！！！')
     }
-    response.end('404')
+    // 读取目录
+    fs.readdir('./dir', (err, files) => {
+      if(err) {
+        console.log('目录读取失败！！!')
+      }
+      var htmlStr = template.render(data.toString(), {
+        title: 'byron',
+        files,
+        time
+      })
+      // 发送模板
+      response.end(htmlStr)
+    })
   })
+
 })
-
+//端口设置
 server.listen('5000', () => {
-  console.log('服务已开启。。。,http://127.0.0.1:5000/ 来访问')
-});
-
+  console.log('服务已开启，请访问：http://127.0.0.1:5000 来访问。。。')
+})

@@ -16,5 +16,7 @@
     "url": "https://github.com/ByronFanglei/WebDemo/issues"
   },
   "homepage": "https://github.com/ByronFanglei/WebDemo#readme",
-  "dependencies": {}
+  "dependencies": {
+    "art-template": "^4.13.2"
+  }
 }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>边框</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  //给所有HTML层添加一个高亮的边框,建议直接赋值运行在某页面console下
+  [].forEach.call($$('*'), (a) => {
+    a.style.outline = '1px solid #' + (~~(Math.random() * (1 << 24))).toString(16)
+  })
+
+
+  // 这段代码只是首先获取了所有的页面元素，然后使用一个不同的颜色为它们添加了一个1ps的边框。
+  // $$("*") 函数是现代浏览器命令行的API的一部分，它等同于使用document.querySelectorAll 方法。
+  // 你可以将一个CSS选择器作为参数传入document.querySelectorAll去选取当前页面的元素。
+  // 所以如果你想在浏览器的控制台以外使用那个单行代码，你可以用document.querySelectorAll('*')来替代
+  // [].forEach.call是借助数组的forEach方法
+  // 这个可以用来分析HTML的层级
+</script>
+
+</html>
