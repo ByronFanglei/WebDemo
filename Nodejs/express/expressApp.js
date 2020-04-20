@@ -7,6 +7,13 @@ const app = express();
 app.engine('html', require('express-art-template'));
 //配置默认目录
 // app.set('views', 新目录)
+//添加body-parser模块
+const bodyParser = require('body-parser');
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
+
 const comments = [{
   name: '张三',
   message: '123',
@@ -24,8 +31,9 @@ app.get('/', (req, res) => {
 app.get('/post', (req, res) => {
   res.render('post.html')
 })
-app.get('/pinglun', (req, res) => {
-  const data = req.query;
+app.post('/post', (req, res) => {
+  //通过req.body获取post信息
+  const data = req.body;
   data.dateTime = Date();
   comments.unshift(data);
   //重定向
@@ -37,10 +45,4 @@ app.listen('5000', () => {
   console.log('服务已开启。。。http:127.0.0.1:5000/')
 })
 
-// 模块操作路径
-//去磁盘根目录的data中查找index
-// require('/data/index.js')
-// require('data/index.js')
-// //相对于当前文件的data中查找index
-// require('./data/index.js')
 
