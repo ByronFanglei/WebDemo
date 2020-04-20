@@ -6,14 +6,6 @@ const comments = [{
   name: '张三',
   message: '123',
   dateTime: '222'
-}, {
-  name: '张三',
-  message: '123',
-  dateTime: '222'
-}, {
-  name: '张三',
-  message: '123',
-  dateTime: '222'
 }]
 http.createServer((request, respones) => {
   // 使用url模块的parse方法将路径解析为对象，第二个参数true表示直接将字符串转为对象，通过query访问
@@ -42,7 +34,7 @@ http.createServer((request, respones) => {
     //判定public文件
   }else if(pathName.indexOf('/public/') === 0){
     // console.log(url)
-    //判断public的url请求，如果为upublic的请求直接跳转到本地静态资源public的文件下
+    //判断public的url请求，如果为public的请求直接跳转到本地静态资源public的文件下
     fs.readFile('.'+pathName, (err, data) => {
       if(err){
         return respones.end('404')
@@ -53,7 +45,7 @@ http.createServer((request, respones) => {
   }else if(pathName === '/pinglun'){
     //获取get提交数据？之后的值
     const comment = parseObj.query
-    comment.dateTime = '2020-5-1';
+    comment.dateTime = Date();
     comments.unshift(comment)
     //设置临时重定向code 302,301是永久重定向
     respones.statusCode = 302
