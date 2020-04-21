@@ -82,7 +82,7 @@
           </div>
 
           <h2 class="sub-header">Section title</h2>
-          <a href="" class="btn btn-success">新增数据</a>
+          <a href="/student/new" class="btn btn-success">新增数据</a>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -92,6 +92,7 @@
                   <th>gender</th>
                   <th>age</th>
                   <th>hobbies</th>
+                  <th>编辑</th>
                 </tr>
               </thead>
               <tbody>
@@ -102,6 +103,10 @@
                   <td>{{$value.gender}}</td>
                   <td>{{$value.age}}</td>
                   <td>{{$value.hobbies}}</td>
+                  <td>
+                    <a href="/student/edit?id={{$value.id}}">编辑</a>
+                    <a href="/student/delete?id={{$value.id}}">删除</a>
+                  </td>
                 </tr>
                 {{/each}}
               </tbody>
