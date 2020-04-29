@@ -1,0 +1,67 @@
+{{extend '../_layouts/home.html'}}
+
+{{block 'title'}}{{'多人博客 - 首页'}}{{/block}}
+
+{{block 'body'}}
+<section class="container">
+  {{include '../_partials/settings-nav.html'}}
+  <div class="col-md-5">
+    <div class="subhead">
+      <h2>修改密码</h2>
+    </div>
+    <hr>
+    <form id="admin">
+      <div class="form-group">
+        <label for="exampleInputPassword1">当前密码</label>
+        <input type="password" name="oldpass" class="form-control" id="exampleInputPassword1" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword2">新的密码</label>
+        <input type="password" name="newpass" class="form-control" id="exampleInputPassword2" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword3">确认密码</label>
+        <input type="password" name="newpasstwo" class="form-control" id="exampleInputPassword3" placeholder="">
+      </div>
+      <button type="submit" class="btn btn-success">保存</button>
+    </form>
+    <div class="subhead">
+      <h2>注销账号</h2>
+      <hr>
+    </div>
+    <div>
+      <p>一旦注销，不可找回，请谨慎操作</p>
+      <button class="btn btn-danger" type="submit" id="delete">删除</button>
+    </div>
+    <hr>
+  </div>
+</section>
+{{/block}}
+{{block 'script'}}
+<script>
+  $('#admin').on('submit', function (event) {
+    event.preventDefault()
+    const data = $(this).serialize()
+    $.ajax({
+      url: '/settings/admin',
+      type: 'post',
+      data: data,
+      dataType: 'json',
+      success: function (data) {
+        const code = data.code
+        switch (code) {
+          case 0:
+            window.alert('修改成功')
+            return window.location.href = '/login'
+          case 1:
+            return window.alert('新密码与旧密码相同')
+          case 2:
+            return window.alert('两个新密码不一样')
+          case 3:
+            return window.alert('输入密码不正确')
+        }
+      }
+    })
+  })
+</script>
+{{/block}}
