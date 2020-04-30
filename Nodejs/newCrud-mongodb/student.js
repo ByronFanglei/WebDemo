@@ -22,7 +22,7 @@ var stuSchema = new Schema({
   },
   time: {
     type: String,
-    default: Date.now()
+    default: Date.now
   }
 })
 

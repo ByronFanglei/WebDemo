@@ -24,6 +24,7 @@
 </head>
 <body>
   <button id="more">一大波僵尸</button>
+  <button id="stop"">暂停</button>
   <div id="all"></div>
 </body>
 <script>
@@ -88,11 +89,15 @@
 
 
   var more = document.querySelector('#more');
-  
+  var stop = document.querySelector('#stop');
+  var timers
   more.onclick = function(){
-    var timers = setInterval(function(){
+    timers = setInterval(function(){
       new Move();
     },1000)
+  }
+  stop.onclick = function(){
+    clearInterval(timers)
   }
 </script>
 </html>

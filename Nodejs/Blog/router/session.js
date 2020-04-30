@@ -159,6 +159,27 @@ router.get('/settings/profile', (req, res) => {
     user: req.session.user
   })
 })
+router.post('/settings/profile', (req, res) => {
+  const body = req.body
+  const id = req.session.user._id
+  User.findByIdAndUpdate(id, {
+    nickname: body.nickname,
+    bio: body.bio,
+    gender: body.gender,
+    birthday: body.birthday
+  }).then((value) => {
+    req.session.user.nickname = body.nickname
+    req.session.user.gender = body.gender
+    return res.status(200).json({
+      code: 0
+    })
+  }).catch((reason) => {
+    return res.status(500).json({
+      code: 500
+    })
+  })
+
+})
 
 
 
