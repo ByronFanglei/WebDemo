@@ -15,7 +15,7 @@
   function printFibonacci (n) {
     //判断初始值是否大于0，如果大于0直接设置数组否则return
     var arr = n > 0 ? [1] : [];
-    //循环n指，获取指定n指的FIbonacci数
+    //循环n值，获取指定n指的FIbonacci数
     for(let i=1;i<n;i++){
       arr.push(arr[i-1] + (i>=2?arr[i-2]:0) )
     }
@@ -32,5 +32,26 @@
   }
   console.log(f(20));
   
+
+  // Generator斐波拉契数列
+  function * Fibonacci (num) {
+    // let count = 0
+    let arr = num > 0 ? [1] : []
+    for (let i = 1; i < num; i++) {
+      arr.push(arr[i - 1] + (i >= 2 ? arr[i - 2] : 0))
+      yield `${arr}还可以执行${num - i - 1}次数`
+    }
+  }
+  let l = Fibonacci(10)
+  console.log(l.next().value)
+  console.log(l.next().value)
+  console.log(l.next().value)
+  console.log(l.next().value)
+  console.log(l.next().value)
+  console.log(l.next().value)
+  console.log(l.next().value)
+  console.log(l.next().value)
+  console.log(l.next().value)
+  console.log(l.next().value)
 </script>
 </html>

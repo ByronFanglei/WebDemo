@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="input1">
+  <script>
+    // let timer = null
+    // // 可以直接使用id
+    // input1.addEventListener('keyup', () => {
+    //   if (timer) {
+    //     clearTimeout(timer)
+    //   }
+    //   timer = setTimeout(() => {
+    //     console.log(input1.value)
+    //     timer = null
+    //   }, 500)
+    // })
+
+
+    // 防抖函数
+    function debounce(fun, delay = 500) {
+      let timer = null
+      return function () {
+        if (timer) {
+          clearTimeout(timer)
+        }
+        timer = setTimeout(() => {
+          fun.apply(this, arguments)
+          timer = null
+        }, delay)
+      }
+    }
+
+    input1.addEventListener('keyup',debounce(function () {
+      console.log(this.value)
+    }, 2000))
+
+  </script>
+</body>
+</html>

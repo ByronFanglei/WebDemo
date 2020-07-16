@@ -13,5 +13,6 @@
             "extension": ".css"
         }
     ],
-  "easysass.targetDir": "CssDemo/css/"
+  "easysass.targetDir": "CssDemo/css/",
+  "liveServer.settings.port": 5501
 }

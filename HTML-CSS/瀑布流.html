@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>瀑布流</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    main {
+      /* width: 95%; */
+      display: grid;
+      /* auto-fill尽可能的填充列，列的最小宽度应为40px，最大1fr，灵活的调整，让每列宽度相同 */
+      grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+      /* grid-auto-rows: 40px; */
+      grid-gap: 5px;
+      padding: 5px;
+      box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15);
+      margin: 0 auto;
+      columns: 12;
+      grid-auto-rows: 1px;
+    }
+    .item{
+      display: inline-block;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <main></main>
+</body>
+<script>
+  // 用于生成随机颜色
+const getRandomColor = () =>
+  `#${Math.random()
+    .toString(16)
+    .slice(2, 8)}`;
+
+// 用于生成随机高度
+const genRandomHeight = () => `${Math.ceil(Math.random() * 100 + 15)}px`;
+
+const mainEl = document.querySelector("main");
+// 生成100个div，方便查看效果
+mainEl.innerHTML = Array.from({ length: 100 }, (x, i) => {
+  return `
+    <div class="item" style="background: ${getRandomColor()}; height: ${genRandomHeight()}">
+      ${i}
+    </div>`;
+}).join("");
+// 获取行高与间距，目前行高是40px，间距是5px
+const rowHeight = parseInt(
+  getComputedStyle(mainEl).getPropertyValue("grid-auto-rows")
+);
+const rowGap = parseInt(
+  getComputedStyle(mainEl).getPropertyValue("grid-row-gap")
+);
+
+const setSpan = el => {
+  // 计算div需要跨越的行数
+  el.style.gridRowEnd = `span ${Math.ceil(
+    (el.clientHeight + rowGap) / (rowHeight + rowGap)
+  )}`;
+};
+
+document.querySelectorAll(".item").forEach(setSpan);
+</script>
+</html>
