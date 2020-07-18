@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hash</title>
+</head>
+<body>
+  <button id="btn1">修改hash</button>
+  <script>
+    // hash 变化，包括：
+    // a. JS 修改 url
+    // b. 手动修改 url 的 hash
+    // c. 浏览器前进、后退
+    window.onhashchange = (event) => {
+      console.log(`old url:${event.oldURL}`)
+      console.log(`new url:${event.newURL}`)
+      console.log(`hash:${location.hash}`)
+      console.log(event)
+    }
+
+    document,addEventListener('DOMContentLoaded', () => {
+      console.log(`hash:${location.hash}`)
+    })
+    btn1.addEventListener('click', () => {
+      location.href = '#/user'
+    })
+  </script>
+</body>
+</html>

@@ -11,41 +11,92 @@
 
 </body>
 <script>
-  var obj = {
+  // var obj = {
+  //   id: 1,
+  //   name: 'byron',
+  //   msg: {
+  //     age: 23
+  //   },
+  //   color: ['red', 'blue', 'pink']
+  // }
+  // // 浅拷贝
+  // var qobj = {}
+  // Object.assign(qobj, obj);
+  // console.log(qobj);
+
+  // // 深拷贝
+  // var newobj = {}
+  // function DeepCopy(obj, newObj) {
+  //   for (let key in obj) {
+  //     var item = obj[key];
+  //     if (item instanceof Array) {
+  //       newObj[key] = [];
+  //       DeepCopy(item, newObj[key])
+  //     } else if (item instanceof Object) {
+  //       newObj[key] = {};
+  //       DeepCopy(item, newObj[key])
+  //     } else {
+  //       newObj[key] = item;
+  //     }
+  //   }
+  //   return newObj;
+  // }
+
+  // DeepCopy(obj, newobj)
+  // obj.msg.age = 30;
+  // console.log(obj);
+  // console.log(newobj);
+
+
+  let obj = {
     id: 1,
     name: 'byron',
     msg: {
       age: 23
     },
-    color: ['red', 'blue', 'pink']
+    color: ['red', 'blue', 'pink'],
+    reg: /^qwe/,
+    time: new Date()
   }
-  // 浅拷贝
-  var qobj = {}
-  Object.assign(qobj, obj);
-  console.log(qobj);
+  let obj2 = {}
+  // 浅拷贝1
+  // for (let key in obj) {
+  //   if (!obj.hasOwnProperty(key)) break;
+  //   obj2[key] = obj[key]
+  // }
+  // 浅拷贝2
+  // Object.assign(obj2, obj)
 
-  // 深拷贝
-  var newobj = {}
-  function DeepCopy(obj, newObj) {
+  // 深拷贝1
+  // obj2 = JSON.parse(JSON.stringify(obj))
+  // 深拷贝2
+  function deepClone (obj) {
+    // 克隆实例
+    let newObj = new obj.constructor;
+    // 判断特殊情况
+    if(obj === null) return null;
+    if (typeof obj !== 'object') return obj;
+    // 考虑正则问题
+    if (obj instanceof RegExp) {
+      return new RegExp(obj)
+    }
+    // 考虑new问题
+    if (obj instanceof Date) {
+      return new Date(obj)
+    }
     for (let key in obj) {
-      var item = obj[key];
-      if (item instanceof Array) {
-        newObj[key] = [];
-        DeepCopy(item, newObj[key])
-      } else if (item instanceof Object) {
-        newObj[key] = {};
-        DeepCopy(item, newObj[key])
-      } else {
-        newObj[key] = item;
+      // 判断是否为私有属性
+      if (obj.hasOwnProperty(key)) {
+        newObj[key] = deepClone(obj[key])
       }
     }
-    return newObj;
+    return newObj
   }
-
-  DeepCopy(obj, newobj)
-  obj.msg.age = 30;
-  console.log(obj);
-  console.log(newobj);
+  obj2 = deepClone(obj)
+  console.log(obj, obj2)
+  console.log(obj === obj2)
+  obj.msg.age = 100
+  console.log(obj, obj2)
 </script>
 
 </html>

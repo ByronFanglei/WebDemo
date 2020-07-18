@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  /**
+ * 设定如下对应关系
+     A: 1,
+     B: 2,
+     C: 3,
+     ...
+     Z: 26,
+     AA: 27,
+     AB: 28,
+     AC: 29,
+     ...
+     AZ: 52,
+     BA: 53,
+     BB: 54,
+     ...
+     ZZ: 702
+     AAA: 703
+     AAB: 704
+     ...
+ * 写一个转换函数，根据上面规则把一个字符串转换为数字
+ * str2Int('ABCDEFG') → 334123303
+ */
+function str2Int (str) {
+  let num = 0
+  for (let i = str.length; i > 0; i--) {
+    // console.log(Math.pow(26, str.length-i), (str[i-1].charCodeAt(0) - 'A'.charCodeAt(0) + 1))
+    num += Math.pow(26, str.length-i) * (str[i-1].charCodeAt(0) - 'A'.charCodeAt(0) + 1)
+  }
+  console.log(num)
+}
+str2Int('ZZ')
+</script>
+</body>
+</html>

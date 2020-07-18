@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>with</title>
+</head>
+<body>
+
+<script>
+  const obj = {
+    a: 100,
+    b: 200
+  }
+  console.log(obj.a)
+  console.log(obj.b)
+  console.log(obj.c)
+
+  // 使用with能改变{}内自由变量的查找方式，
+  // 将{}内的自由变量，当作obj的属性来查找
+  // 打破了作用域规则，易读性差，不建议使用
+  with(obj) {
+    console.log(a)
+    console.log(b)
+    console.log(c)
+  }
+</script>
+</body>
+</html>
