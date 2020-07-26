@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  function flag(arr) {
+    // 判断是否有二维数组
+    let isDeep = arr.some(item => item instanceof Array)
+    if(!isDeep) {
+      return arr
+    }
+    const res = Array.prototype.concat.apply([], arr)
+    return flag(res)
+  }
+
+  let arr = [1, [2, [3, [4, [5]]]]]
+  console.log(flag(arr))
+
+  // var key1 = new Object()
+  // var key2 = new Object()
+  // var obj = new Object()
+  // obj[key1] = 'a'
+  // obj[key2] = 'b'
+  // console.log(obj[key1]) // b
+
+</script>
+</body>
+</html>

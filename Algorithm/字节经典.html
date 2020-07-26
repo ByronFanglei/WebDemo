@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+  // 输入正N树，输出所有和为N的连续正序数
+  // 输入 15
+  // 输出 [[1,2,3,4,5],[4,5,6],[7,8]]
+
+  function createArr(n ,len) {
+    let arr=new Array(len).fill(null),
+        temp=[];
+    arr[0] = n
+    arr = arr.map((item, index) => {
+      if (item === null) {
+        item = temp[index-1]+1
+      }
+      temp.push(item)
+      return item
+    })
+    return arr
+  }
+
+  // createArr(1, 5)
+
+
+  function zijie(n) {
+    let result = []
+    let middle = Math.ceil(n / 2)
+    let sum = 0
+    let sumarr = []
+    for (let i = 1; i <= middle; i++) {
+      for(let j = 2;; j++) {
+        sum = (i+(i+j-1)) * (j/2)
+        if(sum > n) {
+          break
+        } else if (sum === n) {
+          result.push(createArr(i, j))
+          break
+        }
+      }
+    }
+    return result
+  }
+
+
+  console.log(zijie(15))
+</script>  
+</body>
+</html>

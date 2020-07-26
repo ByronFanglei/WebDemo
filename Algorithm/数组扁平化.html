@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  let arr = [
+    [1, 2, 2],
+    [3, 4, 5, 5],
+    [6, 7, 8, 9, [11, 12, [12, 13, [14]]]], 10
+  ];
+
+  // 方法一
+  // let arrflat = arr.flat(Infinity)
+  // console.log(arrflat)
+
+  // 方法二
+  // console.log(arr.toString().split(',').map(item => parseFloat(item)))
+  // console.log(JSON.stringify(arr).replace(/(\[|\])/g,'').split(',').map(item => parseFloat(item)))
+
+  // 方法三
+  while(arr.some(item => Array.isArray(item))) {
+    arr = [].concat(...arr)
+  }
+  console.log(arr)
+</script>
+</body>
+</html>

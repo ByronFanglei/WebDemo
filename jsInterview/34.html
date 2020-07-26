@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+  // function fun(a,b){
+  //   console.log("a="+a)
+  //   console.log("b="+b)
+  //   console.log(this)
+  // }
+  // var obj = {}
+  // fun(1,2);
+  // fun.call(obj,1,2);
+  // fun.apply(obj,[1,2]);
+  // var newfun=fun.bind(obj,1,2);
+  // newfun();
+  // //call其他应用
+  // var arr = [1,2,3,4,5];
+  // console.log(Math.max.apply(Math, arr))
+  // console.log(Math.max(...arr))
+
+
+  function fun(){
+    //返回当前执行的函数
+    console.log(arguments.callee)
+    // arguments不是数组是伪数组
+    console.log(Array.isArray(arguments)) //false
+  }
+fun(1,2)
+</script>  
+</body>
+</html>

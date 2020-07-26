@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  // 使用默认属性方法
+  // var a = {
+  //   i: 0,
+  //   // valueOf(){
+  //   //   return ++this.i
+  //   // }
+  //   toString(){
+  //     return ++this.i
+  //   }
+  // }
+  // if (a == 1 && a == 2 && a == 3) {
+  //   console.log(1)
+  // } else {
+  //   console.log(2)
+  // }
+  
+  // 使用数组方法
+  var a = [1, 2, 3]
+  a.toString = a.shift
+  if (a == 1 && a == 2 && a == 3) {
+    console.log(1)
+  } else {
+    console.log(2)
+  } 
+
+  // 数据劫持办法
+  // var i = 0
+  // Object.defineProperty(window, 'a', {
+  //   get () {
+  //     return ++i
+  //   }
+  // })
+
+  // if (a == 1 && a == 2 && a == 3) {
+  //   console.log(1)
+  // } else {
+  //   console.log(2)
+  // } 
+</script>
+</body>
+</html>

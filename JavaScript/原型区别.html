@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  const obj1 = {
+    a: 10,
+    b: 20,
+    sum () {
+      return this.a + this.b
+    }
+  }
+
+  const obj2 = new Object({
+    a: 10,
+    b: 20,
+    sum () {
+      return this.a + this.b
+    }
+  })
+
+  // const obj2 = new Object(obj1) // obj1 === obj2  true
+  const obj3 = Object.create(null) // {} 没有原型
+  const obj4 = new Object() // {} 有原型
+  const obj5 = Object.create( { // {} 有原型,且内容在原型中
+    a: 10,
+    b: 20,
+    sum () {
+      return this.a + this.b
+    }
+  })
+  const obj6 = Object.create(obj1) // obj6.__proto__ === obj1 true
+
+  const user = {
+    count: 1,
+    getCount: function () {
+      console.log(this.count)
+    }
+  }
+  // console.log(user.getCount())
+  // const func = user.getCount
+  // console.log(func())
+  // console.log(func.apply(user))
+
+  let i
+  for ( i = 1;i <= 3; i++) {
+    setTimeout(function(){
+      console.log(i)
+    },0)
+  }
+
+  let a = 100
+  function test () {
+    alert(a)
+    a = 10
+    alert(a)
+  }
+  test()
+  alert(a)
+</script>
+</body>
+</html>

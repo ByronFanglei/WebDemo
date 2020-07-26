@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+  const o = {
+    m() {console.log(this)},
+    n: () => {console.log(this)}
+  }
+  o.m(); // m
+  o.n(); // window
+  let p = o.m;
+  p(); // window
+  p = o.n;
+  p(); // window
+</script>
+</body>
+</html>

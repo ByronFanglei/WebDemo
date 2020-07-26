@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id='pname'></p>
+  <input type="text" value="" id="inp">
+<!-- <script>
+  let obj = {
+    name: 'ewq '
+  }
+  let newobj = JSON.parse(JSON.stringify(obj))
+  // 双向绑定
+  Object.defineProperty(obj, 'name', {
+    get(){
+      return newobj.name
+    },
+    set(val){
+      // console.log(val)
+      if (val !== newobj.name) {
+        newobj.name = val
+        observer()
+      }
+    }
+  })
+
+  function observer(){
+    pname.innerHTML = obj.name
+    inp.value = obj.name
+  }
+  observer()
+  inp.oninput = function(){
+    obj.name = this.value
+  }
+</script> -->
+<script>
+  let obj = {
+    name: ''
+  }
+  obj = new Proxy(obj, {
+    get(target, prop){
+      return target[prop]
+    },
+    set(target, prop, value){
+      console.log(value)
+      target[prop] = value
+      observer()
+    }
+  })
+  function observer(){
+    pname.innerHTML = obj.name
+    inp.value = obj.name
+  }
+  observer()
+  inp.oninput = function(){
+    obj.name = this.value
+  }
+</script>
+</body>
+</html>

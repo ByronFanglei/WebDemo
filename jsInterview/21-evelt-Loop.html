@@ -19,7 +19,7 @@
     console.log('script start 1'); // 1
     
 		setTimeout(function () {
-			console.log('setTimeout 8'); // 8
+			console.log('setTimeout 9'); // 9
     }, 0)
     
     async1();
@@ -31,7 +31,7 @@
       console.log('promise2 7'); // 7
       reject();
     }).catch(reason => {
-      console.log('promisereject')
+      console.log('promisereject 8') //8
     });
     
 		console.log('script end 5'); // 5

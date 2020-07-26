@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>斐波拉契</title>
+</head>
+<body>
+  
+
+<script>
+  // 获取n位斐波拉契数值
+  // function Fibo(n){
+  //   let arr = n > 0 ? [1] : [];
+  //   for (let i = 1; i < n; i++) {
+  //     arr.push(arr[i-1] + (i >= 2 ? arr[i-2] : 0))
+  //   }
+  //   return arr
+  // }
+  // console.log(Fibo(20))
+
+
+  // 根据n值获取对应的斐波拉契数值
+  function Fsum(n){
+    if (n === 1 || n === 2) {
+      return 1
+    }
+    return Fsum(n-1) + Fsum(n-2)
+  }
+  console.log(Fsum(5))
+</script>  
+</body>
+</html>

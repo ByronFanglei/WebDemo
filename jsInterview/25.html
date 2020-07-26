@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function A(){
+    alert(1)
+  }
+
+  function Func(){
+    A=function(){
+      alert(2)
+    }
+    return this
+  }
+
+  Func.A = A
+  Func.prototype={
+    A:() => {
+      alert(3)
+    }
+  }
+  // console.log(new Func.A())
+  A() // 1
+  Func.A() // 1
+  Func().A() // 2
+  new Func.A() // 1
+  new Func().A() // 3
+  new new Func().A() // Uncaught TypeError: (intermediate value).A is not a constructor
+</script>
+</body>
+</html>

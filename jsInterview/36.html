@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    header{
+      background-color: antiquewhite;
+    }
+    footer{
+      background-color: aqua;
+      clear: both;
+    }
+    .wrapper{
+      width: 100%;
+      float: left;
+    }
+    .center{
+      background-color: yellowgreen;
+      margin: 0 100px;
+    }
+    .left{
+      background-color: yellow;
+      width: 100px;
+      float: left;
+      margin-left: -100%;
+    }
+    .right{
+      background-color: violet;
+      width: 100px;
+      float: left;
+      margin-left: -100px;
+    }
+
+  </style>
+</head>
+<body>
+
+
+<header>header</header>
+<div class="wrapper">
+  <div class="center">center</div>
+</div>
+<div class="left">left</div>
+<div class="right">right</div>
+<footer>footer</footer>
+<script>
+
+  // let promise = new Promise((resolve, reject) => {
+  //   let date = Date.now()
+  //   if (date % 2 === 0) {
+  //     resolve(`结果为偶数：${date}`)
+  //   } else {
+  //     reject(`结果为奇数：${date}`)
+  //   }
+  // })
+  
+  // promise.then(value => {
+  //   console.log(value)
+  //   // console.log(promise)
+  //   // throw new Error('this is error')
+  //   return Promise.reject(1)
+  // }).then(value => {
+  //   console.log('1111111')
+  // }).catch(reason => {
+  //   console.log(reason)
+  //   return new Promise(() => {}) // 终端promise
+  //   // console.log(promise)
+  // }).then(value => {
+  //   console.log(value)
+  // }).catch(reason => {
+  //   console.log(reason)
+  // })
+
+  // function func(){
+  //   return 1;
+  // }
+  // console.log(func());
+  // var func = () => 2;
+
+  // function fun(){
+  //   return 1
+  // }
+  // console.log(fun())
+  // function fun(){
+  //   return 2
+  // }
+
+  // let price = 11.2
+  // console.log(Reflect.apply(price > 100 ? Math.floor : Math.ceil, null, [price]))
+
+  // let o = {
+  //   name: 'xiaoming',
+  //   price: 100
+  // }
+  // const d = new Proxy(o, {
+  //   set(target, key, value){
+  //     if(target[key] !== value) {
+  //       target[key] = value
+  //     }
+  //   },
+  //   get(target, key){
+  //     if (key === 'price') {
+  //       return target[key] + 20
+  //     } else {
+  //       return target[key]
+  //     }
+  //   }
+  // })
+  // d.name = 'byron'
+  // console.log(d.name)
+
+
+  // function *asyan(){
+  //   for(let i = 0; i < 5; i++) {
+  //     yield console.log(Math.floor(Math.random() * 12 + 38))
+  //   }
+  // }
+  // let l = asyan()
+  // l.next(10)
+  // l.next()
+  // l.return(100)
+  // l.next()
+  // l.next()
+  // l.next()
+
+  // function * gen () {
+  // let val
+  //   val = (yield [1, 2, 3]) + 7
+  //   console.log(val) // 27
+  // }
+  // const l = gen()
+  // console.log(l.next(10)) // next传参相当与是对yield进行传参
+  // // return内部也是可以传递参数的
+  // // console.log(l.return(100)) // 提前终止   {value: 100, done: true}
+  // console.log(l.next(20))
+  // console.log(l.next(30))
+  // console.log(l.next(40))
+
+  // function promise(){
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       console.log('异步开始了')
+  //       resolve(Date.now())
+  //     },2000)
+  //   })
+  // }
+
+  // async function apro(){
+  //   console.log('开始async')
+  //   await promise()
+  //   console.log('结束async')
+  // }
+  // apro()
+
+  // const arr = [1, 2, 3, 4, 5]
+  // for(let key in arr) {
+  //   console.log(key)
+  // }
+
+  var arr = [11,24,53,25,77,90,199];
+  var result = arr.filter(function(value,index,obj){
+    return value>=20;
+  })
+  console.log(result)
+</script>
+</body>
+</html>

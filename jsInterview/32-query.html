@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  function query(name){
+    const search = location.search
+    const p = new URLSearchParams(search)
+    return p.get(name)
+  }
+  // http://127.0.0.1:5501/jsInterview/32-query.html?b=%27123%27
+  console.log(query('b')) // '123'
+</script>
+</body>
+</html>

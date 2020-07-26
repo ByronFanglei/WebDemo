@@ -1,10 +1,11 @@
+// 触发更新视图
 const updataView = () => {
   console.log('视图更新')
 }
-const arrpro = Array.prototype
-// vue双向绑定
+// const arrpro = Array.prototype
+// 重新定义属性,监听起来
 function defineReactive (target, key, value) {
-  observer(target)
+  observer(value)
   // 核心api
   Object.defineProperty(target, key, {
     set (newValue) {
@@ -19,9 +20,9 @@ function defineReactive (target, key, value) {
     }
   })
 }
-
+// 监听对象属性
 function observer(target) {
-  if (typeof target !== 'Object' || typeof target === null) {
+  if (typeof target !== 'object' || typeof target === null) {
     return target
   }
   for (let key in target) {
@@ -35,9 +36,10 @@ const data = {
   info: {
       address: '北京' // 需要深度监听
   },
-  nums: [10, 20, 30]
+  // nums: [10, 20, 30]
 }
 observer(data)
 
 // data.name = 'byron'
-data.info.address = '上海'
+// data.info.address = '上海'
+data.age = { num: 21 }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  // [7,1,5,3,6,4]
+  // 5
+  let arr = [7,6,4,3,1]
+  var stock = function(arr){
+    // 如果数组是倒叙。则直接返回0
+    let soarr = arr.sort((a,b) => b-a )
+    if (soarr.join('') === arr.join('')) return 0 
+
+    let min,max
+    // 查找最小值以及下标
+    min = Math.min(...arr)
+    let minIndex = arr.findIndex(item => {
+      return item === min
+    })
+    // 截取最小值以后的数组
+    let arrs = arr.slice(minIndex)
+    // 获取截取后的最大值
+    max = Math.max(...arrs)
+    return max - min
+  }
+  console.log(stock(arr))
+</script>
+</body>
+</html>

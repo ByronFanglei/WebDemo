@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    header{
+      background-color: antiquewhite;
+      border: 5px solid #ff6700;
+    }
+    footer{
+      background-color: aqua;
+    }
+    .clearbox{
+      padding: 0 100px;
+    }
+    .center{
+      width: 100%;
+      height: 200px;
+      background-color: aquamarine;
+      float: left;
+    }
+    .left{
+      width: 100px;
+      background-color: blueviolet;
+      margin-left: -100%;
+      position: relative;
+      left: -100px;
+      float: left;
+    }
+    .right{
+      width: 100px;
+      background-color: yellowgreen;
+      margin-left: -100px;
+      position: relative;
+      right: -100px;
+      float: left;
+    }
+    .clearbox::after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <header name='header'>头部</header>
+  <div class="clearbox">
+    <div class="center" id="center">center</div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+  </div>
+  <footer>底部</footer>
+
+  <a href="http://www.fbyron.cn" id="aaa">fbyron</a>
+  <input type="text" id="inp">
+<script>
+  // 时间
+  // let date = new Date()
+  // console.log(`当前时间戳：${date.getTime()}`)
+  // console.log(`当前年份：${date.getFullYear()}`)
+  // console.log(`当前月份：${date.getMonth() + 1}`)
+  // console.log(`当前日期：${date.getDate()}`)
+  // console.log(`当前周几：${date.getDay()}`)
+  // console.log(`当前小时：${date.getHours()}`)
+  // console.log(`当前分钟：${date.getMinutes()}`)
+  // console.log(`当前秒钟：${date.getSeconds()}`)
+  // console.log(`当前毫秒：${date.getMilliseconds()}`)
+
+  // Math类
+  // console.log(Math.abs(-2))
+  // console.log(Math.ceil(2.2))
+  // console.log(Math.floor(2.8))
+  // console.log(Math.round(2.2))
+  // console.log(Math.random())
+  // console.log(Math.pow(2,2))
+  // console.log(2 ** 2)
+  
+  // for(let i = 0; i < 10; i++) {
+  //   console.log(parseInt(Math.random() * 10))
+  // }
+
+  // 字符串
+  // let str = 'egglvguaSSs'
+  // let str1 = 'tuzinanayanling'
+  // let str2 = '  qwe  '
+
+  // console.log(str.charAt(7))
+  // console.log(str.charCodeAt(7))
+  // console.log(String.fromCharCode(65))
+  // console.log(str.concat(str1))
+  // console.log(str.indexOf('u'))
+  // console.log(str.lastIndexOf('e'))
+  // console.log(str.slice(0, -1))
+  // console.log(str.substring(1, 2))
+  // console.log(str.substr(3, 2))
+  // console.log(str.split(''))
+  // console.log(str.toLocaleLowerCase())
+  // console.log(str.toLocaleUpperCase())
+  // console.log(str.search('g'))
+  // console.log(Array.from(str.match(/s+/i)))
+  // console.log(str.replace(/g/g, '0'))
+  // console.log(str2.trim())
+  // console.log(str2.replace(/^\s+/, '').replace(/\s+$/, ''))
+  // console.log(str.includes('S'))
+  // console.log(str.startsWith('egg'))
+  // console.log(str.endsWith('SS'))
+  // console.log(str.repeat(10))
+  // for(let i = 0; i < 1000;) {
+  //   let num = parseInt(Math.random() * 50)
+  //   i+=num
+  //   let ii = i.toString().padStart(4, 0)
+  //   let iii = i.toString().padEnd(5, '*')
+  //   console.log(ii, iii)
+  // }
+
+  // DOM
+  // console.log(Array.from(document.getElementsByTagName('div')))
+  // console.log(document.getElementsByClassName('left'))
+  // console.log(document.getElementsByName('header'))
+  // console.log(Array.from(document.getElementsByClassName('clearbox'))[0].children)
+  // console.log(Array.from(document.getElementsByClassName('clearbox'))[0].parentNode)
+  // console.log(document.body)
+  // console.log(document.documentElement)
+  // console.log(Array.from(document.all))
+  // console.log(document.querySelector('.left').getAttribute('class'))
+  // console.log(document.querySelectorAll('div'))
+  // document.body.appendChild(document.createDocumentFragment())
+  // console.log(document.createDocumentFragment())
+  // // document.querySelector('.left').insertAdjacentHTML('beforebegin','<p>123</p>')
+  // document.querySelector('.left').textContent = '<p>123</p>'
+  // console.log(document.querySelector('.left').textContent)
+
+  // style
+  // let dom = document.body
+  // let header = document.getElementsByName('header')[0]
+  // let left = document.querySelector('.left')
+  // console.log(header.clientWidth, header.clientHeight)
+  // console.log(header.offsetWidth, header.offsetHeight)
+  // console.log(left.offsetParent)
+  // console.log(header.offsetLeft, header.offsetTop)
+  // console.log(header.scrollWidth ,header.scrollHeight)
+  // header.setAttribute('data-inner', 'inner')
+  // console.log(header.getAttribute('data-inner'))
+  
+  // event
+  // let a = document.getElementById('aaa')
+  // a.onclick = function(event) {
+  //   event.preventDefault(); // 阻止默认事件
+  // }
+  // a.addEventListener('click', () => {
+  //   a.preventDefault()
+  // })
+  // header.onclick = function(event) {
+  //   event.stopPropagation(); // 阻止冒泡
+  //   console.log(event.clientX, event.clientY)
+  //   console.log(event.screenX, event.screenY)
+  //   console.log(event.pageX, event.pageY)
+  // }
+  // document.body.addEventListener('click', () => {
+  //   console.log('我感受到了')
+  // })
+  // window.onscroll = function(){
+  //   console.log('1')
+  // }
+  // window.onmousewheel = function(){
+  //   console.log('2')
+  // }
+
+  // 鼠标事件
+  // let body = document.body
+  // let hea = document.getElementsByName('header')[0]
+  // // 右击事件
+  // body.oncontextmenu = function() {
+  //   console.log('1')
+  // }
+  // // 鼠标按键松开
+  // hea.onmouseup = function(){
+  //   console.log('鼠标按键松开')
+  // }
+  // // 双击
+  // hea.ondblclick = function(){
+  //   console.log('双击')
+  // }
+  // hea.onmousedown = function(){
+  //   console.log('鼠标按钮被按下')
+  // }
+  // hea.onmouseenter = function(){
+  //   console.log('鼠标到header了')
+  // }
+  // hea.onmouseleave = function(){
+  //   console.log('鼠标出去header了')
+  // }
+  // // 节流展示鼠标在元素上移动
+  // function thr(fun) {
+  //   let timer = null
+  //   return function() {
+  //     if (timer) return
+  //     timer = setTimeout(() => {
+  //       fun.apply(this, arguments)
+  //       timer = null
+  //     }, 1000)
+  //   }
+  // }
+  // hea.addEventListener('mousemove', thr(function(e){
+  //   console.log(e.offsetX, e.offsetY)
+  // }))
+
+  // body.onmouseover = function(){
+  //   console.log('111111111')
+  // }
+  // body.onmouseout = function(){
+  //   console.log('2222222')
+  // }
+
+  // 键盘事件
+  // function deb(fun) {
+  //   let timer = null
+  //   return function() {
+  //     if(timer) {
+  //       clearTimeout(timer)
+  //     }
+  //     timer = setTimeout(() => {
+  //       fun.apply(this, arguments)
+  //       timer = null
+  //     }, 1000)
+  //   }
+  // }
+  // inp.addEventListener('keyup', deb(function(){
+  //   console.log(this.value)
+  // }))
+
+  // inp.onkeydown = function(){
+  //   console.log(this.value)
+  // }
+  // inp.onkeypress = function(){
+  //   console.log('1')
+  // }
+  // inp.oninput = function() {
+  //   console.log('1')
+  // }
+
+  // window
+  // window.onload = function(){
+  //   console.log('1')
+  // }
+  // window.onbeforeunload = function(){
+  //   console.log('111111111111111')
+  // }
+  // window.onresize = function(){
+  //   console.log(document.body.clientHeight, document.body.clientWidth)
+  // }
+  // console.log(window.location)
+  // console.log(window.history)
+  // console.log(window.screen)
+  // var obj = {
+  //   id: 1,
+  //   name: 'obay',
+  //   msg: {
+  //     age: 24
+  //   },
+  //   color: ['red','pink','skyblue'],
+  //   date: Date.now(),
+  //   reg: /^a+tt$/g,
+  //   fun: function(){conosle.log('fun')}
+  // }
+  // function deepclone(oldobj, newobj){
+  //   if (oldobj == null) {
+  //     return null
+  //   }
+  //   for (var key in oldobj) {
+  //     var item = oldobj[key]
+  //     if (item instanceof Array) {
+  //       newobj[key] = []
+  //       deepclone(item, newobj[key])
+  //     } else if (item instanceof Object) {
+  //       newobj[key] = {}
+  //       deepclone(item, newobj[key])
+  //     } else {
+  //       newobj[key] = item
+  //     }
+  //   }
+  //   return newobj
+  // }
+  // let obj2 = {}
+  // console.log(deepclone(obj, obj2))
+
+  // function deepclone(oldobj){
+  //   let obj = new oldobj.constructor
+  //   if (oldobj == null) return null
+  //   if (typeof oldobj !== 'object') return oldobj
+  //   if (oldobj instanceof RegExp) {
+  //     return new RegExp(oldobj)
+  //   }
+  //   if (oldobj instanceof Date) {
+  //     return new Date(oldobj)
+  //   }
+  //   if (oldobj instanceof Function) {
+  //     return new Function(oldobj)
+  //   }
+  //   for (let key in oldobj) {
+  //     if (oldobj.hasOwnProperty(key)) {
+  //       obj[key] = deepclone(oldobj[key])
+  //     }
+  //   }
+  //   return obj
+  // }
+  // let obj2 = deepclone(obj)
+  // console.log()
+
+  // let obj2 = JSON.parse(JSON.stringify(obj))
+  // console.log(obj2)
+  
+  // for (let i = 0; i < 20; i++) {
+  //   console.log(Math.floor(Math.random() * 25 + 7))
+  // }
+
+  // var sum = 123
+  // if(true) {
+  //   console.log(sum)
+  //   let sum = 321
+  // }
+
+  // var a = 123
+  // aa = 321
+
+  // let arr = [1, 2, 3, 4]
+  // let obj = {
+  //   id: 1,
+  //   name: 'obay',
+  //   msg: {
+  //     age: 24
+  //   },
+  //   color: ['red','pink','skyblue'],
+  //   date: Date.now(),
+  //   reg: /^a+tt$/g,
+  //   fun: function(){conosle.log('fun')}
+  // }
+  // let [a, b, c] = arr
+  // let {id, name, msg} = obj
+  // console.log(a, b, c)
+  // console.log(id, name, msg)
+
+  // const sum = (...arg) => {
+  //   console.log(arg instanceof Array)
+  //   let a = arg.reduce(function(total, cur){
+  //     return total + cur
+  //   })
+  //   return a
+  // }
+  // console.log(sum(1,2,3))
+  
+  // let divs = document.querySelectorAll('div')
+  // console.log(divs)
+  // console.log(...divs)
+
+  // let set = new Set()
+  // console.log(Object.prototype.toString.apply(set)) // [object Set]
+  // set.add('aa').add('bb').add('aa')
+  // set.delete('aa')
+  // console.log(set.has('bb'))
+  // console.log(set.size)
+  // console.log(set.keys())
+  // console.log(set.values())
+  // console.log(set.entries())
+  // set.clear()
+  // set.forEach(item => {
+  //   console.log(item)
+  // });
+  // console.log(set)
+
+  // const map = new Map([[1,2],[3,4]])
+  // console.log(Object.prototype.toString.apply(map)) // [object Map]
+  // map.set(1,2).set('q','w')
+  // console.log(map.size)
+  // console.log(map.has('q'))
+  // console.log(map.get(1))
+  // map.forEach((value, key) => {
+  //   console.log(value, key)
+  // })
+  // console.log(map.keys())
+  // console.log(map.values())
+  // console.log(map.entries())
+  // console.log(map)
+
+  // let arr = ['a', 'b', 'c', 'd', 'e', 'f']
+  // let [a, , b, ...arg] = arr
+  // console.log(a,b,arg)
+
+  // let arr = []
+  // let [firstName = 'hello', curName, ...last] = arr
+  // console.log(firstName, curName, last)
+
+  let options = {
+    size: {
+      width: {
+        size: {
+          width: 200
+        }
+      },
+      height: 200
+    },
+    items: ['Cake', 'Donut'],
+    extra: true
+  }
+  const {size:{width:{size:{width}},height},items:[a,b],extra} = options
+  console.log(width, a,b, extra)
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>闭包</title>
+  <style>
+    .div1{
+      width: 0;
+      height: 0;
+      border-bottom: 250px solid #ff6700;
+    }
+  </style>
+</head>
+<body>
+  <div class="div1"></div>
+</body>
+<script>
+  // function books(){
+  //   var book = '书包中书本'
+  // }
+  // console.log(book)
+
+  // function a(){
+  //   b()
+  //   function b(){
+  //     c()
+  //     function c(){
+  //       console.log('我在c')
+  //     }
+  //   }
+  // }
+  // a()
+
+  for(var i = 0;i < 5; i++) {
+    // (function(x){
+      setTimeout(function(){
+      console.log(i++)
+    }, 4000)
+    // })(i)
+    
+  }
+  console.log(i)
+</script>
+</html>
