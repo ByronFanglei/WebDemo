@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      background-color: #f4c042;
+    }
+    .box{
+      width: 300px;
+      height: 300px;
+      margin: 300px auto;
+      background: url('../Images/1.png') no-repeat left bottom;
+      position: relative;
+    }
+    .sun{
+      width: 136px;
+      height: 136px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 136px;
+      z-index: -1;
+      margin: 0 auto;
+      animation: move 3s infinite linear;
+    }
+    @keyframes move {
+      0%{
+        transform: translateY(0);
+      }
+      10%{
+        transform: translateY(0);
+      }
+      40%{
+        transform: translateY(-40px);
+      }
+      60%{
+        transform: translateY(-40px);
+      }
+      100%{
+        transform: translateY(0);
+      }
+    }
+    .sun .eye{
+      position: absolute;
+      left: 40px;
+      top: 60px;
+      animation: eye 3s infinite linear;
+    }
+    @keyframes eye {
+      0%{
+        transform: translateX(0);
+      }
+      10%{
+        transform: translateX(0);
+      }
+      40%{
+        transform: translateX(0) scale(1,1);
+      }
+      50%{
+        transform: translateX(0) scale(1,0.2);
+      }
+      60%{
+        transform: translateX(0) scale(1);
+      }
+      100%{
+        transform: translateX(30px);
+      }
+    }
+    .sun .sunbody{
+      animation: scroll 3s infinite linear;
+    }
+    @keyframes scroll {
+      0%{
+        transform: rotate(0);
+      }
+      10%{
+        transform: rotate(0);
+      }
+      50%{
+        transform: rotate(90deg);
+      }
+      60%{
+        transform: rotate(90deg);
+      }
+      100%{
+        transform: rotate(90deg);
+      }
+    }
+    .box p{
+      text-align: center;
+      font-family: '微软雅黑';
+      font-size: 20px;
+      padding-top: 230px;
+      animation: oppo 3s infinite linear;
+    }
+    @keyframes oppo {
+      0%{
+        opacity: 1;
+      }
+      40%{
+        opacity: 1;
+      }
+      60%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="sun">
+      <img src="../Images/sun.png" class="sunbody">
+      <img src="../Images/eye.png" class="eye">
+    </div>
+    <p>Loading...</p>
+  </div>
+<script>
+  setTimeout(() => {
+    window.location.href = 'http://www.fbyron.cn'
+  }, 3000)
+</script>
+</body>
+</html>
