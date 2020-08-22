@@ -37,7 +37,7 @@ const dfs = (root) => {
   root.children.forEach(dfs)
 }
 dfs(tree)
-
+console.log('--------------------')
 // 广度优先遍历
 const bfs = (root) => {
   const q = [root]
