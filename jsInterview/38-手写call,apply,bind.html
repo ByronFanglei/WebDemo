@@ -9,22 +9,60 @@
   
 
 <script>
-  function person() {
-    console.log(this.name)
+  function person(a, b, c) {
+    return {
+      name: this.name,
+      a,
+      b,
+      c
+    }
   }
   let egg = {
     name: '鸡蛋'
   }
 
   // call
+  // Function.prototype.newCall = function(obj) {
+  //   var obj = obj || window
+  //   obj.p = this
+  //   var newArguments = []
+  //   for (var i = 1; i < arguments.length; i++) {
+  //     newArguments.push(`arguments[${i}]`)
+  //   }
+  //   var result = eval(`obj.p(${newArguments})`)
+  //   delete obj.p
+  //   return result
+  // }
+  // let res = person.newCall(egg, '1', '2', '3')
+  // console.log(res)
 
-  Function.prototype.newCall = function(obj) {
-    obj.p = this
-    obj.p()
-    delete obj.p
+  // apply
+  // Function.prototype.newApply = function (obj, arr) {
+  //   var obj = obj || window
+  //   var result
+  //   obj.p = this
+  //   if (!arr) {
+  //     result = obj.p()
+  //   } else {
+  //     var newArguments = []
+  //     for (let i = 0; i < arr.length; i++) {
+  //       newArguments.push(`arr[${i}]`)
+  //     }
+  //     result = eval(`obj.p(${newArguments})`)
+  //   }
+  //   delete obj.p
+  //   return result
+  // }
+  // let res = person.newApply(egg, ['1', '2', '3'])
+  // console.log(res)
+
+  // bind
+  Function.prototype.newBind = function (obj) {
+    var that = this
+    return function () {
+      
+    }
   }
-
-  person.newCall(egg)
 </script>
 </body>
 </html>

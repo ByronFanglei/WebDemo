@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+  // 第一题
+  // var a = {n: 1}
+  // var b = a // 引用
+  // a.x = a = {n: 2}
+
+  // console.log(a.x) // undefined
+  // console.log(b.x) // {n: 2}
+
+  // 第二题
+  // 有以下3个判断数组的方法，请分别介绍它们之间的区别和优势
+  // let arr = [1, 2, 3]
+  // // Object.prototype.toString.call()
+  // console.log(Object.prototype.toString.call(arr)) // [object Array]
+
+  // // instanceof 既可以判断父类也可以判断子类
+  // console.log(arr instanceof Array) // trur
+
+  // // Array.isArray(arr) // 可以用于prototype
+  // console.log(Array.isArray(arr)) // trur
+
+  // 第三题
+  // 使用sort()对数组[3,15,8,29,102,22]进行排序，输出结果
+  // console.log([3,15,8,29,102,22].sort((a, b) => a - b))
+  
+  // 第四题
+  // 实现一个sleep(1000)函数
+  // promise
+  function sleep (time) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('ok')
+      }, time)
+    })
+  }
+  (async () => {
+    console.log('111')
+    await sleep(2000)
+    console.log('222')
+  })()
+</script>  
+</body>
+</html>
