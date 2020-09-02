@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简易jQuery</title>
+</head>
+<body>
+  <p>1</p>
+  <p>2</p>
+  <p>3</p>
+<script>
+
+  class Jq {
+    constructor(select) {
+      const dom = document.querySelectorAll(select)
+      const length = dom.length
+      for (let i = 0; i < length; i++) {
+        this[i] = dom[i]
+      }
+      this.length = length
+      this.select = select
+    }
+    get(index) {
+      return this[index]
+    }
+    each(fun) {
+      for (let i = 0; i < this.length; i++) {
+        const elem = this[i]
+        fun(elem)
+      } 
+    }
+    on(type, fun) {
+      return this.each(item => {
+        item.addEventListener(type, fun, false)
+      })
+    }
+  }
+
+  // 插件机制
+  Jq.prototype.digclcik = (item) => {
+    console.log(`您传入的值为${item}`)
+  }
+
+  // “造轮子”
+  class Myjq extends Jq {
+    constructor(select) {
+      super(select)
+    }
+    // 扩展自己的方法
+    addClass(date) {
+
+    }
+    style() {
+      
+    }
+  }
+
+</script>
+</body>
+</html>
