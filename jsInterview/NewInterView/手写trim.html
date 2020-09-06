@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>trim</title>
+</head>
+<body>
+  <input type="text" name="" id="inp">
+  <button id="btn">alert</button>
+<script>
+
+  // String.prototype.myTrim = function () {
+  //   return this.replace(/^\s+/, '').replace(/\s+$/, '')
+  // }
+  // btn.onclick = function () {
+  //   console.log(inp.value.myTrim())
+  // }
+
+  // 查看url内容
+  // function query(name) {
+  //   const search = window.location.search
+  //   const p = new URLSearchParams(search)
+  //   console.log(search)
+  //   return p.get(name)
+  // }
+  // console.log(query('a'))
+
+  // 将search转换为js对象
+  function query() {
+    let res = {}
+    let url = window.location.search.substr(1)
+    let urla = url.split('&')
+    urla.forEach(item => {
+      let urlaa = item.split('=')
+      const key = urlaa[0]
+      const value = urlaa[1]
+      res[key] = value
+    })
+    return res
+  }
+
+  console.log(query())
+</script>  
+</body>
+</html>

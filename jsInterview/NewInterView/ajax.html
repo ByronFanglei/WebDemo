@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ajax</title>
+</head>
+<body>
+
+
+<script>
+
+  // let xhr = new XMLHttpRequest()
+  // xhr.open('GET', 'http://localhost:5501/jsInterview/NewInterView/data/data.json', true)
+  // xhr.onreadystatechange = () => {
+  //   if (xhr.readyState === 4) {
+  //     if (xhr.status === 200) {
+  //       console.log(JSON.parse(xhr.responseText))
+  //     }
+  //   }
+  // }
+  // xhr.send(null)
+
+
+  // promise版本
+  // function ajax (url) {
+  //   let p = new Promise((resolve, reject) => {
+  //     let xhr = new XMLHttpRequest()
+  //     xhr.open('GET', url, true)
+  //     xhr.onreadystatechange = () => {
+  //       if (xhr.readyState === 4) {
+  //         if (xhr.status === 200) {
+  //           const d = JSON.parse(xhr.responseText)
+            
+  //           resolve(d)
+  //         } else if (xhr.status === 404) {
+  //           reject(new Error('this is error'))
+  //         }
+  //       }
+  //     }
+  //     xhr.send(null)
+  //   })
+  //   return p
+  // }
+
+  // ajax('http://localhost:5501/jsInterview/NewInterView/data/data.json').then(value => {
+  //   console.log(value)
+  //   return 123
+  // }).then(value => {
+  //   console.log(value)
+  // }).catch(reason => {
+  //   console.log(reason)
+  // })
+
+
+  // fetch
+  fetch('http://localhost:5501/jsInterview/NewInterView/data/data.json').then(value => {
+    console.log(value)
+    return value.json()
+  }).then(value => {
+    console.log(value)
+  })
+  
+  window.addEventListener('load', () => {
+    console.log('loader')
+  })
+  window.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded')
+  })
+</script>
+</body>
+</html>

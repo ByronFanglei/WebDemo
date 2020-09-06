@@ -29,3 +29,14 @@ function fun1(a, b, c) {
 const fn2 = fun1.mybind({x:1}, 10, 20, 30)
 const res = fn2()
 console.log(res) // { x: 1} 10 20 30 this fun1
+
+
+// console.log('1')
+// setTimeout(() => {
+//   console.log('2')
+// },1000)
+// console.log('3')
+// setTimeout(() => {
+//   console.log('4')
+// })
+// console.log('5')

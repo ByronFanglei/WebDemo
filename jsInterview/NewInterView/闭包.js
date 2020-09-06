@@ -19,3 +19,4 @@ function fun() {
   console.log(a) // 100
 }
 print(fun)
+// 闭包

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" name="" id="inp1">
+
+
+<script>
+
+  
+
+  function debound(fun, delay = 500) {
+    let timer = null
+
+    return function () {
+      if (timer) {
+        clearInterval(timer)
+      }
+      timer = setTimeout(() => {
+        fun.apply(this, arguments)
+        timer = null
+      }, delay)
+    }
+  }
+
+  inp1.addEventListener('keyup', debound(function (e) {
+    console.log(e.target)
+    console.log(this.value)
+  }))
+
+</script>
+</body>
+</html>

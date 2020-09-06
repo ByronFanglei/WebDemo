@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #div1{
+      width: 200px;
+      height: 200px;
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+<body>
+  
+  <div id="div1" draggable="true">123</div>
+
+<script>
+
+
+  function throttle (fun, detal = 100) {
+    let timer = null
+
+    return function() {
+      if (timer) {
+        return
+      }
+      timer = setTimeout(() => {
+        fun.apply(this, arguments)
+        timer = null
+      }, detal)
+    }
+  }
+
+  div1.addEventListener('drag', throttle(function(e) {
+    console.log(e.offsetX, e.offsetY)
+  }, 500))
+</script>  
+</body>
+</html>

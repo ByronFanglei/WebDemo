@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #div1{
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+    }
+    #div2{
+      width: 300px;
+      height: 300px;
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+<body>
+  <div id='div1'>
+
+  </div>
+  <div id='div2'>
+    <button>123</button>
+  </div>
+
+<script>
+  function bindEvent(elem, type, select, fun) {
+    if (fun == null) {
+      fun = select
+      select = null
+    }
+
+    elem.addEventListener(type, event => {
+      const target = event.target
+      if (select) {
+        if (target.matches(select)) {
+          fun.call(elem, event)
+        }
+      } else { 
+        fun.call(elem, event)
+      }
+    })
+  }
+  
+
+  bindEvent(document.body, 'click', 'button', event => {
+    event.stopPropagation()
+    console.log('button')
+    console.log(event.target)
+  })
+
+  bindEvent(div1, 'click', event => {
+    event.stopPropagation()
+    console.log('document.div1')
+    console.log(event.target)
+  })
+
+  
+
+</script>  
+</body>
+</html>
