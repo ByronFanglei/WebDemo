@@ -6,8 +6,18 @@
   <title>Document</title>
 </head>
 <body>
+  <!-- old -->
   <div id='div1' class="container">
     <p>vdom</p>
+    <ul style="font-size: 20px;">
+      <li>a</li>
+    </ul>
+  </div>
+
+
+  <!-- new -->
+  <div id='div1' class="container">
+    <span>vdom</span>
     <ul style="font-size: 20px;">
       <li>a</li>
     </ul>
@@ -15,25 +25,46 @@
 </body>
 <script>
   // js模拟DOM结构
-  // {
-  //   tar: 'div',
-  //   props： {
-  //     id: 'div1',
-  //     className: 'container'
-  //   },
-  //   children: [{
-  //     tar: 'p',
-  //     children: 'vdom'
-  //   },{
-  //     tar: 'ul',
-  //     props: {
-  //       style: 'font-size: 20px'
-  //     },
-  //     children: [{
-  //       tar: 'li',
-  //       children: 'a'
-  //     }]
-  //   }]
-  // }
+  {
+    tag: 'div',
+    props： {
+      id: 'div1',
+      className: 'container'
+    },
+    children: [{
+      tag: 'p',
+      children: 'vdom'
+    },{
+      tag: 'ul',
+      props: {
+        style: 'font-size: 20px'
+      },
+      children: [{
+        tag: 'li',
+        children: 'a'
+      }]
+    }]
+  }
+
+  {
+    tag: 'div',
+    props： {
+      id: 'div1',
+      className: 'container'
+    },
+    children: [{
+      tag: 'span',
+      children: 'vdom'
+    },{
+      tag: 'ul',
+      props: {
+        style: 'font-size: 20px'
+      },
+      children: [{
+        tag: 'li',
+        children: 'a'
+      }]
+    }]
+  }
 </script>
 </html>

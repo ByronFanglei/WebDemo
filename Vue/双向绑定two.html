@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  // 准备数据
+  const obj = {
+    name: 'byron',
+    age: 23,
+    info: {
+      city: '北京' // 需要深度监听
+    },
+    nums: [12, 22, 23, 45, 79]
+  }
+
+  // 获取数组原型
+  const arrproto = Array.prototype
+  // 创建新对象，原型指向arrpeoto，在扩展其他方法不会影响原型
+  const arrProto = Object.create(arrproto);
+  ['push', 'pop', 'shift', 'unshift', 'splice'].forEach(item => {
+    arrProto[item] = function() {
+      console.log('更新视图')
+      arrproto[item].call(this, ...arguments)
+    }
+  })
+
+  // 入口方法
+  function observe(obj) {
+    if (typeof obj !== 'object' || obj == null) {
+      return obj
+    }
+    if (Array.isArray(obj)) {
+      obj.__proto__ = arrProto
+    }
+    for(let key in obj) {
+      defineReactive(obj, key, obj[key])
+    }
+  }
+  // 监听方法
+  function defineReactive(target, key, value) {
+    observe(value)
+    // console.log(target, key, value)
+    Object.defineProperty(target, key, {
+      get() {
+        return value
+      },
+      set(newValue) {
+        if (newValue !== value) {
+          observe(newValue)
+          value = newValue
+          console.log('更新视图')
+        }
+      }
+
+    })
+  }
+
+
+
+  observe(obj)
+
+  // obj.name = { a: '333' }
+  // obj.x = '000'
+  // delete obj.name
+  // console.log(obj)
+  obj.nums.push(4)
+
+
+</script>  
+</body>
+</html>

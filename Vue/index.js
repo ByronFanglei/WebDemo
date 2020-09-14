@@ -1,11 +1,15 @@
 const compiler = require('vue-template-compiler')
 
 // 插值
-// const template = `<p>{{message}}</p>`
+// const template = `<h1><a href="#" name="byron">{{123}}</a></h1>`
+const template = `<p>name:{{name}}</p>`
 // with(this){return _c('p',[_v(_s(message))])}
 // with(this) {
+//   // 返回vnode 类似于snabbdom的h函数
 //   return createElement('p',[createTextVNode(toString(message))])
 // }
+with(this){return createElement('p',[_v("name:"+_s(name))])}
+
 
 // 表达式
 // const template = `<p>{{flag ? message : 'no message found'}}</p>`
@@ -83,30 +87,30 @@ const compiler = require('vue-template-compiler')
 
 
 // v-model
-const template = `<input type="text" v-model="name">`
+// const template = `<input type="text" v-model="name">`
 // with(this){return _c('input',{directives:[{name:"model",rawName:"v-model",value:(name),expression:"name"}],attrs:{"type":"text"},domProps:{"value":(name)},on:{"input":function($event){if($event.target.composing)return;name=$event.target.value}}})}
-with(this) {
-  return createElement('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (name),
-      expression: "name"
-    }],
-    attrs: {
-      "type": "text"
-    },
-    domProps: {
-      "value": (name)
-    },
-    on: {
-      "input": function ($event) {
-        if ($event.target.composing) return;
-        name = $event.target.value
-      }
-    }
-  })
-}
+// with(this) {
+//   return createElement('input', {
+//     directives: [{
+//       name: "model",
+//       rawName: "v-model",
+//       value: (name),
+//       expression: "name"
+//     }],
+//     attrs: {
+//       "type": "text"
+//     },
+//     domProps: {
+//       "value": (name)
+//     },
+//     on: {
+//       "input": function ($event) {
+//         if ($event.target.composing) return;
+//         name = $event.target.value
+//       }
+//     }
+//   })
+// }
 
 // 编译
 const res = compiler.compile(template)

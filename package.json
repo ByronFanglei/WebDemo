@@ -17,10 +17,16 @@
   },
   "homepage": "https://github.com/ByronFanglei/WebDemo#readme",
   "dependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
     "art-template": "^4.13.2",
     "express": "^4.17.1",
     "express-art-template": "^1.0.1",
     "mongoose": "^5.9.10",
+    "rollup": "^2.26.11",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-serve": "^1.0.4",
     "vue-template-compiler": "^2.6.11"
   }
 }

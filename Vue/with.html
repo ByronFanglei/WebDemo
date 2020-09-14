@@ -6,12 +6,20 @@
   <title>with</title>
 </head>
 <body>
-
+  <input type="text" name="" id="inp">
+  <h1>
+    <a href="#" name="byron">123</a>
+  </h1>
 <script>
+  inp.onclick = function (e) {
+    console.log(e)
+  }
+
   const obj = {
     a: 100,
     b: 200
   }
+
   console.log(obj.a)
   console.log(obj.b)
   console.log(obj.c)
@@ -19,11 +27,13 @@
   // 使用with能改变{}内自由变量的查找方式，
   // 将{}内的自由变量，当作obj的属性来查找
   // 打破了作用域规则，易读性差，不建议使用
-  with(obj) {
-    console.log(a)
-    console.log(b)
-    console.log(c)
-  }
+  
+  // with(obj) {
+  //   console.log(a)
+  //   console.log(b)
+  //   console.log(c)
+  // }
+
 </script>
 </body>
 </html>
