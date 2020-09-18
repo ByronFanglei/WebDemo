@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>手写ajax</title>
+</head>
+
+<body>
+
+
+  <script>
+    let data = '../mock/detail.json'
+    // ajax get请求
+    // const xhr = new XMLHttpRequest()
+    // xhr.open('GET', data, true)
+    // xhr.onreadystatechange = () => {
+    //   if (xhr.readyState === 4) {
+    //     if (xhr.status === 200) {
+    //       console.log(JSON.parse(xhr.responseText))
+    //     }
+    //   }
+    // }
+    // xhr.send(null)
+
+    // ajax post请求 需要服务端协助
+    // const xhr = XMLHttpRequest()
+    // xhr.open('POST', data, true)
+    // xhr.onreadystatechange = () => {
+    //   if (xhr.readyState === 4) {
+    //     if (xhr.status === 200) {
+    //       console.log(JSON.parse(xhr.responseText))
+    //     }
+    //   }
+    // }
+    // // 设置请求格式
+    // xhr.setRequestHeader("content-type","application/x-www-form-urlencoded")
+    // xhr.send("username=yyy&age=19&password=123abc")
+
+    // promise版本
+    function P(data) {
+      return new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest()
+        xhr.open('GET', data, true)
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              let d = JSON.parse(xhr.responseText)
+              resolve(d)
+            } else if (xhr.status === 404) {
+              reject(new Error('找不到内容'))
+            }
+          }
+        }
+        // 别忘记send
+        xhr.send()
+      })
+    }
+
+    P(data).then((value) => {
+      console.log(value)
+      return 1
+    }).then(value => {
+      console.log(value)
+    }).catch(reason => {
+      console.log(reason)
+    })
+  </script>
+
+</body>
+
+</html>

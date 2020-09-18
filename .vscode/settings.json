@@ -14,5 +14,6 @@
         }
     ],
   "easysass.targetDir": "CssDemo/css/",
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "vue3snippets.enable-compile-vue-file-on-did-save-code": false
 }

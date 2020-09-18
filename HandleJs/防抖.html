@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>节流</title>
+</head>
+<body>
+  <input type="text" name="" id="inp">
+  
+
+<script>
+
+  function debound(fun, time = 500, ) {
+    let timer = null
+    return function() {
+      if (timer) {
+        clearInterval(timer)
+      }
+      timer = setTimeout(() => {
+        fun.apply(this, arguments)
+        timer = null
+      }, time)
+    }
+  }
+
+  inp.addEventListener('keyup', debound(function() {
+    console.log(inp.value)
+  }, 100))
+
+</script>
+</body>
+</html>

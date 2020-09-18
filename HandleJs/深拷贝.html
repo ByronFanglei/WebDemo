@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>深拷贝</title>
+</head>
+
+<body>
+
+
+  <script>
+    let obj = {
+      name: 'byron',
+      age: 23,
+      info: {
+        city: '北京'
+      },
+      nums: [1997, 07, 30, 2020, 9, 16, 'watch']
+    }
+
+    // 第一种方法
+    // let obj2 = JSON.parse(JSON.stringify(obj))
+
+    // 方法二
+    // function DeepClone(oldobj, obj) {
+    //   if (oldobj == null || typeof oldobj !== 'object') return oldobj
+
+    //   for (let i in oldobj) {
+    //     if (oldobj.hasOwnProperty(i)) {
+    //       if (oldobj[i] instanceof Array) {
+    //         obj[i] = []
+    //         DeepClone(oldobj[i], obj[i])
+    //       } else if (oldobj[i] instanceof Object) {
+    //         obj[i] = {}
+    //         DeepClone(oldobj[i], obj[i])
+    //       } else {
+    //         obj[i] = oldobj[i]
+    //       }
+    //     }
+    //   }
+    //   return obj
+    // }
+
+    // let obj3 = {}
+    // let obj2 = DeepClone(obj, obj3)
+    // console.log(obj2)
+
+    // 方法三
+    function DeepClone(obj) {
+      let newObj = new obj.constructor
+
+      if (obj == null || typeof obj !== 'object') return obj
+
+      if (obj instanceof Date) {
+        return newObj = new Date(obj)
+      }
+      if (obj instanceof RegExp) {
+        return newObj = new RegExp(obj)
+      }
+      if (obj instanceof Function) {
+        return newObj = new Function(obj)
+      }
+
+      for (let i in obj) {
+        if (obj.hasOwnProperty(i)) {
+          newObj[i] = DeepClone(obj[i])
+        }
+      }
+
+      return newObj
+
+
+    }
+
+
+    let obj2 = DeepClone(obj)
+
+    console.log(obj, obj2)
+    obj.name = 123
+    obj.nums.push('ipad air')
+    console.log(obj, obj2)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>call</title>
+</head>
+<body>
+  
+
+<script>
+
+
+function person (a, b, c) {
+  console.log(this.name)
+  console.log(a, b, c)
+}
+const egg = {
+  name: 'byron'
+}
+
+// person.call(egg)
+
+Function.prototype.myCall = function(obj) {
+  // 第一步：判断当前obj是否为空，若为空设置为window
+  var obj = obj || window;
+  // 第二步：对形参添加一个函数指向this也就是调用该方法的函数
+  obj.p = this
+  // 第三步：设置一个存放除this以外参数的数组
+  let newArr = []
+  // 第四步：循环arguments，填充newArr
+  for (let i = 1; i < arguments.length; i++) {
+    // 这里要存储的类型为arguments[1],arguments[2]...
+    newArr.push(`arguments[${i}]`)
+  }
+  // 第五步：使用eval函数解析字符串并执行
+  let request = eval(`obj.p(${newArr})`)
+  // 第六步：移除绑定
+  delete obj.p
+  // 返回内容
+  return request
+}
+
+person.myCall(null, 'egg', 'tianji', 'gua')
+
+</script>  
+</body>
+</html>

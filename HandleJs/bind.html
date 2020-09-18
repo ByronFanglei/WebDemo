@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bind</title>
+</head>
+<body>
+  
+
+<script>
+
+function person (a, b, c, d) {
+  console.log(this.name)
+  console.log(a, b, c, d)
+}
+const egg = {
+  name: 'byron'
+}
+person.prototype.apple = 'apple'
+
+// let b = person.bind(egg, 'egg', 'tianji', 'gua')
+// let bb = new b('123')
+
+
+
+
+Function.prototype.myApply = function(obj, arr) {
+  var obj = obj || window
+  obj.p = this
+  let result
+  if (!arr) {
+    result = obj.p()
+  } else {
+    let newArr = []
+    for (let i = 0; i < arr.length; i++) {
+      newArr.push(`arr[${i}]`)
+    }
+    result = eval(`obj.p(${newArr})`)
+  }
+  return result
+  delete obj.p
+}
+
+
+
+Function.prototype.myBind = function(obj) {
+  // 判断是调取是否为函数
+  if (typeof this !== 'function') {
+    throw new TypeError('不是function')
+  }
+  // 保存当前this
+  let that = this
+  // 获取除arguments[0]的其他参数转换为数组（第一个括号内）
+  let arr1 = Array.prototype.slice.call(arguments, 1)
+  // 设置一个空函数，用来进行桥接prototype
+  let o = function() {}
+  // 定义返回方法
+  newf =  function () {
+    // 获取arguments参数并转换为数组(第二个括号内)
+    let arr2 = Array.prototype.slice.call(arguments)
+    // 将第一个数组与第二个数组合并
+    let arr = [...arr1, ...arr2]
+    // 如果new后 this指向空
+    if (this instanceof newf) {
+      that.myApply(this, arr)
+    } else {
+      // 反之则指向当前对象
+      that.myApply(obj, arr)
+    }
+  }
+  // newf.prototype = that.prototype
+  // 设置空函数的原型为调用函数的prototype
+  o.prototype = that.prototype
+  // 设置返回函数的原型为空函数的原型，这样做的目的是提高性能
+  newf.prototype = new o
+  // 返回函数
+  return newf
+}
+
+// let p = person.myBind(egg, 'egg', 'tianji', 'gua')
+// let pp = new p('123')
+// console.log(pp.apple)
+
+person.myBind(egg, 'egg', 'tianji', 'gua')('hello')
+
+
+</script>  
+</body>
+</html>
