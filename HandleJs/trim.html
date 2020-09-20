@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>去重</title>
+</head>
+<body>
+  
+  <input type="text" name="" id="inp">
+  <button id="btn">click</button>
+<script>
+
+  btn.addEventListener('click', event => {
+    console.log(myTrim(inp.value))
+  })
+  
+  function myTrim(value) {
+    return value.replace(/^\s+/, '').replace(/\s+$/, '')
+  }
+
+
+</script>  
+</body>
+</html>

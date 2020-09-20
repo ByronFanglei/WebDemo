@@ -32,10 +32,11 @@
 
   </div>
   <div id='div2'>
-    <button>123</button>
+    <button id="btn">123</button>
   </div>
 
 <script>
+  
   function bindEvent(elem, type, select, fun) {
     if (fun == null) {
       fun = select
@@ -46,28 +47,18 @@
       const target = event.target
       if (select) {
         if (target.matches(select)) {
-          fun.call(elem, event)
+          fun.call(target, elem)
         }
-      } else { 
-        fun.call(elem, event)
+      } else {
+        fun.call(target, elem)
       }
     })
   }
-  
 
-  bindEvent(document.body, 'click', 'button', event => {
-    event.stopPropagation()
-    console.log('button')
-    console.log(event.target)
+  bindEvent(div2, 'click', 'button', event => {
+    console.log(event)
   })
 
-  bindEvent(div1, 'click', event => {
-    event.stopPropagation()
-    console.log('document.div1')
-    console.log(event.target)
-  })
-
-  
 
 </script>  
 </body>
