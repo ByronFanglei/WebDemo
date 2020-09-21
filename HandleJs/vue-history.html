@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue-history</title>
+</head>
+<body>
+  <button id="btn1">修改url</button>
+
+<script>
+
+  // document.addEventListener('DOMContentLoaded', () => {
+  //   console.log('DOMContentLoaded')
+  // })
+  // window.onload = function () {
+  //   console.log('onload')
+  // }
+
+  document.addEventListener('DOMContentLoaded', event => {
+    console.log(location.pathname)
+  })
+
+  btn1.addEventListener('click', event => {
+    const state = { name: 'byron' }
+    history.pushState(state, '', 'byron')
+  })
+  // 监听浏览器前进与后退
+  window.onpopstate = (event) => {
+    console.log(event)
+    console.log(event.state)
+    console.log(location.pathname)
+  }
+
+
+</script>  
+</body>
+</html>

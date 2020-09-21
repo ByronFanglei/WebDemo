@@ -6,11 +6,11 @@ function instanceof_b(l, type) {
   if(no_object.includes(res)) {
     return false
   }
-  let ll = l.__proto__
+  let ll = l !== null ? l.__proto__ : null
   let tt = type.prototype
 
   while(true) {
-    if (ll == null) {
+    if (ll === null) {
       return false
     }
     if (ll === tt) {
@@ -22,4 +22,4 @@ function instanceof_b(l, type) {
 
 
 
-console.log(instanceof_b(arr, Array))
+console.log(instanceof_b(null, Array))

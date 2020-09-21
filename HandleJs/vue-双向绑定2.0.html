@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>双向绑定-2.0</title>
+</head>
+
+<body>
+
+
+<script>
+  const obj = {
+    name: 'byron',
+    age: 23,
+    info: {
+      city: '北京' // 需要深度监听
+    },
+    nums: [12, 22, 23, 45, 79]
+  }
+
+  const arrprototype = Array.prototype
+  const arrproto = Object.create(arrprototype);
+
+  ['push', 'pop', 'shift', 'unshift', 'splice'].forEach(item => {
+    arrproto[item] = function() {
+      console.log('数组数据更新')
+      arrprototype[item].call(this, ...arguments)
+    }
+  })
+
+  function observe(obj) {
+    if (typeof obj !== 'object' || obj == null) {
+      return obj
+    }
+
+    if (Array.isArray(obj)) {
+      obj.__proto__ = arrproto
+    }
+
+    for (let key in obj) {
+      defineReactive(obj, key, obj[key])
+    }
+  }
+
+  function defineReactive(target, key, value) {
+    observe(value)
+    // console.log(target, key, value)
+    Object.defineProperty(target, key, {
+      get() {
+        return value
+      },
+      set(newValue) {
+        if (newValue !== value) {
+          observe(newValue)
+          value = newValue
+          console.log('数据更新')
+        }
+      }
+    })
+  }
+
+
+  observe(obj)
+
+  // obj.name = 'haha'
+  // obj.info.city = '杭州'
+  obj.nums.push(4)
+  // obj.name = { test: 'byrons' }
+  // console.log(obj.name.test)
+
+
+  // console.log(obj)
+
+
+</script>
+</body>
+
+</html>

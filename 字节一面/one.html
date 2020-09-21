@@ -12,7 +12,7 @@
     m() {console.log(this)},
     n: () => {console.log(this)}
   }
-  o.m(); // m
+  o.m(); // o
   o.n(); // window
   let p = o.m;
   p(); // window
@@ -52,7 +52,7 @@ p();
 p = o.n;
 p();
 
-// 第三题：
+// 第三题：使用es5写出下列class，实例挂原型，静态挂自己
 class Person {
         constructor(name){
             this.name = name;
@@ -66,6 +66,17 @@ class Person {
            return "[object Person]";
         }
    }
+
+var Person = function(name) {
+  this.name = name
+}
+Person.prototype.toString = function() {
+  return "[object Person]";
+}
+Person.self = function() {
+  return this
+}
+
 
 // 第四题：
 async function async1() {

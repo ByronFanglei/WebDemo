@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>双向绑定-3.0</title>
+</head>
+<body>
+  
+
+<script>
+  const obj = {
+    name: 'byron',
+    age: 23,
+    info: {
+      city: '北京' // 需要深度监听
+    },
+    nums: [12, 22, 23, 45, 79]
+  }
+
+
+  function reactive(obj) {
+    if (typeof obj !== 'object' || obj == null) {
+      return obj
+    }
+
+    const pobj = {
+      get(target, key, receive) {
+        // 获取当前对象key
+        const keys = Reflect.ownKeys(target)
+        // 判断指定key是否为当前obj的key
+        if (keys.includes(key)) {
+          console.log('get', target[key])
+        }
+        const result = Reflect.get(target, key, receive)
+        return reactive(result)
+      },
+      set(target, key, newvalue, receive) {
+        // 判断是否为重复数据
+        if (target[key] === newvalue) {
+          console.log('重复数据')
+          return true
+        }
+
+        const keys = Reflect.ownKeys(target)
+        if (keys.includes(key)) {
+          // 已有key
+          console.log('已有key', key)
+        } else {
+          // 新增key
+          console.log('新增key', key)
+        }
+
+        const result = Reflect.set(target, key, newvalue, receive)
+        console.log('set', key, newvalue)
+        return result
+
+      },
+      deleteProperty(target, key) {
+        const result = Reflect.deleteProperty(target, key)
+        return result
+      }
+    }
+
+
+    let proObj = new Proxy(obj, pobj)
+    return proObj
+  }
+  
+  let data = reactive(obj)
+  
+
+  // data.info.city
+  // console.log(delete data.name)
+  // data.name = '123'
+  // data.qq = 'qqqq'
+
+
+  // console.log(data)
+
+
+</script>
+</body>
+</html>

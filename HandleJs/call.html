@@ -19,8 +19,6 @@ const egg = {
   name: 'byron'
 }
 
-// person.call(egg)
-
 Function.prototype.myCall = function(obj) {
   // 第一步：判断当前obj是否为空，若为空设置为window
   var obj = obj || window;
@@ -41,7 +39,7 @@ Function.prototype.myCall = function(obj) {
   return request
 }
 
-person.myCall(null, 'egg', 'tianji', 'gua')
+person.myCall(egg, 'egg', 'tianji', 'gua')
 
 </script>  
 </body>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue-hash</title>
+</head>
+<body>
+  
+  <button id="btn1">修改hash</button>
+<script>
+  window.onhashchange = (event) => {
+    console.log(`old URL:${event.oldURL}`)
+    console.log(`new URL:${event.newURL}`)
+    console.log(location.hash)
+  }
+
+  document.addEventListener('DOMContentLoaded', event => {
+    console.log(`hash:${location.hash}`)
+  })
+
+  btn1.addEventListener('click', event => {
+    location.href = `#/${Math.random().toString(36).slice(-8)}`
+  })
+
+
+</script>  
+</body>
+</html>
