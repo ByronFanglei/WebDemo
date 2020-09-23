@@ -4,7 +4,8 @@
  * 2、如果目标值大于或者小于中间元素，则在大于或小于中间元素的那一半数组中搜索
  * 时间复杂度:O(logn)
  */
-let arr = [100, 2, 45, 85, 23, 54, 0, 99, 1]
+// let arr = [100, 2, 45, 85, 23, 54, 0, 99, 1]
+let arr = [0,  1,  2,  23, 45, 54, 85, 99, 100]
 
 function binarySearch(arr, item) {
   let low = 0
@@ -23,4 +24,4 @@ function binarySearch(arr, item) {
   return -1
 }
 
-console.log(binarySearch(arr, 233))
+console.log(binarySearch(arr, 0))

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>new</title>
+</head>
+<body>
+  
+
+<script>
+
+  function Dog(name) {
+    this.name = name,
+    this.say = function () {
+      console.log(this.name)
+    }
+  }
+
+  // let d = new Dog('小黑')
+
+  // d.say()
+
+  // console.log(Dog.prototype)
+
+  function _new(fun, ...arg) {
+    const obj = new Object()
+    obj.__proto__ = fun.prototype
+    let res = fun.call(obj, ...arg)
+    
+    return res instanceof Object ? res : obj
+  }
+
+  let dd = _new(Dog, 'new小黑')
+  dd.say()
+
+</script>  
+</body>
+</html>
