@@ -9,15 +9,31 @@
   
 
 <script>
+  // 第一道
+  // function fn() {
+  //   this.user = 'hello world';
+  //   return 1
+  //   // return {}
+  // }
+  // var a = new fn()
+  // console.log(a.user)
+  // console.log(a)
 
-  function fn() {
-    this.user = 'hello world';
-    return 1
-    // return {}
+  // 第二道
+  var o = {
+    a: 10,
+    b: {
+      a: 12,
+      fn: function () {
+        console.log(this.a)
+        console.log(this)
+      }
+    }
   }
-  var a = new fn()
-  console.log(a.user)
-  console.log(a)
+
+  var j = o.b.fn
+  j()
+  o.b.fn()
 
 
 </script>  
