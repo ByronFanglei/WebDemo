@@ -20,20 +20,39 @@
   // console.log(a)
 
   // 第二道
-  var o = {
-    a: 10,
-    b: {
-      a: 12,
-      fn: function () {
-        console.log(this.a)
-        console.log(this)
-      }
+  // var o = {
+  //   a: 10,
+  //   b: {
+  //     a: 12,
+  //     fn: function () {
+  //       console.log(this.a)
+  //       console.log(this)
+  //     }
+  //   }
+  // }
+
+  // var j = o.b.fn
+  // j()
+  // o.b.fn()
+
+  // 第三道：实现add(2,3,4) = 9, add()(2)(3)(4) = 9
+  function add(...n) {
+    let nn = n.reduce((a, b) => a + b)
+    var temp = function(...m) {
+      let mm = m.reduce((a, b) => a + b)
+      return add(mm + nn)
     }
+    temp.toString = function() {
+      return nn
+    }
+    return temp
   }
 
-  var j = o.b.fn
-  j()
-  o.b.fn()
+  // console.log(add(3)(4)(5))
+  console.log(add(2,3,4)(1,2,3)(1,2))
+
+
+
 
 
 </script>  

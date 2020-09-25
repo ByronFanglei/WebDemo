@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .wrap{
+      display: flex;
+    }
+    .left{
+      width: 200px;
+      height: 100px;
+      background-color: aqua;
+    }
+    .right{
+      width: 200px;
+      height: 100px;
+      background-color: bisque;
+    }
+    .center{
+      flex: 1;
+      height: 100px;
+      background-color: coral;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='wrap'>
+    <div class='left'>left</div>
+    <div class='center'>center</div>
+    <div class='right'>right</div>
+  </div>
+</body>
+
+</html>

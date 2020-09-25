@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>定位方法</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .left,.right{
+      position: absolute;
+      width: 200px;
+      height: 100px;
+      background-color: aqua;
+      top: 0;
+    }
+    .left{
+      left: 0px;
+    }
+    .right{
+      right: 0px;
+    }
+    .center{
+      margin: 0 200px;
+      overflow: hidden;
+      background-color: beige;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="left"></div>
+  <div class="right"></div>
+  <div class="center"></div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sleep</title>
+</head>
+<body>
+ 
+  
+<script>
+  // 测试函数
+  function fn() {
+      console.log('测试延迟')
+    }
+  // 第一种：回调函数
+  function sleep(callback, time) {
+    if (typeof callback === 'function') {
+      setTimeout(callback, time)
+    }
+  }
+  sleep(fn, 3000)
+
+
+  // 第二种：promise
+  function sleep(timer) {
+    return new Promise(resolve => setTimeout(resolve, timer))
+  }
+  sleep(3000).then(() => {
+    fn()
+  })
+
+  // 第三种：Generator
+  function * sleep(timer) {
+    yield new Promise(resolve => setTimeout(resolve, timer))
+  }
+  sleep(3000).next().value.then(value => {
+    fn()
+  })
+
+</script>  
+</body>
+</html>

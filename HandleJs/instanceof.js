@@ -1,25 +1,27 @@
-let arr = [1, 2, 3]
-
-function instanceof_b(l, type) {
-  const no_object = ['number', 'string', 'boolean', 'symbol', 'bigint', 'undefined']
-  const res = typeof l
-  if(no_object.includes(res)) {
+function instance_of(L, R) {
+  // 如果为基本数据类型直接返回false
+  const arr = ['string', 'number', 'boolean', 'symbol', 'bigint', 'undefined']
+  if (arr.includes(typeof L)) {
     return false
   }
-  let ll = l !== null ? l.__proto__ : null
-  let tt = type.prototype
+  // 获取隐式原型
+  L = L.__proto__
+  // 获取显示原型
+  const RR = R.prototype
 
   while(true) {
-    if (ll === null) {
+    // 当隐式原型为null 查找结束且没有找到
+    if (L === null) {
       return false
     }
-    if (ll === tt) {
+    // 当显示原型全等于隐式原型则返回true
+    if (L === RR) {
       return true
     }
-    ll = ll.__proto__
+    // 没有找到继续向上一层原型查找
+    L = L.__proto__
   }
+
 }
 
-
-
-console.log(instanceof_b(null, Array))
+console.log(instance_of([], Object))
