@@ -36,25 +36,93 @@
   // o.b.fn()
 
   // 第三道：实现add(2,3,4) = 9, add()(2)(3)(4) = 9
-  function add(...n) {
-    let nn = n.reduce((a, b) => a + b)
-    var temp = function(...m) {
-      let mm = m.reduce((a, b) => a + b)
-      return add(mm + nn)
-    }
-    temp.toString = function() {
-      return nn
-    }
-    return temp
-  }
+  // function add(...n) {
+  //   let nn = n.reduce((a, b) => a + b)
+  //   var temp = function(...m) {
+  //     let mm = m.reduce((a, b) => a + b)
+  //     return add(mm + nn)
+  //   }
+  //   temp.toString = function() {
+  //     return nn
+  //   }
+  //   return temp
+  // }
 
   // console.log(add(3)(4)(5))
-  console.log(add(2,3,4)(1,2,3)(1,2))
+  // console.log(add(2,3,4)(1,2,3)(1,2))
 
+  // 第四道：数组合并并展开
+  // 输入：[['a','b'],['n','m'],['0','1']] 
+  // 输出：['an0','an1','am0','am1','bn0','bn1','bm0','bm1']
+  let arr = [['a','b','c'],['n','m'],['0','1','2','3']]
+  function arrflat (arr) {
+    let len = arr.length
+    let result = Array(len)
+    let flag = []
 
+    function deep(res, len, index, result) {
+      if (index === len) {
+        console.log(result)
+        flag.push(result.join(''))
+        return
+      }
+      for(let i = 0; i < arr[index].length; i++) {
+        result[index] = res[index][i]
+        deep(res, len, index+1, result)
+      }
+    }
 
+    deep(arr, len, 0, result)
+    console.log(flag)
+    
+  }
+  arrflat(arr)
 
+  // 第五题：用数组模拟一个栈，每次获取栈内最小元素的时间复杂度位o(1)
+  // let arr = []
+  // function arrshift(arr, num) {
+  //   if (!arr) {
+  //     if (num > arr[0]) {
+  //       [num, arr[0]] = [arr[0], num]
+  //       arr.unshift(num)
+  //     }
+  //   } else {
+  //     arr.unshift(num)
+  //   }
+  //   return arr[0]
+  // }
+
+  // console.log(arrshift(arr, 2))
+  // console.log(arrshift(arr, 1))
+
+  // 第六题：二位数组斜切45度遍历
+  // let arr = [
+  //   1, 1, 2, 3, 1, 2, 3]
+  //   4, 4, 5, 6, 4, 5, 6]
+  //   7, 7, 8, 9, 7, 8, 9]
+  //   7, 7, 8, 9, 7, 8, 9]
+  //   7, 7, 8, 9, 7, 8, 9]
+  // ]
+  // let arr = [
+  //   [1, 2, 3],
+  //   [4, 5, 6],
+  //   [7, 8, 9],
+  //   [7, 8, 9],
+  //   [7, 8, 9],
+  // ]
+  // function hypotenuse(arr) {
+  //   for (let i = j = arr.length - 1,index=0; i > (-arr.length+arr[0].length-1); i--,index=0) {
+  //     console.log(i, j)
+  //     if(arr[0].length>= j){
+  //       while(1){
+
+  //       }
+  //     }
+  //   }
+    
+  // }
+  // console.log(hypotenuse(arr))
 
 </script>  
 </body>
-</html>
+</html> 
