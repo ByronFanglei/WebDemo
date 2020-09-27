@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>promise-all</title>
+</head>
+<body>
+  
+
+<script>
+
+  // Promise.all([
+  //   Promise.resolve('abc'),
+  //   Promise.resolve('abcqq'),
+  //   // Promise.reject('123'),
+  // ]).then(value => {
+  //   console.log(value)
+  // }).catch(reason => {
+  //   console.log(reason)
+  // })
+
+
+  function all(arr) {
+    return new Promise((resolve, reject) => {
+      // 保存成功的值
+      let result = []
+      // 用于计数，当计数等于result长度证明所有都为成功
+      let count = 0
+      // 传入不一定是一个数组，但是一个可遍历的数组，所以需要转换
+      let arg = Array.from(arr)
+      for (let key of arg) {
+        // 每个key值都进行Promise.resolve一下
+        Promise.resolve(key)
+        .then(value => {
+          result.push(value)
+          count++
+          if (count === arg.length) {
+            resolve(result)
+          }
+        })
+        .catch(reason => {
+          reject(reason)
+        })
+      }
+      
+    })
+  }
+
+  all([
+    Promise.resolve('abc'),
+    Promise.resolve('abcqq'),
+    'abc',
+    // Promise.reject('123'),
+  ]).then(value => {
+    console.log(value)
+  }).catch(reason => {
+    console.log(reason)
+  })
+
+
+
+</script>  
+</body>
+</html>

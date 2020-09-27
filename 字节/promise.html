@@ -18,65 +18,65 @@
 
 
   // 手写Promise.allSettled
-  // function allSet(arr) {
-  //   return new Promise(function(resolve, reject) {
-  //     if (Object.prototype.toString.call(arr) !== '[object Array]') {
-  //       return reject(new TypeError('not is arr'))
-  //     }
+  function allSet(arr) {
+    return new Promise(function(resolve, reject) {
+      if (Object.prototype.toString.call(arr) !== '[object Array]') {
+        return reject(new TypeError('not is arr'))
+      }
 
 
-  //     let args = Array.prototype.slice.call(arr)
-  //     if (args === 0) return resolve([])
-  //     let arrCount = args.length
+      let args = Array.prototype.slice.call(arr)
+      if (args === 0) return resolve([])
+      let arrCount = args.length
 
-  //     for(let i = 0; i < arrCount; i++) {
-  //       resolvePromise(i, args[i])
-  //     }
+      for(let i = 0; i < arrCount; i++) {
+        resolvePromise(i, args[i])
+      }
 
-  //     function resolvePromise(index, value) {
-  //       if (typeof value === 'object') {
-  //         let then = value.then
-  //         if (typeof then === 'function') {
-  //           then.call(
-  //             value,
-  //             function(val) {
-  //               args[index] = {
-  //                 status: 'fulfilled',
-  //                 value: val
-  //               }
-  //               if(--arrCount === 0) {
-  //                 resolve(args)
-  //               }
-  //             },
-  //             function(reason) {
-  //               args[index] = {
-  //                 status: 'rejected',
-  //                 value: reason
-  //               }
-  //               if(--arrCount === 0) {
-  //                 resolve(args)
-  //               }
-  //             }
-  //           )
-  //         }
-  //       }
-  //     }
-  //   })
-  // }
+      function resolvePromise(index, value) {
+        if (typeof value === 'object') {
+          let then = value.then
+          if (typeof then === 'function') {
+            then.call(
+              value,
+              function(val) {
+                args[index] = {
+                  status: 'fulfilled',
+                  value: val
+                }
+                if(--arrCount === 0) {
+                  resolve(args)
+                }
+              },
+              function(reason) {
+                args[index] = {
+                  status: 'rejected',
+                  value: reason
+                }
+                if(--arrCount === 0) {
+                  resolve(args)
+                }
+              }
+            )
+          }
+        }
+      }
+    })
+  }
 
-  // let result = allSet([Promise.resolve('a'), Promise.reject('b')])
-  // console.log(result)
+  let result = allSet([Promise.resolve('a'), Promise.reject('b')])
+  console.log(result)
 
   
-  Promise.all([
-    Promise.resolve('1'),
-    Promise.resolve('2'),
-    3
-  ]).then(value => {
-    console.log(value)
-  }).catch(reason => {
-    console.log(reason)
-  })
+  // Promise.all([
+  //   Promise.resolve('1'),
+  //   Promise.resolve('2'),
+  //   3
+  // ]).then(value => {
+  //   console.log(value)
+  // }).catch(reason => {
+  //   console.log(reason)
+  // })
 
 </script>  
 </body>

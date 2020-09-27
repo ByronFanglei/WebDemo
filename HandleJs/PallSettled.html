@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>promise-allSettled</title>
+</head>
+<body>
+  
+
+<script>
+  Promise.allSettled([
+    Promise.resolve('byte'),
+    Promise.reject('abc'),
+  ]).then(value => {
+    console.log(value)
+  })
+
+
+  function allSettled(arr) {
+    return new Promise((resolve, reject) => {
+      // 判断参数是否为数组
+      if (Object.prototype.toString.call(arr) !== "[object Array]") {
+        return Promise.reject(
+          new TypeError('not is Array')
+        )
+      }
+      // 对数组做一份拷贝
+      let arg = Array.prototype.slice.call(arr)
+      // 当传入数组长度为0时，直接退出
+      if (arg.length === 0) return resolve([])
+      // 获取数组的长度
+      let len = arg.length
+      // 循环数组的每一项
+      for (let i = 0; i < len; i++) {
+        promisereject(i, arr[i])
+      }
+
+      function promisereject(index, value) {
+        // 判断当前项是否为object
+        if (typeof value === 'object') {
+          const then = value.then
+          // 判断当前then后是否为function
+          if (typeof then === 'function') {
+            // 对then执行call方法，执行this为value，指向成功与失败方法
+            then.call(
+              value,
+              function resolve(val) {
+                arg[index] = {
+                  status: "fulfilled", value: val
+                }
+                // 判断当长度等于0时，直接退出
+                if (--len === 0) return resolve(arg)
+              },
+              function reject(reason) {
+                arg[index] = {
+                  status: "rejected", reason: reason
+                }
+                // 判断当长度等于0时，直接退出
+                if (--len === 0) return resolve(arg)
+              }
+            )
+          }
+        }
+      }
+    })
+    
+    
+
+
+  }
+
+  allSettled([
+    Promise.resolve('byte'),
+    Promise.reject('abc'),
+  ]).then(value => {
+    console.log(value)
+  })
+
+
+
+
+
+
+</script>  
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>并发执行promiseall</title>
+</head>
+<body>
+  
+
+<script>
+
+  class Scheduler {
+    constructor() {
+      this.list = [],
+      // 最大并发量
+      this.maxNumber = 3,
+      // 正在工作量
+      this.workingNum = 0
+    }
+    add(promiseCreator) {
+      this.list.push(promiseCreator)
+    }
+    start() {
+      for (let i = 0; i < this.maxNumber; i++) {
+        this.doNext()
+      }
+    }
+    doNext() {
+      if(this.list.length && this.workingNum < this.maxNumber) {
+        this.workingNum++
+        // console.log(this.list.shift())
+        this.list.shift()().then(value => {
+          this.workingNum--
+          this.doNext()
+        })
+      }
+    }
+
+  }
+
+  const scheduler = new Scheduler()
+  const timeout = time => new Promise(resolve => setTimeout(resolve, time))
+  const addTask = (time, order) => {
+    scheduler.add(() => timeout(time).then(() => {
+      console.log(order)
+    }))
+  }
+
+  addTask(1000, 1)
+  addTask(500, 2)
+  addTask(300, 3)
+  addTask(400, 4)
+
+  scheduler.start()
+
+  
+  
+  // let p1 = new Promise(resolve => {
+  //   setTimeout(() => {
+  //     console.log(1)
+  //   }, 1000)
+  // })
+  // let p2 = new Promise(resolve => {
+  //   setTimeout(() => {
+  //     console.log(2)
+  //   }, 500)
+  // })
+  // let p3 = new Promise(resolve => {
+  //   setTimeout(() => {
+  //     console.log(3)
+  //   }, 300)
+  // })
+  // let p4 = new Promise(resolve => {
+  //   setTimeout(() => {
+  //     console.log(4)
+  //   }, 400)
+  // })
+
+  // Promise.all([p1, p2, p3, p4]).then(value => {
+  //   console.log(value)
+  // })
+
+</script>  
+</body>
+</html>
