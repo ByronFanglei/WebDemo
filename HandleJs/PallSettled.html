@@ -9,9 +9,11 @@
   
 
 <script>
+  let p3 = new Promise(resolve => setTimeout(resolve, 300, 3))
   Promise.allSettled([
     Promise.resolve('byte'),
     Promise.reject('abc'),
+    p3
   ]).then(value => {
     console.log(value)
   })
@@ -45,14 +47,14 @@
             // 对then执行call方法，执行this为value，指向成功与失败方法
             then.call(
               value,
-              function resolve(val) {
+              function (val) {
                 arg[index] = {
                   status: "fulfilled", value: val
                 }
                 // 判断当长度等于0时，直接退出
                 if (--len === 0) return resolve(arg)
               },
-              function reject(reason) {
+              function (reason) {
                 arg[index] = {
                   status: "rejected", reason: reason
                 }
@@ -64,15 +66,13 @@
         }
       }
     })
-    
-    
-
-
   }
 
+  
   allSettled([
     Promise.resolve('byte'),
     Promise.reject('abc'),
+    p3
   ]).then(value => {
     console.log(value)
   })
