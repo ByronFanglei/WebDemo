@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    function add(...arg) {
+
+      let fsum = arg.reduce((prev, cur) => prev + cur)
+      var result = function(...argg) {
+        let lsum = argg.reduce((prev, cur) => prev + cur)
+        return add(fsum + lsum)
+      }
+      result.toString = function() {
+        return fsum
+      }
+      return result
+    }
+
+    console.log(add(1,2)(3,4)(1,2))
+
+
+  </script>
+</body>
+</html>

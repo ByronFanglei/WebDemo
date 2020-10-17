@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 正则表达式练习
+    // let str = '当前日期2020-11-15/2020/10/15'
+    // let s='([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8])))'
+    // let reg = new RegExp('2')
+    // console.log(str.match(/([2-9][0-9]{3})-(0[1-9]|1[0-2])-(\d{2})\/\d+\/\d+\/\d+/))
+
+    // console.log(reg.test(str))
+
+    let str = 'history him high hi'
+    let reg = /\bhi\b/
+    // console.log(str.match(/\s/))
+
+    let sumreg = /\(0\d{2}\)[- ]?\d{8}|\(?0\d{2}\)?[- ]?\d{8}/
+    let num = '(022)-11111111'
+    // console.log(num.match(sumreg))
+
+    let strs = '当前日期2020-11-15/2020/10/15'
+    let strreg = /\d{4}-\d{2}-\d{2}|\d{4}\/\d{2}\/\d{2}/
+    console.log(strs.match(strreg))
+
+  </script>
+</body>
+
+</html>

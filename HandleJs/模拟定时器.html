@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>模拟定时器</title>
+</head>
+<body>
+  <script>
+
+    function f() {
+      console.log('fn')
+    }
+
+    function setTime(fn, detal) {
+      let fun = function() {
+        fn()
+        setTimeout(fun, detal)
+      }
+      setTimeout(fun, detal)
+    }
+
+    setTime(f, 1000)
+
+
+
+  </script>
+</body>
+</html>

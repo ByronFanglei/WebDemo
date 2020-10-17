@@ -24,4 +24,4 @@ function binarySearch(arr, item) {
   return -1
 }
 
-console.log(binarySearch(arr, 0))
+console.log(binarySearch(arr, 23))

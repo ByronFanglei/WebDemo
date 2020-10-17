@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>继承</title>
+</head>
+
+<body>
+  <script>
+    let Animate = function (type) {
+      this.type = type
+    }
+    Animate.prototype.eat = function () {
+      Animate.walk()
+      console.log('i am eat food', this.type)
+    }
+    Animate.walk = function () {
+      console.log('i am walk')
+    }
+
+    let Dog = function (type) {
+      // 第一步：初始化父类的构造函数
+      Animate.call(this, type)
+    }
+    // // 第二步：父级实例化到子原型上
+    Dog.prototype = new Animate()
+
+    let dog = new Dog('dog')
+    dog.eat()
+
+
+  </script>
+</body>
+
+</html>

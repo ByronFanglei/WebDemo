@@ -197,14 +197,61 @@
     //   for (const i of [1,2,3,4]) {
     //     await log(i, 1000)
     //   }
-    // })() // 每秒输入一个数字yi
+    // })() // 每秒输入一个数字
 
-    
+    // 第八题：数组去重
+    let arr = [10, 20, 20, 20, 30, 30, 40, 40, 40, 50]
+    // 结果： [10,20,30,40,50]
+    // let arr = [10,10,10,10,10,10,10,10,10,10,10,10 ]
+    // let arr = [10, 20]
+    // let arr = [10]
+    function c(arr) {
+      if (arr.length <= 1) return arr
+      let index = 0
+      let lax = 1
 
+      while (lax < arr.length) {
+        if (arr[index] === arr[lax]) {
+          lax++
+        } else {
+          arr[index + 1] = arr[lax]
+          index++
+          lax++
+        }
+      }
+      console.log(index)
+      return arr.slice(0, index+1)
+    }
+    // console.log(c(arr))
 
+    function cc(arr) {
+      if (arr.length <= 1) return arr
+      let idx = 0
+      for (let i = 1; i < arr.length;) {
+        if (arr[idx] === arr[i]) {
+          i++
+        } else {
+          arr[idx + 1] = arr[i]
+          idx++
+          i++
+        }
+      }
+      return arr.slice(0, idx+1)
+    }
 
+    // console.log(cc(arr))
 
-
+    // 第九题
+    // var test = (function(a) {
+    //   this.a = a
+    //   return function(b){
+    //     return this.a + b
+    //   }
+    // })(function(a,b) {
+    //   return a
+    // }(1,2))
+    // console.info(test(4))
+    // console.info(test(10))
 
   </script>
 </body>

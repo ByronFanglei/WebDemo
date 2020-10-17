@@ -1,4 +1,4 @@
-const PENDING = 'PENDING',
+const PENDING = 'pending',
       FULFILLED = 'fulfilled',
       REJECTED = 'rejected'
 
