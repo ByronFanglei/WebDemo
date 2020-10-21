@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <p>data为函数</p>
+      <button-counter></button-counter>
+      <button-counter></button-counter>
+      <button-counter></button-counter>
+    </div>
+    <div>
+      <p>data不为函数</p>
+      <button-counters></button-counters>
+      <button-counters></button-counters>
+      <button-counters></button-counters>
+    </div>
+  </div>
+  <script>
+    Vue.component('button-counter', {
+      data: function () {
+        return {
+          count: 0
+        }
+      },
+      template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+    })
+    // 直接报错了，当时面试回答的是：点击一个其他的count联动
+    Vue.component('button-counters', {
+      data: {
+        count: 0
+      },
+      template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+    })
+
+    var app = new Vue({
+      el: '#app',
+      data: {}
+    })
+  </script>
+</body>
+
+</html>

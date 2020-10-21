@@ -129,7 +129,7 @@
     // console.log(hypotenuse(arr))
 
     // 第六题：编写一个函数，计算每个元素出现的次数，返回一个对象
-    // let arr = ['a', 'b', 'a', 'c', 'a', 'b', 'd']
+    let arr = ['a', 'b', 'a', 'c', 'a', 'b', 'd']
     // function fun (arr) {
     //   let obj = {}
     //   let map = new Map()
@@ -145,7 +145,19 @@
     //   }
     //   console.log(obj)
     // }
-    // fun(arr)
+
+    function fun(arr) {
+      let obj = {}
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] in obj) {
+          obj[arr[i]] = obj[arr[i]] + 1
+        } else {
+          obj[arr[i]] = 1
+        }
+      }
+      return obj
+    }
+    // console.log(fun(arr))
 
     // 第六题：点击每个li后alert下标
     // function bindlist(elem, type, select, fun) {
@@ -200,7 +212,7 @@
     // })() // 每秒输入一个数字
 
     // 第八题：数组去重
-    let arr = [10, 20, 20, 20, 30, 30, 40, 40, 40, 50]
+    // let arr = [10, 20, 20, 20, 30, 30, 40, 40, 40, 50]
     // 结果： [10,20,30,40,50]
     // let arr = [10,10,10,10,10,10,10,10,10,10,10,10 ]
     // let arr = [10, 20]
