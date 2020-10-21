@@ -18,9 +18,11 @@
       // 正在工作量
       this.workingNum = 0
     }
+    // 添加
     add(promiseCreator) {
       this.list.push(promiseCreator)
     }
+    // 启动
     start() {
       for (let i = 0; i < this.maxNumber; i++) {
         this.doNext()
@@ -36,11 +38,12 @@
         })
       }
     }
-
   }
 
   const scheduler = new Scheduler()
+  
   const timeout = time => new Promise(resolve => setTimeout(resolve, time))
+  
   const addTask = (time, order) => {
     scheduler.add(() => timeout(time).then(() => {
       console.log(order)

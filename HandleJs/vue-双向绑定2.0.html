@@ -23,7 +23,7 @@
   const arrprototype = Array.prototype
   const arrproto = Object.create(arrprototype);
 
-  ['push', 'pop', 'shift', 'unshift', 'slice'].forEach(item => {
+  ['push', 'pop', 'shift', 'unshift', 'splice', 'sort', 'reverse'].forEach(item => {
     arrproto[item] = function() {
       console.log('数组数据更新')
       arrprototype[item].call(this, ...arguments)

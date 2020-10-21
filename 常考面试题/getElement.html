@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>1</h1>
+  <h2>2</h2>
+  <h3>3</h3>
+  <h4>4</h4>
+  <h5>5</h5>
+  <h6>6</h6>
+  <h5>5</h5>
+  <h6>6</h6>
+  <div>div</div>
+  <p>p</p>
+  <ul>
+    <li>
+      <h2>2</h2>
+      <h3>3</h3>
+    </li>
+    <li>222</li>
+    <li>
+      <h1>1</h1>
+      <h2>2</h2>
+      <h3>3</h3>
+      <h4>4</h4>
+      <h5>5</h5>
+      <h6>6</h6>
+      <h5>5</h5>
+      <h6>6</h6>
+    </li>
+  </ul>
+
+  <script>
+    // 获取页面所有h开头的标签元素并统计数量
+    let reg = /^H\w+/
+    let elem = document.documentElement
+    var map = new Map()
+
+    function filterH(elem) {
+      let Elem = elem.nodeName
+      if (reg.test(Elem)) {
+        if (map.has(Elem)) {
+          map.set(Elem, map.get(Elem) + 1)
+        } else {
+          map.set(Elem, 1)
+        }
+      }
+
+      if (elem.children) {
+        let arr = Array.from(elem.children)
+        for (let i = 0; i < arr.length; i++) {
+          filterH(arr[i])
+        }
+      }
+      let obj = {}
+
+      for (let [key, value] of map) {
+        obj[key.toLocaleLowerCase()] = value
+      }
+      return obj
+    }
+
+    console.log(filterH(elem))
+  </script>
+</body>
+
+</html>

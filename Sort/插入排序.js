@@ -10,24 +10,24 @@
 
   let arr = [100, 2, 45, 85, 23, 54, 0, 99]
 
-  // function insert(arr){
-  //   let hand = []
-  //   hand.push(arr[0])
-  //   for(let i = 1; i < arr.length; i++) {
-  //     let A = arr[i]
-  //     for (let j = hand.length-1; j >= 0; j--) {
-  //       let B = hand[j]
-  //       if (A > B) {
-  //         hand.splice(j+1, 0, A)
-  //         break
-  //       }
-  //       if (j === 0) {
-  //         hand.unshift(A)
-  //       }
-  //     }
-  //   }
-  //   return hand
-  // }
+  function insert(arr){
+    let hand = []
+    hand.push(arr[0])
+    for(let i = 1; i < arr.length; i++) {
+      let A = arr[i]
+      for (let j = hand.length-1; j >= 0; j--) {
+        let B = hand[j]
+        if (A > B) {
+          hand.splice(j+1, 0, A)
+          break
+        }
+        if (j === 0) {
+          hand.unshift(A)
+        }
+      }
+    }
+    return hand
+  }
 
 
   function insert(arr) {

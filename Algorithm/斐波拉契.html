@@ -10,14 +10,14 @@
 
 <script>
   // 获取n位斐波拉契数值
-  // function Fibo(n){
-  //   let arr = n > 0 ? [1] : [];
-  //   for (let i = 1; i < n; i++) {
-  //     arr.push(arr[i-1] + (i >= 2 ? arr[i-2] : 0))
-  //   }
-  //   return arr
-  // }
-  // console.log(Fibo(20))
+  function Fibo(n){
+    let arr = n > 0 ? [1] : [];
+    for (let i = 1; i < n; i++) {
+      arr.push(arr[i-1] + (i >= 2 ? arr[i-2] : 0))
+    }
+    return arr
+  }
+  console.log(Fibo(20))
 
 
   // 根据n值获取对应的斐波拉契数值
@@ -27,7 +27,7 @@
     }
     return Fsum(n-1) + Fsum(n-2)
   }
-  console.log(Fsum(5))
+  console.log(Fsum(20))
 </script>  
 </body>
 </html>

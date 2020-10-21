@@ -11,9 +11,13 @@ let arr = [100, 2, 45, 85, 23, 54, 0, 99]
 
 function mergeSort(arr) {
     if (arr.length === 1) {return arr;}
+    // 获取中间下标
     const mid = Math.floor(arr.length / 2)
+    // 根据中间下标获取左边
     const arrLeft = arr.slice(0, mid)
+    // 根据中间下标获取右边
     const arrRight = arr.slice(mid, arr.length)
+    
     const orderLeft =  mergeSort(arrLeft)
     const orderRight =  mergeSort(arrRight)
     let res = []
