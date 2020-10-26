@@ -1,11 +1,16 @@
-const { Model } = require("mongoose")
+const {
+  exec
+} = require('../db/mysql')
 
 const LoginCheck = (username, password) => {
-  if (username === 123 && password === 321) {
-    return true
-  } else {
-    return false
-  }
+  let sql = `
+    select username, realname from users 
+    where username='${username}' and password='${password}';
+  `
+  return exec(sql).then(value => {
+    return value[0] || {}
+  })
+
 }
 
 module.exports = {

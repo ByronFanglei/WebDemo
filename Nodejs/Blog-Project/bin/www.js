@@ -1,7 +1,7 @@
 const http = require('http')
+const serveHandle = require('../app.js')
 
 const PORT = 5050
-const serveHandle = require('../app.js')
 
 const serve = http.createServer(serveHandle)
 serve.listen(PORT)

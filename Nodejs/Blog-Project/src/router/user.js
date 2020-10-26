@@ -1,5 +1,10 @@
-const { LoginCheck } = require('../controller/user')
-const { SuccessModel, ErrorModel } = require('../model/resModel')
+const {
+  LoginCheck
+} = require('../controller/user')
+const {
+  SuccessModel,
+  ErrorModel
+} = require('../model/resModel')
 
 const handleUserRouter = (request, respond) => {
 
@@ -9,13 +14,17 @@ const handleUserRouter = (request, respond) => {
 
   // 登录接口
   if (method === 'POST' && request.path === '/api/user/login') {
-    const { username, password } = request.body
+    const {
+      username,
+      password
+    } = request.body
     const loginDate = LoginCheck(username, password)
-    if (loginDate) {
-      return new SuccessModel('登陆成功')
-    } else {
+    return loginDate.then(value => {
+      if (value.username) {
+        return new SuccessModel('登陆成功')
+      }
       return new ErrorModel('账户名或密码错误')
-    }
+    })
   }
 }
 
