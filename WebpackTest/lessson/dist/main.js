@@ -10,17 +10,17 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/banner.scss":
-/*!************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/banner.scss ***!
-  \************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/banner.scss":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/banner.scss ***!
+  \****************************************************************************************************************************************************************************/
 /*! namespace exports */
 /*! export default [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
 /*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_exports__, __webpack_require__.r, module.id, __webpack_require__.*, module */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"body .banner {\\n  width: 400px;\\n  -webkit-transform: translate(200px, 200px);\\n  transform: translate(200px, 200px); }\\n\", \"\"]);\n// Exports\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://lesson/./src/banner.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ \"./node_modules/css-loader/dist/runtime/getUrl.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _font_iconfont_eot_t_1603934611288__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./font/iconfont.eot?t=1603934611288 */ \"./src/font/iconfont.eot?t=1603934611288\");\n/* harmony import */ var _font_iconfont_woff_t_1603934611288__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./font/iconfont.woff?t=1603934611288 */ \"./src/font/iconfont.woff?t=1603934611288\");\n/* harmony import */ var _font_iconfont_ttf_t_1603934611288__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./font/iconfont.ttf?t=1603934611288 */ \"./src/font/iconfont.ttf?t=1603934611288\");\n/* harmony import */ var _font_iconfont_svg_t_1603934611288__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./font/iconfont.svg?t=1603934611288 */ \"./src/font/iconfont.svg?t=1603934611288\");\n// Imports\n\n\n\n\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_font_iconfont_eot_t_1603934611288__WEBPACK_IMPORTED_MODULE_2__.default);\nvar ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_font_iconfont_eot_t_1603934611288__WEBPACK_IMPORTED_MODULE_2__.default, { hash: \"#iefix\" });\nvar ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_font_iconfont_woff_t_1603934611288__WEBPACK_IMPORTED_MODULE_3__.default);\nvar ___CSS_LOADER_URL_REPLACEMENT_3___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_font_iconfont_ttf_t_1603934611288__WEBPACK_IMPORTED_MODULE_4__.default);\nvar ___CSS_LOADER_URL_REPLACEMENT_4___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_font_iconfont_svg_t_1603934611288__WEBPACK_IMPORTED_MODULE_5__.default, { hash: \"#iconfont\" });\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"body .banner {\\n  width: 400px;\\n  -webkit-transform: translate(200px, 200px);\\n  transform: translate(200px, 200px); }\\n\\n@font-face {\\n  font-family: \\\"iconfont\\\";\\n  src: url(\" + ___CSS_LOADER_URL_REPLACEMENT_0___ + \");\\n  /* IE9 */\\n  src: url(\" + ___CSS_LOADER_URL_REPLACEMENT_1___ + \") format(\\\"embedded-opentype\\\"), url(\\\"data:application/x-font-woff2;charset=utf-8;base64,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\\\") format(\\\"woff2\\\"), url(\" + ___CSS_LOADER_URL_REPLACEMENT_2___ + \") format(\\\"woff\\\"), url(\" + ___CSS_LOADER_URL_REPLACEMENT_3___ + \") format(\\\"truetype\\\"), url(\" + ___CSS_LOADER_URL_REPLACEMENT_4___ + \") format(\\\"svg\\\");\\n  /* iOS 4.1- */ }\\n\\n.iconfont {\\n  font-family: \\\"iconfont\\\" !important;\\n  font-size: 16px;\\n  font-style: normal;\\n  -webkit-font-smoothing: antialiased;\\n  -moz-osx-font-smoothing: grayscale; }\\n\\n.iconspinner5:before {\\n  content: \\\"\\\\e857\\\"; }\\n\\n.iconiconset0394:before {\\n  content: \\\"\\\\e711\\\"; }\\n\\n.iconxiazai-xue:before {\\n  content: \\\"\\\\e625\\\"; }\\n\\n.iconAa:before {\\n  content: \\\"\\\\e636\\\"; }\\n\\n.iconfangdajing:before {\\n  content: \\\"\\\\e653\\\"; }\\n\\n.iconyumaobi:before {\\n  content: \\\"\\\\e6e5\\\"; }\\n\", \"\"]);\n// Exports\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://lesson/./src/banner.scss?./node_modules/css-loader/dist/cjs.js??ruleSet%5B1%5D.rules%5B1%5D.use%5B1%5D!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -37,6 +37,75 @@ eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/*! unknown exports (runtime-defined) */
+/*! runtime requirements: module */
+/*! CommonJS bailout: module.exports is used directly at 3:0-14 */
+/***/ (function(module) {
+
+eval("\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    // eslint-disable-next-line no-param-reassign\n    options = {};\n  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign\n\n\n  url = url && url.__esModule ? url.default : url;\n\n  if (typeof url !== 'string') {\n    return url;\n  } // If url is already wrapped in quotes, remove them\n\n\n  if (/^['\"].*['\"]$/.test(url)) {\n    // eslint-disable-next-line no-param-reassign\n    url = url.slice(1, -1);\n  }\n\n  if (options.hash) {\n    // eslint-disable-next-line no-param-reassign\n    url += options.hash;\n  } // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n\n\n  if (/[\"'() \\t\\n]/.test(url) || options.needQuotes) {\n    return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, '\\\\n'), \"\\\"\");\n  }\n\n  return url;\n};\n\n//# sourceURL=webpack://lesson/./node_modules/css-loader/dist/runtime/getUrl.js?");
+
+/***/ }),
+
+/***/ "./src/font/iconfont.eot?t=1603934611288":
+/*!***********************************************!*\
+  !*** ./src/font/iconfont.eot?t=1603934611288 ***!
+  \***********************************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.p, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"e360fe34ead49b76a5d20f13ce7271f3.eot\");\n\n//# sourceURL=webpack://lesson/./src/font/iconfont.eot?");
+
+/***/ }),
+
+/***/ "./src/font/iconfont.svg?t=1603934611288":
+/*!***********************************************!*\
+  !*** ./src/font/iconfont.svg?t=1603934611288 ***!
+  \***********************************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.p, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"89e19e0de6ab7d807ec7190ce93a4bd0.svg\");\n\n//# sourceURL=webpack://lesson/./src/font/iconfont.svg?");
+
+/***/ }),
+
+/***/ "./src/font/iconfont.ttf?t=1603934611288":
+/*!***********************************************!*\
+  !*** ./src/font/iconfont.ttf?t=1603934611288 ***!
+  \***********************************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.p, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"8a7cce055f4bc67ab5ebe4a66a3786d8.ttf\");\n\n//# sourceURL=webpack://lesson/./src/font/iconfont.ttf?");
+
+/***/ }),
+
+/***/ "./src/font/iconfont.woff?t=1603934611288":
+/*!************************************************!*\
+  !*** ./src/font/iconfont.woff?t=1603934611288 ***!
+  \************************************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.p, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"78b4ce08559556a974472c9b182b2119.woff\");\n\n//# sourceURL=webpack://lesson/./src/font/iconfont.woff?");
+
+/***/ }),
+
 /***/ "./src/banner.scss":
 /*!*************************!*\
   !*** ./src/banner.scss ***!
@@ -47,7 +116,7 @@ eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n
 /*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_exports__, __webpack_require__.r, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_banner_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/postcss-loader/dist/cjs.js!./banner.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/banner.scss\");\n\n            \n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_banner_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_banner_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});\n\n//# sourceURL=webpack://lesson/./src/banner.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_1_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_banner_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!../node_modules/sass-loader/dist/cjs.js!../node_modules/postcss-loader/dist/cjs.js!./banner.scss */ \"./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/banner.scss\");\n\n            \n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_1_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_banner_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_1_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_banner_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});\n\n//# sourceURL=webpack://lesson/./src/banner.scss?");
 
 /***/ }),
 
@@ -64,20 +133,6 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
-/***/ "./src/banner.jpg":
-/*!************************!*\
-  !*** ./src/banner.jpg ***!
-  \************************/
-/*! namespace exports */
-/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.p, __webpack_require__.* */
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"images/banner_a042f409310b9680cd2fe610b365479e.jpg\");\n\n//# sourceURL=webpack://lesson/./src/banner.jpg?");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -87,7 +142,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _banner_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./banner.jpg */ \"./src/banner.jpg\");\n/* harmony import */ var _banner_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./banner.scss */ \"./src/banner.scss\");\n\r\n\r\n\r\nconsole.log(_banner_jpg__WEBPACK_IMPORTED_MODULE_0__.default)\r\n\r\nvar img = new Image()\r\nimg.src = _banner_jpg__WEBPACK_IMPORTED_MODULE_0__.default\r\nimg.classList.add('banner')\r\n\r\nvar dom = document.getElementById('root')\r\ndom.append(img)\r\n\n\n//# sourceURL=webpack://lesson/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _banner_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./banner.scss */ \"./src/banner.scss\");\n// import createAvatar from './createAvatar'\r\n// import Banner from './banner.jpg'\r\n// import style from'./banner.scss'\r\n\r\n\r\n// createAvatar()\r\n\r\n// console.log(Banner)\r\n\r\n// var img = new Image()\r\n// img.src = Banner\r\n// img.classList.add(style.banner)\r\n\r\nvar dom = document.getElementById('root')\r\n// dom.append(img)\r\ndom.innerHTML = '<p class=\"iconfont iconAa\"></p>'\r\n\r\n\r\n\n\n//# sourceURL=webpack://lesson/./src/index.js?");
 
 /***/ })
 

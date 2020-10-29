@@ -1,0 +1,11 @@
+.content{
+  margin-top: 200px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.inputbar{
+  width: 300px;
+  margin-bottom: 20px;
+}

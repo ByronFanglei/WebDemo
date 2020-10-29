@@ -1,11 +1,18 @@
-import Banner from './banner.jpg'
+// import createAvatar from './createAvatar'
+// import Banner from './banner.jpg'
+// import style from'./banner.scss'
 import './banner.scss'
 
-console.log(Banner)
+// createAvatar()
 
-var img = new Image()
-img.src = Banner
-img.classList.add('banner')
+// console.log(Banner)
+
+// var img = new Image()
+// img.src = Banner
+// img.classList.add(style.banner)
 
 var dom = document.getElementById('root')
-dom.append(img)
+// dom.append(img)
+dom.innerHTML = '<p class="iconfont iconAa"></p>'
+
+

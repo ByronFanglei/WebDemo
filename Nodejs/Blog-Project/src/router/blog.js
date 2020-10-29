@@ -10,6 +10,17 @@ const {
   ErrorModel
 } = require('../model/resModel.js')
 
+
+// 统一登陆验证函数
+const loginCheck = (request) => {
+  if (!request.session.username) {
+    return Promise.resolve(
+      new ErrorModel('尚未登录')
+    )
+  }
+}
+
+
 const handleBlogRouter = (request, respond) => {
 
   const method = request.method // GET POST
@@ -40,7 +51,14 @@ const handleBlogRouter = (request, respond) => {
 
   // 新增一篇博客
   if (method === 'POST' && request.path === '/api/blog/new') {
-    const author = 'Byron'
+    // 登录验证
+    const loginCheckResult = loginCheck(request)
+    if (loginCheckResult) {
+      // 未登录
+      return loginCheck
+    }
+
+    const author = request.session.username
     request.body.author = author
 
     const blogData = newBlog(request.body)
@@ -51,6 +69,13 @@ const handleBlogRouter = (request, respond) => {
 
   // 更新一篇博客
   if (method === 'POST' && request.path === '/api/blog/update') {
+
+    const loginCheckResult = loginCheck(request)
+    if (loginCheckResult) {
+      // 未登录
+      return loginCheck
+    }
+
     const blogData = updateBlog(id, request.body)
     return blogData.then(value => {
       if (value) {
@@ -63,7 +88,14 @@ const handleBlogRouter = (request, respond) => {
   
   // 删除一篇博客
   if (method === 'POST' && request.path === '/api/blog/del') {
-    const author = '库克'
+
+    const loginCheckResult = loginCheck(request)
+    if (loginCheckResult) {
+      // 未登录
+      return loginCheck
+    }
+
+    const author = request.session.username
 
     const blogData = deleteBlog(id, author)
     return blogData.then(value => {
