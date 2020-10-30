@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ToduList from './ToduList'
+import Todulist from './Todulist'
 
 
-ReactDOM.render(<ToduList />, document.getElementById('root'))
+ReactDOM.render(<Todulist />, document.getElementById('root'))
