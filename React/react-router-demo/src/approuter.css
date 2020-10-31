@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.main{
+  display: flex;
+  flex-direction: row;
+}
+.left{
+  width: 300px;
+  height: 500px;
+  padding: 50px;
+  background-color: antiquewhite;
+}
+.right{
+  flex: 1;
+  height: 500px;
+  padding: 50px;
+  background-color: aquamarine;
+}
+ul{
+  list-style: none;
+}

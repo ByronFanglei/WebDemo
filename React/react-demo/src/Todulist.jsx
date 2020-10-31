@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import store from './store'
 import { message } from 'antd'
-import { changeInputAction, changeList, delList } from './store/actionCreators'
+import { changeInputAction, changeList, delList, getSagaTian } from './store/actionCreators'
 import TodulistUi from './TodulistUi'
 
 
@@ -11,6 +11,16 @@ class Todulist extends Component {
     this.state = store.getState()
     store.subscribe(this.handStoreChange)
   }
+  componentDidMount() {
+    // thunk
+    // const action = getMusic()
+    // store.dispatch(action)
+
+    // saga
+    const action = getSagaTian()
+    store.dispatch(action)
+  }
+
   render() {
     return (
       <TodulistUi 

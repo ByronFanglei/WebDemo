@@ -1,83 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>promise</title>
 </head>
+
 <body>
-  
-<script>
 
-  // Promise.allSettled([
-  //   Promise.resolve('a'),
-  //   Promise.reject('b')
-  // ]).then(value => {
-  //   console.log(value)
-  // })
-
-
-  // 手写Promise.allSettled
-  function allSet(arr) {
-    return new Promise(function(resolve, reject) {
-      if (Object.prototype.toString.call(arr) !== '[object Array]') {
-        return reject(new TypeError('not is arr'))
-      }
+  <script>
+    // Promise.allSettled([
+    //   Promise.resolve('a'),
+    //   Promise.reject('b')
+    // ]).then(value => {
+    //   console.log(value)
+    // })
 
 
-      let args = Array.prototype.slice.call(arr)
-      if (args === 0) return resolve([])
-      let arrCount = args.length
+    // 手写Promise.allSettled
+    // function allSet(arr) {
+    //   return new Promise(function(resolve, reject) {
+    //     if (Object.prototype.toString.call(arr) !== '[object Array]') {
+    //       return reject(new TypeError('not is arr'))
+    //     }
 
-      for(let i = 0; i < arrCount; i++) {
-        resolvePromise(i, args[i])
-      }
 
-      function resolvePromise(index, value) {
-        if (typeof value === 'object') {
-          let then = value.then
-          if (typeof then === 'function') {
-            then.call(
-              value,
-              function(val) {
-                args[index] = {
-                  status: 'fulfilled',
-                  value: val
-                }
-                if(--arrCount === 0) {
-                  resolve(args)
-                }
-              },
-              function(reason) {
-                args[index] = {
-                  status: 'rejected',
-                  value: reason
-                }
-                if(--arrCount === 0) {
-                  resolve(args)
-                }
-              }
-            )
-          }
-        }
-      }
+    //     let args = Array.prototype.slice.call(arr)
+    //     if (args === 0) return resolve([])
+    //     let arrCount = args.length
+
+    //     for(let i = 0; i < arrCount; i++) {
+    //       resolvePromise(i, args[i])
+    //     }
+
+    //     function resolvePromise(index, value) {
+    //       if (typeof value === 'object') {
+    //         let then = value.then
+    //         if (typeof then === 'function') {
+    //           then.call(
+    //             value,
+    //             function(val) {
+    //               args[index] = {
+    //                 status: 'fulfilled',
+    //                 value: val
+    //               }
+    //               if(--arrCount === 0) {
+    //                 resolve(args)
+    //               }
+    //             },
+    //             function(reason) {
+    //               args[index] = {
+    //                 status: 'rejected',
+    //                 value: reason
+    //               }
+    //               if(--arrCount === 0) {
+    //                 resolve(args)
+    //               }
+    //             }
+    //           )
+    //         }
+    //       }
+    //     }
+    //   })
+    // }
+
+    // let result = allSet([Promise.resolve('a'), Promise.reject('b')])
+    // console.log(result)
+
+
+    // Promise.all([
+    //   Promise.resolve('1'),
+    //   Promise.resolve('2'),
+    //   3
+    // ]).then(value => {
+    //   console.log(value)
+    // }).catch(reason => {
+    //   console.log(reason)
+    // })
+
+    // 第一种:链式调用中，只有前一个then的回调执行完毕后，跟着的then中的回调才会被假如至微任务队列
+    // Promise.resolve().then(value => {
+    //   console.log('thne1')
+    //   Promise.resolve().then(value => {
+    //     console.log('then1-1')
+    //   })
+    // }).then(value => {
+    //   console.log('then2')
+    // })
+
+    // 第二种:每个链式调用开端会首先一次进入微队列任务
+    // let p = Promise.resolve()
+
+    // p.then(value => {
+    //   console.log('thne1')
+    //   Promise.resolve().then(value => {
+    //     console.log('then1-1')
+    //   })
+    // }).then(value => {
+    //   console.log('thne1-2')
+    // })
+
+    // p.then(value => {
+    //   console.log('thne2')
+    // })
+
+    // 第三种:同一个promise的每个链式调用的开端会首先依次进入微任务队列
+    // let p = Promise.resolve(11111).then(value => {
+    //   console.log('thne1')
+    //   Promise.resolve().then(value => {
+    //     console.log('thne1-1')
+    //   })
+    // }).then(value => {
+    //   console.log('thne2')
+    //   return 123123
+    // })
+
+    // p.then(value => {
+    //   console.log(value)
+    //   console.log('thne3')
+    // })
+
+    // 第四种：
+    Promise.resolve().then(value => {
+      console.log('thne1')
+      Promise.resolve().then(value => {
+        console.log('thne1-1')
+        // return 1
+        return Promise.resolve()
+      }).then(value => {
+        console.log('thne1-2')
+      })
+    }).then(value => {
+      console.log('thne2')
+    }).then(value => {
+      console.log('thne3')
+    }).then(value => {
+      console.log('thne4')
     })
-  }
 
-  let result = allSet([Promise.resolve('a'), Promise.reject('b')])
-  console.log(result)
-
-  
-  // Promise.all([
-  //   Promise.resolve('1'),
-  //   Promise.resolve('2'),
-  //   3
-  // ]).then(value => {
-  //   console.log(value)
-  // }).catch(reason => {
-  //   console.log(reason)
-  // })
-
-</script>  
+  </script>
 </body>
+
 </html>
