@@ -15,4 +15,5 @@ var dom = document.getElementById('root')
 // dom.append(img)
 dom.innerHTML = '<p class="iconfont iconAa"></p>'
 
+console.log('123')
 

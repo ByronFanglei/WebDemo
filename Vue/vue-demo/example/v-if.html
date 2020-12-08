@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>if</title>
+</head>
+<body>
+  <div id="app">
+    <p v-if='isLogin'>欢迎 Byron</p>
+    <p v-else>请先登录</p>
+    <button @click='handleLogin'>转换</button>
+  </div>
+
+  <script src="../assets/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        isLogin: false
+      },
+      methods: {
+        handleLogin() {
+          this.isLogin = !this.isLogin
+        }
+      },
+    })
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for='item in items'>{{item}}</li>
+    </ul>
+    <hr />
+    <ul>
+      <li v-for='(item, index) in newStudents'>
+        {{index}}={{item.name}}=>{{item.age}}
+      </li>
+    </ul>
+  </div>
+
+  <script src="../assets/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        items: [22,33,556,12,654],
+        students: [{
+          name: 'egg',
+          age: 23,
+        }, {
+          name: 'byron',
+          age: 21,
+        }, {
+          name: 'gua',
+          age: 24,
+        }]
+      },
+      computed: {
+        newitems: function() {
+          return this.items.sort((a,b) => a-b)
+        },
+        newStudents: function() {
+          return sortObj(this.students, 'age')
+        }
+      },
+    })
+
+    // 对象排序方法
+    function sortObj(arr, key) {
+      return arr.sort((a, b) => {
+        var x = a[key]
+        var y = b[key]
+        return ((x<y) ? -1 : ((x>y) ? 1 : 0))
+      })
+    }
+
+  </script>
+</body>
+</html>

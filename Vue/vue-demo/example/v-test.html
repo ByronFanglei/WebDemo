@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>text</title>
+</head>
+<body>
+  <div id='app'>
+    <span>{{message}}</span>
+    <hr />
+    <span v-text='message'></span>
+    <span v-html='text'></span>
+  </div>
+
+  <script src="../assets/vue.js"></script>
+  <script>
+    var arr = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello',
+        text: '<h2>world</h2>'
+      }
+    })
+  </script>
+</body>
+</html>

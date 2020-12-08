@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bind</title>
+  <style>
+    .classA {
+      color: #ff6700
+    }
+    .classB{
+      /* color: #bfc; */
+      font-size: 36px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <a :href="Urls">{{Urls}}</a>
+    <hr>
+    <img v-bind:src="Imgs" alt="" width="200px">
+    <hr>
+    <p>绑定class</p>
+    <div :class="className">Class</div>
+    <div :class="{classA:isOk}">isOk</div>
+    <div :class="[classA, classB]">byron</div>
+    <div :class="classs">classArr</div>
+    <div :class="classobj">classObj</div>
+    <div :class="isOk ? classA : classB">三元运算</div>
+    <div :style="{color: reds}">绑定style</div>
+    <div :style="styleObject">对象绑定style</div>
+  </div>
+  <script src="../assets/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        Urls: 'https://www.mi.com',
+        Imgs: 'http://resource.fbyron.cn/images/578B8141.jpg',
+        className: 'classB',
+        isOk: true,
+        classA: 'classA',
+        classB: 'classB',
+        classs: ['classA', 'classB'],
+        classobj: {
+          'classA': false,
+          'classB': true
+        },
+        reds: 'red',
+        styleObject: {
+          color: 'skyblue',
+          fontSize: '36px'
+        }
+      }
+    })
+  </script>
+</body>
+</html>

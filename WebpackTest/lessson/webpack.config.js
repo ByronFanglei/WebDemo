@@ -5,10 +5,16 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 module.exports = {
   // 打包文件压缩
   // mode: 'production',
+  // devtool: "cheap-module-source-map",
   // 打包文件不压缩
   mode: "development",
+  devtool: "eval-cheap-module-source-map",
   // 项目入口文件
   entry: './src/index.js',
+  // 如果这样配置，并且不写output下的filename后，打包后生成main.js
+  // entry: {
+  //   main: './src/index.js'
+  // },
   // 针对不同类型文件进行打包
   module: {
     rules:[{
@@ -63,8 +69,10 @@ module.exports = {
   ],
   // 项目输出文件，最后要运行的文件
   output: {
+    // 在index.html文件引入js文件添加前缀
+    // publicPath: 'http://cdn.fbyron.cn',
     // 打包最后生成的文件
-    filename: 'main.js',
+    filename: 'bundle.js',
     // 打包最后生成的文件夹
     path: path.resolve(__dirname, 'dist')
   }

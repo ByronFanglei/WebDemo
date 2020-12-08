@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pre</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{message}}</p>
+    <p v-pre>{{message}}</p>
+
+    <p v-once>{{message}}</p>
+    <input type="text" v-model="message">
+    <p>{{message}}</p>
+  </div>
+  <script src="../assets/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'byron'
+      }
+    })
+  </script>
+</body>
+</html>
