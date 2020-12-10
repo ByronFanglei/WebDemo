@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href='http://cdn.repository.webfont.com/webfonts/nomal/142370/45873/5fd230ddf629d81ce8983af9.css' rel='stylesheet' type='text/css' />
+  
+  <!-- <script type="text/javascript" src="http://cdn.repository.webfont.com/wwwroot/js/wf/youziku.api.min.js"></script>
+  <script type="text/javascript">
+    $webfont.load("#text", "a5459d78703e43288657b034f4fe9f08", "Gyoseki-Gyosho");
+    $webfont.draw();
+  </script> -->
+  <style>
+    body {
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    #text {
+      width: auto;
+      height: 300px;
+      font-size: 24px;
+      line-height: 300px;
+      font-family:'Gyoseki-Gyosho24f238276622c22';
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <p style="color: #000;">每个人都在寻找生命中对的那个人，却没有试着成为对的那个人</p> -->
+  <div id="text">
+
+  </div>
+</body>
+
+<script>
+  let divTyping = document.getElementById('text')
+  let i = 0,
+    timer = 0,
+    str = '每个人都在寻找生命中对的那个人，却没有试着成为对的那个人'
+
+  function typing() {
+    if (i <= str.length) {
+      divTyping.innerHTML = str.slice(0, i++) + '_'
+      timer = setTimeout(typing, 200)
+    } else {
+      divTyping.innerHTML = str //结束打字,移除 _ 光标
+      clearTimeout(timer)
+      divTyping.classList.add('animate__animated')
+      divTyping.classList.add('animate__fadeOutUp')
+      divTyping.classList.add('animate__delay-2s')
+    }
+  }
+
+  typing()
+</script>
+
+</html>
