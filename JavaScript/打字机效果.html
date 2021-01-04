@@ -5,13 +5,7 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link href='http://cdn.repository.webfont.com/webfonts/nomal/142370/45873/5fd230ddf629d81ce8983af9.css' rel='stylesheet' type='text/css' />
-  
-  <!-- <script type="text/javascript" src="http://cdn.repository.webfont.com/wwwroot/js/wf/youziku.api.min.js"></script>
-  <script type="text/javascript">
-    $webfont.load("#text", "a5459d78703e43288657b034f4fe9f08", "Gyoseki-Gyosho");
-    $webfont.draw();
-  </script> -->
+  <link href='http://cdn.repository.webfont.com/webfonts/nomal/142370/45904/5fd30ccbf629d846e0bec7a5.css' rel='stylesheet' type='text/css' />
   <style>
     body {
       background-color: #000;
@@ -22,11 +16,11 @@
     }
 
     #text {
-      width: auto;
-      height: 300px;
-      font-size: 24px;
-      line-height: 300px;
-      font-family:'Gyoseki-Gyosho24f238276622c22';
+      margin-top: 500px;
+      width: 960px;
+      font-size: 40px;
+      font-family:'cyjianxk24f59342ad22c22';
+      text-align: center;
     }
   </style>
 </head>
@@ -42,18 +36,20 @@
   let divTyping = document.getElementById('text')
   let i = 0,
     timer = 0,
-    str = '每个人都在寻找生命中对的那个人，却没有试着成为对的那个人'
-
+    // str = '我不知道我有多喜欢你，但如果是去见你我一定是用跑的。我说，在奔向你的路上这一路，风都是甜的，这一路没有桃花只见你为我种下的白玲花'
+    // str = '每个人都在寻找生命中对的那个人，却没有试着成为对的那个人'
+    // str = '当善良遇上善良，便是这世上最美的邂逅，当善良遇上温柔，那便是人间绝配'
+    str = '不是每一场相遇都有结局，但是每一场相遇都有意义，有些人适合让你成长，有些故事只适合收藏'
   function typing() {
     if (i <= str.length) {
-      divTyping.innerHTML = str.slice(0, i++) + '_'
+      divTyping.innerHTML = str.slice(0, i++)
       timer = setTimeout(typing, 200)
     } else {
-      divTyping.innerHTML = str //结束打字,移除 _ 光标
+      // divTyping.innerHTML = str //结束打字,移除 _ 光标
       clearTimeout(timer)
       divTyping.classList.add('animate__animated')
       divTyping.classList.add('animate__fadeOutUp')
-      divTyping.classList.add('animate__delay-2s')
+      divTyping.classList.add('animate__delay-1s')
     }
   }
 
