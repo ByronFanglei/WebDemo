@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  position: relative; 
+  margin: 0 auto;
+}
+
+.item-img {
+  position: absolute;
+  background-color: '#ededed';
+  overflow: hidden;
+}
+
+.item-img img {
+  width: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity 1s;
+}

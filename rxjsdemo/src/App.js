@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { Observable, Subject, asapScheduler, pipe, of, from, interval, merge, fromEvent, combineLatest, SubscriptionLike, PartialObserver } from 'rxjs'
-import { take, filter, map } from 'rxjs/operators'
+import { take, filter, map, debounceTime } from 'rxjs/operators'
 class App extends PureComponent{
 
   _handleButton = () => {
